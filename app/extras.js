@@ -1,6 +1,6 @@
 // Mon Temps — élections, rappel du soir, cycles de travail, simulateur, dossier pour le syndicat.
 import * as M from './moteur.js';
-import { S, codes, sauver, aller } from './etat.js';
+import { S, codes, codesProposes, sauver, aller } from './etat.js';
 import { esc, ic, chevron, enteteRetour, mailto, badgeProvisoire, toast, emettre } from './commun.js';
 
 const jourNum = (d) => M.jourNum(d);
@@ -104,7 +104,7 @@ export const carteElections = () => {
 const cycles = () => (S.etat.reglages.cycles = S.etat.reglages.cycles || []);
 export function vueCycle() {
   const C = codes(); const Y = (S.vue.cycle = S.vue.cycle || { seq: [], nom: '', debut: M.ajouterJours(M.aujourdhui(), 1), fin: M.ajouterJours(M.aujourdhui(), 56), choisi: null });
-  const travail = [...C.values()].filter((c) => c.debut), autres = [...C.values()].filter((c) => !c.debut);
+  const P = codesProposes(); const travail = [...P.values()].filter((c) => c.debut), autres = [...P.values()].filter((c) => !c.debut);
   const sauves = cycles();
   const seq = Y.choisi != null && sauves[Y.choisi] ? sauves[Y.choisi].seq : Y.seq;
   const jours = Math.max(0, jourNum(Y.fin) - jourNum(Y.debut) + 1);

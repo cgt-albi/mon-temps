@@ -11,7 +11,7 @@ const pl = (n, mot) => `${n} ${mot}${n > 1 ? 's' : ''}`;
 const INFOS = (R) => ({
   solde: { titre: 'Solde et théorique', p: [
     'Ton solde, c\'est ce que tu as fait moins ce que tu devais faire, depuis le début de ton suivi.',
-    `Ce que tu dois (le « théorique ») : ${M.formatDuree(R.valeurJourneeHeures * 60)} par jour du lundi au vendredi, ajusté à ta quotité. Les jours fériés et tes congés annuels sont retirés du compte.`,
+    `Ce que tu dois (le « théorique ») : ${M.formatDuree(M.duJournalierHeures(S.etat, S.cfg) * 60)} par jour du lundi au vendredi, ajusté à ta quotité. Les jours fériés et tes congés annuels sont retirés du compte.`,
     'Ce que tu as fait : la durée de tes journées de travail, pause déduite, plus tes dépassements. Maladie, formation et garde d\'enfant comptent comme la journée prévue.',
     'Un solde négatif n\'est pas une dette : c\'est le planning qui ne t\'a pas donné assez d\'heures. Un solde positif, ce sont des heures à récupérer ou à payer.',
     'Chaque barre du graphique est le solde d\'un mois : vers le haut, des heures en plus ; vers le bas, en rouge, des heures en moins.'] },
@@ -30,7 +30,7 @@ const INFOS = (R) => ({
     'L\'appli ajoute ces jours gagnés à ton droit dès que la condition est remplie par ton planning, prévu compris.'] },
   rtt: { titre: 'RTT', p: [
     'Les jours de RTT compensent une durée de travail supérieure à 35 h par semaine. Leur nombre dépend de ton cycle de travail et de ta quotité.',
-    `L'appli compte pour l'instant ${R.rttParAn} jours par an à temps plein. Ce chiffre sera calé sur le protocole de l'établissement.`,
+    `L'appli compte pour l'instant ${M.rttParAn(S.etat, S.cfg)} jours par an à temps plein. Ce chiffre sera calé sur le protocole de l'établissement.`,
     'Certaines absences (maladie notamment) réduisent le nombre de RTT acquis : compare avec ton compteur officiel.'] },
   cet: { titre: 'Compte épargne-temps', p: [
     'Le CET permet de mettre de côté des jours non pris (congés annuels au-delà de 20 jours pris, RTT, heures supplémentaires non récupérées) pour les utiliser plus tard.',

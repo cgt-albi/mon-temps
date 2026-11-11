@@ -23,6 +23,26 @@ for (const c of cfg.codes) {
 }
 t('nom présent', typeof cfg.nom === 'string' && cfg.nom.trim().length > 0);
 
+// Régimes de travail
+const regs = regles.regimes || [];
+const idsVus = new Set();
+for (const r of regs) {
+  t(`régime ${r.nom} : repère unique`, r.id && !idsVus.has(r.id)); idsVus.add(r.id);
+  for (const c of r.codes || []) t(`régime ${r.nom} : le code ${c} existe`, cfg.codes.some((x) => x.code === c));
+}
+{
+  const reg = { id: 'test-12h', nom: 'Test 12 h', codes: ['M41'], duJournalier: '6:30', rttParAn: 3 };
+  const cfgR = { ...cfg, regles: { ...regles, regimes: [reg] } };
+  const etR = { profil: { regime: 'test-12h', quotite: 100 }, jours: {}, codesPerso: [] };
+  const prop = M.codesProposes(cfgR, etR);
+  t('régime : seuls ses codes de travail', prop.has('M41') && !prop.has('M52') && prop.has('RH') && prop.has('CA'));
+  t('régime : dû journalier propre', M.duJournalierHeures(etR, cfgR) === 6.5);
+  t('régime : RTT propres', M.rttParAn(etR, cfgR) === 3);
+  const etSans = { profil: { quotite: 100 }, jours: {}, codesPerso: [] };
+  t('sans régime : tous les codes', M.codesProposes(cfgR, etSans).size === M.tousLesCodes(cfgR, etSans).size);
+  t('sans régime : règle générale', M.duJournalierHeures(etSans, cfgR) === regles.valeurJourneeHeures && M.rttParAn(etSans, cfgR) === regles.rttParAn);
+}
+
 // Dates et fériés
 t('Pâques 2026', M.feries(2026)['2026-04-06'] === 'Lundi de Pâques');
 t('Pentecôte 2027', M.feries(2027)['2027-05-17'] === 'Lundi de Pentecôte');

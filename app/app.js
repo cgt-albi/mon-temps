@@ -1,7 +1,7 @@
 // Mon Temps — point d'entrée, navigation et écrans principaux.
 import * as M from './moteur.js';
 import * as St from './stockage.js';
-import { S, codes, sauver, aller, joursDepuisSauvegarde, appliquerAffichage } from './etat.js';
+import { S, codes, codesProposes, sauver, aller, joursDepuisSauvegarde, appliquerAffichage } from './etat.js';
 import { esc, ic, chevron, toast, navBas, enteteRetour, badgeProvisoire, emettre, mailto, chargerConfig } from './commun.js';
 import { barreHaut, panneauAffichage, brancherAffichage } from './entete.js';
 import * as V from './vues2.js';
@@ -78,7 +78,7 @@ function vueRemplir(p) {
   const [y, m] = moisDepuis(p[1]);
   const cle = `${y}-${M.pad(m)}`;
   if (!S.vue.remplir || S.vue.remplir.mois !== cle) S.vue.remplir = { mois: cle, code: null, sel: new Set() };
-  const R = S.vue.remplir; const C = [...codes().values()];
+  const R = S.vue.remplir; const C = [...codesProposes().values()];
   const puces = C.map((c) => `<button type="button" class="${c.debut ? 'code k k-' + c.teinte : 'puce t-' + c.type}" data-code="${esc(c.code)}" aria-pressed="${R.code === c.code}">${c.debut ? `<b>${esc(c.code)}</b><span>${esc(c.debut)}–${esc(c.fin)}</span>` : esc(c.code)}</button>`);
   const travail = C.filter((c) => c.debut).length;
   return {
@@ -121,8 +121,9 @@ function vueJour(p) {
   const e = S.etat.jours[date] || {};
   const prevuCode = e.prevu && e.prevu.code;
   const info = J.code ? C.get(J.code) : null;
-  const travail = [...C.values()].filter((c) => c.debut);
-  const autres = [...C.values()].filter((c) => !c.debut);
+  const P = codesProposes(); if (J.code && C.has(J.code) && !P.has(J.code)) P.set(J.code, C.get(J.code));
+  const travail = [...P.values()].filter((c) => c.debut);
+  const autres = [...P.values()].filter((c) => !c.debut);
   const fin = info && info.fin ? M.hm(info.fin) + J.depassement : null;
   const sortie = fin != null ? `${M.pad(Math.floor(fin / 60) % 24)}:${M.pad(fin % 60)}` : '';
   const montrerChange = J.mode === 'realise' && prevuCode && J.code && J.code !== prevuCode;

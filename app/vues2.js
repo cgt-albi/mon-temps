@@ -2,7 +2,7 @@
 import { carteElections } from './extras.js';
 import * as M from './moteur.js';
 import * as St from './stockage.js';
-import { S, codes, sauver, aller, joursDepuisSauvegarde, appliquerAffichage } from './etat.js';
+import { S, codes, codesProposes, sauver, aller, joursDepuisSauvegarde, appliquerAffichage } from './etat.js';
 import { esc, ic, chevron, toast, enteteRetour, telechargerFichier, mailto, badgeProvisoire, media, marque } from './commun.js';
 import * as Visite from './visite.js';
 import { barreHaut } from './entete.js';
@@ -169,7 +169,7 @@ export function vueDroits() {
 export function vueReglages() {
   const p = profil(); const R = S.etat.reglages;
   const perso = S.etat.codesPerso.map((c) => c.code);
-  const C = [...codes().values()];
+  const C = [...codesProposes().values()];
   const seg = (nom, valeurs, actuel) => `<div class="segment" role="group" aria-label="${nom}" style="width:12rem">${valeurs.map(([v, l, a]) => `<button type="button" data-${nom}="${v}" aria-pressed="${String(actuel) === String(v)}" ${a ? `aria-label="${a}"` : ''}>${l}</button>`).join('')}</div>`;
   const js = joursDepuisSauvegarde();
   return {
@@ -181,6 +181,7 @@ export function vueReglages() {
           <div class="rangee"><label class="champ"><span>Métier</span><select id="metier"><option value="">—</option>${S.cfg.metiers.map((m) => `<option ${p.metier === m ? 'selected' : ''}>${esc(m)}</option>`).join('')}</select></label>
             <label class="champ"><span>Quotité</span><select id="quotite">${[100, 90, 80, 70, 60, 50].map((q) => `<option value="${q}" ${Number(p.quotite || 100) === q ? 'selected' : ''}>${q} %</option>`).join('')}</select></label></div>
           <label class="champ"><span>Service</span><input id="service" value="${esc(p.service || '')}" placeholder="facultatif"></label>
+          ${S.cfg.regles.regimes.length ? `<label class="champ"><span>Régime de travail</span><select id="regime"><option value="">Je ne sais pas / autre</option>${S.cfg.regles.regimes.map((r) => `<option value="${esc(r.id)}" ${p.regime === r.id ? 'selected' : ''}>${esc(r.nom)}</option>`).join('')}</select></label>` : ''}
         </div>
         <p class="etiquette">Mes codes horaires</p>
         <ul class="liste">${C.filter((c) => c.debut).map((c) => `<li><a class="lien" href="#/code/${encodeURIComponent(c.code)}"><span style="display:flex;gap:.75rem;align-items:baseline"><i class="pt k-${c.teinte}" style="width:.75rem;height:.75rem;align-self:center"></i><b style="font-stretch:82%;min-width:3rem">${esc(c.code)}</b><span style="color:var(--encre2)">${esc(c.debut)} – ${esc(c.fin)}${c.debut2 ? ` + ${esc(c.debut2)} – ${esc(c.fin2)}` : ''}</span></span><span class="val">${M.formatDuree(M.dureeEffectiveCode(c))}${perso.includes(c.code) ? ' · perso' : ''}${chevron()}</span></a></li>`).join('')}
@@ -203,7 +204,7 @@ export function vueReglages() {
       </div>`,
     apres(el) {
       const majProfil = () => {
-        S.etat.profil = { ...(S.etat.profil || {}), prenom: el.querySelector('#prenom').value.trim(), metier: el.querySelector('#metier').value, quotite: Number(el.querySelector('#quotite').value), service: el.querySelector('#service').value.trim() };
+        S.etat.profil = { ...(S.etat.profil || {}), prenom: el.querySelector('#prenom').value.trim(), metier: el.querySelector('#metier').value, quotite: Number(el.querySelector('#quotite').value), service: el.querySelector('#service').value.trim(), regime: el.querySelector('#regime') ? el.querySelector('#regime').value : (S.etat.profil || {}).regime || '' };
         sauver(); toast('Enregistré');
       };
       ['prenom', 'metier', 'quotite', 'service'].forEach((k) => { el.querySelector('#' + k).onchange = majProfil; });
@@ -459,13 +460,14 @@ export function vueBienvenue() {
       <div class="page" style="margin-top:1rem">
         <label class="champ"><span>Prénom (facultatif)</span><input id="prenom" value="${esc(B.prenom)}" autocomplete="given-name"></label>
         <label class="champ"><span>Métier</span><select id="metier"><option value="">Choisir…</option>${S.cfg.metiers.map((m) => `<option ${B.metier === m ? 'selected' : ''}>${esc(m)}</option>`).join('')}</select></label>
+        ${S.cfg.regles.regimes.length ? `<label class="champ"><span>Régime de travail</span><select id="regime"><option value="">Choisir… (ou je ne sais pas)</option>${S.cfg.regles.regimes.map((r) => `<option value="${esc(r.id)}" ${B.regime === r.id ? 'selected' : ''}>${esc(r.nom)}</option>`).join('')}</select></label>` : ''}
         <label class="champ"><span>Temps de travail</span><select id="quotite">${[100, 90, 80, 70, 60, 50].map((q) => `<option value="${q}" ${B.quotite === q ? 'selected' : ''}>${q === 100 ? 'Temps plein (100 %)' : `Temps partiel ${q} %`}</option>`).join('')}</select></label>
         <button class="btn principal plein" id="suivant">Continuer</button>
       </div>`,
     apres(el) {
       el.querySelector('#suivant').onclick = () => {
-        B.prenom = el.querySelector('#prenom').value.trim(); B.metier = el.querySelector('#metier').value; B.quotite = Number(el.querySelector('#quotite').value);
-        S.etat.profil = { prenom: B.prenom, metier: B.metier, quotite: B.quotite, service: '' }; sauver(); B.etape = 'depart'; S.rendre();
+        B.prenom = el.querySelector('#prenom').value.trim(); B.metier = el.querySelector('#metier').value; B.quotite = Number(el.querySelector('#quotite').value); B.regime = el.querySelector('#regime') ? el.querySelector('#regime').value : '';
+        S.etat.profil = { prenom: B.prenom, metier: B.metier, quotite: B.quotite, service: '', regime: B.regime }; sauver(); B.etape = 'depart'; S.rendre();
       };
     }
   };

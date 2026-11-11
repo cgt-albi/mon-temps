@@ -73,6 +73,22 @@ export function tousLesCodes(cfg, etat) {
   return map;
 }
 
+// ---------- Régimes de travail (postes en 12 h, 10 h, 7 h 48…) ----------
+// Décrits par le syndicat dans Pages CMS ; l'agent choisit le sien dans son profil.
+export function regimeDe(etat, cfg) {
+  const id = etat && etat.profil && etat.profil.regime;
+  return (id && (cfg.regles.regimes || []).find((r) => r && r.id === id)) || null;
+}
+// Codes à proposer à l'agent : les horaires de travail de son régime (s'il en a), ses codes perso, et tous les autres codes (repos, congés…).
+export function codesProposes(cfg, etat) {
+  const tous = tousLesCodes(cfg, etat);
+  const reg = regimeDe(etat, cfg);
+  const liste = reg && Array.isArray(reg.codes) ? new Set(reg.codes.map((c) => String(c).trim().toUpperCase()).filter(Boolean)) : null;
+  if (!liste || !liste.size) return tous;
+  const perso = new Set(((etat && etat.codesPerso) || []).map((c) => c.code));
+  return new Map([...tous].filter(([k, c]) => !estTravail(c) || liste.has(k.toUpperCase()) || perso.has(k)));
+}
+
 // Segments horaires d'un code, en minutes depuis minuit du jour (fin > début, la nuit déborde au-delà de 1440).
 export function segments(info) {
   if (!info || !info.debut || !info.fin) return [];
@@ -155,6 +171,17 @@ export function minutesDJF(segs) {
 }
 
 // ---------- Théorique et crédit d'une journée ----------
+// Dû d'un jour ouvré à temps plein, en heures : celui du régime de l'agent s'il en précise un, sinon la règle générale.
+export function duJournalierHeures(etat, cfg) {
+  const reg = regimeDe(etat, cfg);
+  const v = reg && reg.duJournalier !== undefined && reg.duJournalier !== '' ? heuresDecimales(reg.duJournalier) : NaN;
+  return Number.isFinite(v) && v > 0 ? v : cfg.regles.valeurJourneeHeures;
+}
+export function rttParAn(etat, cfg) {
+  const reg = regimeDe(etat, cfg);
+  const v = reg && reg.rttParAn !== undefined && reg.rttParAn !== '' && reg.rttParAn !== null ? Number(reg.rttParAn) : NaN;
+  return Number.isFinite(v) && v >= 0 ? v : (cfg.regles.rttParAn || 0);
+}
 function quotite(etat, cfg) {
   const q = Number(etat.profil && etat.profil.quotite);
   return (Number.isFinite(q) && q > 0 ? q : cfg.regles.quotiteParDefaut || 100) / 100;
@@ -168,7 +195,7 @@ export function estJourOuvreTheorique(date, cfg) {
 export function theoriqueJour(date, j, etat, cfg) {
   if (!estJourOuvreTheorique(date, cfg)) return 0;
   if (j && j.info && (j.info.type === 'conge' || j.info.type === 'cet')) return 0;
-  return Math.round(cfg.regles.valeurJourneeHeures * 60 * quotite(etat, cfg));
+  return Math.round(duJournalierHeures(etat, cfg) * 60 * quotite(etat, cfg));
 }
 export function creditJour(date, j, etat, cfg, codes) {
   if (!j || !j.info) return 0;
@@ -177,7 +204,7 @@ export function creditJour(date, j, etat, cfg, codes) {
   if (t === 'assimile' || t === 'greve') {
     const prevu = j.prevuCode ? codes.get(j.prevuCode) : null;
     if (estTravail(prevu)) return dureeEffectiveCode(prevu);
-    return estJourOuvreTheorique(date, cfg) ? Math.round(cfg.regles.valeurJourneeHeures * 60 * quotite(etat, cfg)) : 0;
+    return estJourOuvreTheorique(date, cfg) ? Math.round(duJournalierHeures(etat, cfg) * 60 * quotite(etat, cfg)) : 0;
   }
   return 0;
 }
@@ -266,8 +293,8 @@ export function bilanAnnee(annee, etat, cfg, jusqua = aujourdhui(), profondeur =
     theorique: cumul.theorique, realise: cumul.realise, depassements: cumul.depassements, nuit: cumul.nuit,
     saisis: cumul.saisis, total: cumul.total, manquants: cumul.manquants,
     rhPris: rh, rhRepere: Math.round((cfg.regles.rhParAn || 104)), gePris: ge, geDroit: (cfg.regles.gardeEnfantJours || 6) * (etat.profil && etat.profil.geDouble ? 2 : 1) * q,
-    nuits, cetPris, feriesTravailles, dimanchesTravailles, recupMin: recup * Math.round(cfg.regles.valeurJourneeHeures * 60 * q),
-    rttPris: rtt, rttDroit: Math.round((cfg.regles.rttParAn || 0) * q), recupPris: recup,
+    nuits, cetPris, feriesTravailles, dimanchesTravailles, recupMin: recup * Math.round(duJournalierHeures(etat, cfg) * 60 * q),
+    rttPris: rtt, rttDroit: Math.round(rttParAn(etat, cfg) * q), recupPris: recup,
     caPris: ca, caDroit: Math.round((cfg.regles.caParAn || 25) * q), caHorsSaison, bonusHS, bonusFrac,
     djfMinutes: djf.minutes + djfMinAvant, djfJours: djf.jours.size + djfJoursAvant
   };

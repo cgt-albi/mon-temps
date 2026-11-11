@@ -5,6 +5,8 @@ import * as St from './stockage.js';
 export const S = { cfg: null, etat: null, demo: false, etatReel: null, vue: {}, rendre: () => {} };
 
 export const codes = () => M.tousLesCodes(S.cfg, S.etat);
+// Codes à afficher dans les choix (filtrés selon le régime de travail de l'agent).
+export const codesProposes = () => M.codesProposes(S.cfg, S.etat);
 
 let minuteur = null;
 export function sauver() {

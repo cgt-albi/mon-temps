@@ -30,6 +30,20 @@
   "maladieJoursTauxPlein": 90,
   "gardeEnfantJours": 6,
   "rhParAn": 104,
+  "regimes": [
+    {
+      "id": "journee-7h48",
+      "nom": "Journées de 7 h 48",
+      "description": "Exemple à adapter : postes de jour en 7 h 48. Chaque journée travaillée donne 48 minutes d'avance sur le dû de 7 h.",
+      "codes": [
+        "M41",
+        "M52",
+        "J38"
+      ],
+      "duJournalier": "",
+      "rttParAn": ""
+    }
+  ],
   "aValider": [
     "regles.valeurJourneeHeures",
     "regles.rttParAn",
@@ -40,6 +54,7 @@
     "regles.rhParAn",
     "regles.coefHeuresSup1",
     "elections",
-    "paie"
+    "paie",
+    "regles.regimes"
   ]
 }

@@ -258,6 +258,33 @@ content:
       - { name: quotiteParDefaut, label: Quotité par défaut (%), type: number }
       - { name: rttParAn, label: RTT par an, type: number }
       - { name: caParAn, label: Congés annuels par an, type: number }
+      - name: regimes
+        label: Régimes de travail (postes en 12 h, 10 h, 7 h 48…)
+        description: "L'agent choisit son régime dans son profil. Il ne voit alors que les codes de travail de son régime (plus repos, congés, absences). Une case vide reprend la règle générale."
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{fields.nom}" }
+        fields:
+          - name: id
+            label: Repère technique (unique, sans espace, ne plus le changer ensuite)
+            type: string
+            required: true
+            pattern: { regex: "^[a-z0-9-]+$", message: "Minuscules, chiffres et tirets seulement, par ex. postes-12h" }
+          - { name: nom, label: Nom affiché à l'agent, type: string, required: true }
+          - { name: description, label: Explication (facultatif), type: text }
+          - name: codes
+            label: Codes de travail de ce régime
+            description: Écrire les codes tels qu'ils sont dans « Codes horaires », un par ligne (ex. N12, J12).
+            type: string
+            list: true
+          - name: duJournalier
+            label: Dû par jour ouvré (facultatif)
+            description: "Seulement si différent de la règle générale, par ex. 6:30 pour la nuit exclusive (32 h 30 par semaine)."
+            type: string
+            pattern: { regex: "^$|^\\d{1,2}[:h]\\d{2}$", message: "Format attendu : 6:30" }
+          - name: rttParAn
+            label: RTT par an pour ce régime (facultatif)
+            type: number
       - { name: rhParAn, label: Repos hebdomadaires par an, type: number }
       - name: periodeEstivale
         label: Période estivale
