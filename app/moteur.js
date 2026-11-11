@@ -15,6 +15,15 @@ export const hm = (s) => { if (!s) return null; const [h, m] = s.split(':').map(
 
 export function aujourdhui() { const t = new Date(); return iso(t.getFullYear(), t.getMonth() + 1, t.getDate()); }
 
+// Accepte une durée écrite « 7:48 », « 7h48 », « 07:48 » ou un nombre d'heures (7,8 ou 7.8).
+export function heuresDecimales(v) {
+  if (typeof v === 'number') return v;
+  const s = String(v ?? '').trim().replace(',', '.');
+  const m = s.match(/^(\d{1,2})\s*[:hH]\s*(\d{1,2})?$/);
+  if (m) return Number(m[1]) + Number(m[2] || 0) / 60;
+  const n = Number(s);
+  return Number.isFinite(n) ? n : NaN;
+}
 export function formatDuree(min, signe = false) {
   if (!Number.isFinite(min)) min = 0;
   const neg = min < 0; const a = Math.round(Math.abs(min));

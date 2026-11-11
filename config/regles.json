@@ -1,5 +1,5 @@
 {
-  "valeurJourneeHeures": 7,
+  "valeurJourneeHeures": "7:00",
   "quotiteParDefaut": 100,
   "rttParAn": 15,
   "caParAn": 25,

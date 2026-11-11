@@ -9,6 +9,7 @@ const t = (nom, cond) => { if (cond) ok++; else { ko++; console.error('ÉCHEC :'
 const racine = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const lire = (f) => JSON.parse(fs.readFileSync(path.join(racine, 'config', f), 'utf8'));
 const contenu = lire('contenu.json'); const { aValider, ...regles } = lire('regles.json');
+regles.valeurJourneeHeures = M.heuresDecimales(regles.valeurJourneeHeures);
 const cfg = { ...contenu, regles, aValider, codes: lire('codes.json') };
 t('codes : une liste', Array.isArray(cfg.codes) && cfg.codes.length > 0);
 for (const k of ['valeurJourneeHeures', 'reposQuotidienMinHeures', 'reposHebdoMinHeures', 'maxSeptJoursHeures', 'amplitudeMaxHeures']) t(`règle ${k} est un nombre`, typeof regles[k] === 'number' && regles[k] > 0);
@@ -28,6 +29,8 @@ t('Pentecôte 2027', M.feries(2027)['2027-05-17'] === 'Lundi de Pentecôte');
 t('jour de semaine', M.jourSemaine('2026-11-11') === 2);
 
 // Durées
+t('7:48 = 7,8 h', Math.abs(M.heuresDecimales('7:48') - 7.8) < 1e-9 && M.heuresDecimales('07h48') === M.heuresDecimales('7:48'));
+t('7 h en nombre', M.heuresDecimales(7) === 7 && M.heuresDecimales('7') === 7 && M.heuresDecimales('7,5') === 7.5);
 t('durée de nuit', M.dureeEffectiveCode({ debut: '21:00', fin: '07:00', pauseMin: 0 }) === 600);
 t('service coupé', M.dureeEffectiveCode({ debut: '07:00', fin: '11:00', debut2: '16:00', fin2: '20:00' }) === 480);
 t('heures de nuit', M.minutesNuit([[M.jourNum('2026-01-05') * 1440 + 20 * 60, M.jourNum('2026-01-05') * 1440 + 31 * 60]], cfg) === 540);

@@ -196,13 +196,14 @@ content:
         type: select
         options:
           values:
-            - { value: travail, label: Travail }
+            - { value: travail, label: Travail de jour }
+            - { value: nuit, label: Travail de nuit }
             - { value: repos, label: Repos }
             - { value: rtt, label: RTT }
             - { value: conge, label: Congé }
             - { value: recup, label: Récupération }
             - { value: cet, label: Compte épargne-temps }
-            - { value: assimile, label: Assimilé à du travail (formation, etc.) }
+            - { value: assimile, label: "Absence comptée comme travaillée (maladie, formation…)" }
             - { value: greve, label: Grève }
       - name: debut
         label: Début (HH:MM)
@@ -213,6 +214,26 @@ content:
         type: string
         pattern: { regex: "^$|^\\d{2}:\\d{2}$", message: "Format attendu : 16:18" }
       - { name: pauseMin, label: Pause (minutes), type: number }
+      - name: debut2
+        label: Service coupé, reprise (HH:MM, facultatif)
+        type: string
+        pattern: { regex: "^$|^\\d{2}:\\d{2}$", message: "Format attendu : 14:00" }
+      - name: fin2
+        label: Service coupé, fin (HH:MM, facultatif)
+        type: string
+        pattern: { regex: "^$|^\\d{2}:\\d{2}$", message: "Format attendu : 18:00" }
+      - name: couleur
+        label: Couleur dans le planning (facultatif)
+        description: Laisser vide pour une couleur automatique.
+        type: select
+        options:
+          values:
+            - { value: ocre, label: Ocre }
+            - { value: sarcelle, label: Sarcelle }
+            - { value: brique, label: Brique }
+            - { value: prune, label: Prune }
+            - { value: olive, label: Olive }
+            - { value: indigo, label: Indigo }
       - { name: compteCA, label: Décompté des congés annuels, type: boolean }
       - name: compte
         label: Compteur particulier (facultatif)
@@ -229,7 +250,11 @@ content:
     path: config/regles.json
     format: json
     fields:
-      - { name: valeurJourneeHeures, label: Valeur d'une journée (heures), type: number }
+      - name: valeurJourneeHeures
+        label: Dû par jour ouvré (heures:minutes)
+        description: "Ce que l'agent doit chaque jour du lundi au vendredi, à temps plein. Écrire par exemple 7:00 ou 7:48."
+        type: string
+        pattern: { regex: "^\\d{1,2}[:h]\\d{2}$", message: "Format attendu : 7:00 ou 7:48" }
       - { name: quotiteParDefaut, label: Quotité par défaut (%), type: number }
       - { name: rttParAn, label: RTT par an, type: number }
       - { name: caParAn, label: Congés annuels par an, type: number }

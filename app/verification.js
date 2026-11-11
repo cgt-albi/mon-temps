@@ -27,7 +27,7 @@ function sections() {
       ['regles.nuitDebut', 'Heures de nuit', `${R.nuitDebut} – ${R.nuitFin}`, 'Réglementation des heures de nuit']
     ] },
     { titre: 'Jours et congés', aide: 'Droits annuels à temps plein (ajustés à la quotité de l\'agent).', lignes: [
-      ['regles.valeurJourneeHeures', 'Valeur d\'une journée', n(R.valeurJourneeHeures, 'h'), LOCAL],
+      ['regles.valeurJourneeHeures', 'Valeur d\'une journée', M.formatDuree(R.valeurJourneeHeures * 60), LOCAL],
       ['regles.rttParAn', 'RTT par an', n(R.rttParAn, 'jours'), LOCAL],
       ['regles.caParAn', 'Congés annuels par an', n(R.caParAn, 'jours'), 'Décret n° 2002-8'],
       ['regles.rhParAn', 'Repos hebdomadaires attendus par an', n(R.rhParAn, 'jours'), LOCAL],

@@ -1,4 +1,5 @@
 // Outils partagés par les écrans.
+import { heuresDecimales } from './moteur.js';
 export const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 const P = {
@@ -77,6 +78,7 @@ export async function chargerConfig(prefixe = '../') {
   const lire = (f, dflt) => fetch(`${prefixe}config/${f}`, { cache: 'no-cache' }).then((r) => { if (!r.ok) throw new Error(f); return r.json(); }).catch((e) => { if (dflt !== undefined) return dflt; throw e; });
   const [contenu, regles, codes, baremes, primes, courriers] = await Promise.all([lire('contenu.json'), lire('regles.json'), lire('codes.json'), lire('baremes.json', {}), lire('primes.json', { liste: [] }), lire('courriers.json', { modeles: [] })]);
   const { aValider, ...r } = regles;
+  r.valeurJourneeHeures = heuresDecimales(r.valeurJourneeHeures);
   const aujourdhui = new Date().toLocaleDateString('sv-SE');
   const pt = valeurAu(baremes.pointIndice, aujourdhui), im = valeurAu(baremes.indiceMinimum, aujourdhui), sm = valeurAu(baremes.smic, aujourdhui);
   r.valeurPointMensuel = pt ? Number(pt.valeur) : 4.92278;
