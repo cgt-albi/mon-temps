@@ -1,0 +1,549 @@
+# Formulaires de Pages CMS (https://app.pagescms.org)
+# Chaque rubrique ci-dessous correspond à un fichier du dossier config/.
+# Ce fichier ne part pas sur le site public : il sert seulement à Pages CMS.
+
+media:
+  input: images
+  output: /images
+  categories: [image]
+
+content:
+  # ───────────────────────── Appli, logo, contacts et réseaux ─────────────────────────
+  - name: appli
+    label: Appli, logo, contacts et réseaux
+    type: file
+    path: config/contenu.json
+    format: json
+    fields:
+      - name: nom
+        label: Nom de l'appli
+        type: string
+        required: true
+      - name: slogan
+        label: Slogan
+        type: string
+      - name: etablissement
+        label: Établissement
+        type: string
+      - name: syndicat
+        label: Nom du syndicat
+        type: string
+      - name: couleur
+        label: Couleur principale
+        description: Code couleur à 6 chiffres, par exemple #E30613 (rouge CGT).
+        type: string
+        pattern:
+          regex: "^#[0-9a-fA-F]{6}$"
+          message: "Format attendu : # suivi de 6 caractères, par exemple #E30613"
+      - name: logo
+        label: Logo
+        description: Affiché en haut du site et de l'appli.
+        type: image
+      - name: icone
+        label: Icône de l'appli (écran d'accueil du téléphone)
+        description: Image carrée de 512 px ou plus. Laisser vide pour garder l'icône actuelle. Toutes les tailles sont fabriquées automatiquement.
+        type: image
+      - name: domaine
+        label: Nom de domaine (facultatif)
+        description: Par exemple montemps.fr, sans https://. Laisser vide pour l'adresse GitHub.
+        type: string
+      - name: contacts
+        label: Contacts
+        type: object
+        fields:
+          - { name: mailGeneral, label: Mail général, type: string }
+          - { name: mailGreve, label: Mail grève, type: string }
+          - { name: mailSignalement, label: Mail de signalement, type: string }
+          - { name: mailAdhesion, label: Mail d'adhésion, type: string }
+          - { name: telephone, label: Téléphone, type: string }
+          - { name: adresse, label: Adresse, type: text }
+          - { name: local, label: Local syndical, type: string }
+          - { name: permanences, label: Permanences, type: text }
+      - name: reseaux
+        label: Réseaux sociaux
+        description: Coller l'adresse complète de la page (https://…). Un champ vide n'apparaît pas dans l'appli.
+        type: object
+        fields:
+          - { name: site, label: Site web, type: string }
+          - { name: facebook, label: Facebook, type: string }
+          - { name: instagram, label: Instagram, type: string }
+          - { name: whatsapp, label: WhatsApp, type: string }
+          - { name: tiktok, label: TikTok, type: string }
+          - { name: youtube, label: YouTube, type: string }
+          - { name: x, label: X (Twitter), type: string }
+          - { name: bluesky, label: Bluesky, type: string }
+          - { name: threads, label: Threads, type: string }
+          - { name: telegram, label: Telegram, type: string }
+      - name: actualites
+        label: Actualités
+        description: Les plus récentes s'affichent en premier.
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{fields.date} · {fields.titre}" }
+        fields:
+          - { name: date, label: Date, type: date, required: true }
+          - { name: titre, label: Titre, type: string, required: true }
+          - { name: texte, label: Texte, type: text }
+          - { name: image, label: Image (facultative), type: image }
+          - { name: lien, label: Lien « En savoir plus » (facultatif), type: string }
+      - name: agenda
+        label: Agenda (rendez-vous à venir)
+        description: Un rendez-vous disparaît tout seul une fois sa date passée.
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{fields.date} · {fields.titre}" }
+        fields:
+          - { name: date, label: Date, type: date, required: true }
+          - { name: titre, label: Titre, type: string, required: true }
+          - { name: lieu, label: Lieu, type: string }
+      - name: liens
+        label: Liens utiles
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{fields.titre}" }
+        fields:
+          - { name: titre, label: Titre, type: string, required: true }
+          - { name: url, label: Adresse (https://…), type: string, required: true }
+      - name: metiers
+        label: Métiers proposés
+        type: string
+        list: true
+      - name: droits
+        label: Fiches « Mes droits »
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{fields.titre}" }
+        fields:
+          - { name: titre, label: Titre, type: string, required: true }
+          - { name: texte, label: Texte, type: text }
+          - { name: lien, label: Lien, type: string }
+          - { name: source, label: Source, type: string }
+      - name: responsablePublication
+        label: Responsable de la publication (mentions légales)
+        type: string
+      - name: adressePostale
+        label: Adresse postale (mentions légales)
+        type: text
+      - name: statistiques
+        label: Statistiques d'installation
+        type: object
+        fields:
+          - name: goatcounter
+            label: Code GoatCounter (facultatif)
+            description: Laisser vide pour ne rien mesurer. Sinon, le nom choisi sur goatcounter.com (par ex. mon-temps).
+            type: string
+      - name: elections
+        label: Élections professionnelles
+        type: object
+        fields:
+          - { name: actif, label: Afficher le bloc élections, type: boolean }
+          - { name: titre, label: Titre, type: string }
+          - { name: dateScrutin, label: Date du scrutin, type: date }
+          - { name: ouvertureVote, label: Ouverture du vote, type: date }
+          - { name: afficherDepuisJours, label: Afficher combien de jours avant, type: number }
+          - { name: afficherJusquau, label: Afficher jusqu'au, type: date }
+          - { name: texteIntro, label: Texte d'introduction, type: text }
+          - { name: modalites, label: Modalités de vote, type: text }
+          - name: etapes
+            label: Étapes
+            type: object
+            list:
+              collapsible: { collapsed: true, summary: "{fields.titre}" }
+            fields:
+              - { name: titre, label: Titre, type: string }
+              - { name: texte, label: Texte, type: text }
+          - { name: appel, label: Appel à voter, type: text }
+          - name: questions
+            label: Questions fréquentes
+            type: object
+            list:
+              collapsible: { collapsed: true, summary: "{fields.question}" }
+            fields:
+              - { name: question, label: Question, type: string }
+              - { name: reponse, label: Réponse, type: text }
+          - { name: lienOfficiel, label: Lien officiel, type: string }
+      - name: paie
+        label: Date de paie
+        type: object
+        fields:
+          - { name: actif, label: Afficher la date de paie, type: boolean }
+          - { name: decalageJours, label: Décalage (jours), type: number }
+          - name: exceptions
+            label: Exceptions
+            type: object
+            list: true
+            fields:
+              - name: mois
+                label: Mois (AAAA-MM)
+                type: string
+                pattern: { regex: "^\\d{4}-\\d{2}$", message: "Format attendu : 2026-12" }
+              - { name: date, label: Date de paie, type: date }
+          - { name: note, label: Note, type: text }
+
+  # ───────────────────────── Codes horaires ─────────────────────────
+  - name: codes
+    label: Codes horaires
+    type: file
+    path: config/codes.json
+    format: json
+    list:
+      collapsible: { collapsed: true, summary: "{fields.code} · {fields.libelle}" }
+    fields:
+      - { name: code, label: Code, type: string, required: true }
+      - { name: libelle, label: Libellé, type: string, required: true }
+      - name: type
+        label: Type
+        type: select
+        options:
+          values:
+            - { value: travail, label: Travail }
+            - { value: repos, label: Repos }
+            - { value: rtt, label: RTT }
+            - { value: conge, label: Congé }
+            - { value: recup, label: Récupération }
+            - { value: cet, label: Compte épargne-temps }
+            - { value: assimile, label: Assimilé à du travail (formation, etc.) }
+            - { value: greve, label: Grève }
+      - name: debut
+        label: Début (HH:MM)
+        type: string
+        pattern: { regex: "^$|^\\d{2}:\\d{2}$", message: "Format attendu : 08:00" }
+      - name: fin
+        label: Fin (HH:MM)
+        type: string
+        pattern: { regex: "^$|^\\d{2}:\\d{2}$", message: "Format attendu : 16:18" }
+      - { name: pauseMin, label: Pause (minutes), type: number }
+      - { name: compteCA, label: Décompté des congés annuels, type: boolean }
+      - name: compte
+        label: Compteur particulier (facultatif)
+        type: select
+        options:
+          values:
+            - { value: rh, label: Repos hebdomadaire }
+            - { value: ge, label: Garde d'enfant malade }
+
+  # ───────────────────────── Règles de calcul ─────────────────────────
+  - name: regles
+    label: Règles de calcul
+    type: file
+    path: config/regles.json
+    format: json
+    fields:
+      - { name: valeurJourneeHeures, label: Valeur d'une journée (heures), type: number }
+      - { name: quotiteParDefaut, label: Quotité par défaut (%), type: number }
+      - { name: rttParAn, label: RTT par an, type: number }
+      - { name: caParAn, label: Congés annuels par an, type: number }
+      - { name: rhParAn, label: Repos hebdomadaires par an, type: number }
+      - name: periodeEstivale
+        label: Période estivale
+        type: object
+        fields:
+          - name: debut
+            label: Début (MM-JJ)
+            type: string
+            pattern: { regex: "^\\d{2}-\\d{2}$", message: "Format attendu : 05-01" }
+          - name: fin
+            label: Fin (MM-JJ)
+            type: string
+            pattern: { regex: "^\\d{2}-\\d{2}$", message: "Format attendu : 10-31" }
+      - { name: amplitudeMaxHeures, label: Amplitude maximale (heures), type: number }
+      - { name: dureeContinueMaxJourHeures, label: Durée continue max de jour (heures), type: number }
+      - { name: dureeContinueMaxNuitHeures, label: Durée continue max de nuit (heures), type: number }
+      - { name: amplitudeServiceCoupeHeures, label: Amplitude max d'un service coupé (heures), type: number }
+      - { name: vacationMinHeures, label: Vacation minimale (heures), type: number }
+      - { name: reposQuotidienMinHeures, label: Repos quotidien minimal (heures), type: number }
+      - { name: reposHebdoMinHeures, label: Repos hebdomadaire minimal (heures), type: number }
+      - { name: maxSeptJoursHeures, label: Maximum sur 7 jours (heures), type: number }
+      - { name: reposQuinzaineMinJours, label: Jours de repos minimum par quinzaine, type: number }
+      - name: nuitDebut
+        label: Début du travail de nuit (HH:MM)
+        type: string
+        pattern: { regex: "^\\d{2}:\\d{2}$", message: "Format attendu : 21:00" }
+      - name: nuitFin
+        label: Fin du travail de nuit (HH:MM)
+        type: string
+        pattern: { regex: "^\\d{2}:\\d{2}$", message: "Format attendu : 06:00" }
+      - { name: lundiPentecoteTravaille, label: Lundi de Pentecôte travaillé (journée de solidarité), type: boolean }
+      - { name: delaiPrevenanceHeures, label: Délai de prévenance (heures), type: number }
+      - { name: heuresAnnuellesTauxHoraire, label: Heures annuelles pour le taux horaire, type: number }
+      - { name: majorationNuitPct, label: Majoration de nuit (%), type: number }
+      - { name: indemniteDimancheFerie8h, label: Indemnité dimanche / férié pour 8 h (€), type: number }
+      - { name: coefHeuresSup1, label: Coefficient heures sup (premières heures), type: number }
+      - { name: coefHeuresSup2, label: Coefficient heures sup (au-delà), type: number }
+      - { name: seuilHeuresSup, label: Seuil de changement de coefficient (heures), type: number }
+      - { name: maladieTauxPct, label: Arrêt maladie, taux après carence (%), type: number }
+      - { name: maladieJoursTauxPlein, label: Arrêt maladie, jours à ce taux, type: number }
+      - { name: gardeEnfantJours, label: Jours pour garde d'enfant malade, type: number }
+      - name: aValider
+        label: Valeurs encore « à valider »
+        description: Repères techniques des valeurs affichées « provisoire ». Retirer une ligne quand la valeur est confirmée.
+        type: string
+        list: true
+
+  # ───────────────────────── Barèmes ─────────────────────────
+  - name: baremes
+    label: Barèmes (point d'indice, SMIC, grilles)
+    type: file
+    path: config/baremes.json
+    format: json
+    fields:
+      - name: pointIndice
+        label: Valeur du point d'indice
+        description: Ajouter une ligne pour chaque revalorisation. L'appli prend la dernière ligne dont la date est passée.
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{fields.date} · {fields.valeur} €" }
+        fields:
+          - { name: date, label: Date d'effet, type: date, required: true }
+          - { name: valeur, label: Valeur annuelle du point (€), type: number, required: true }
+          - &statut
+            name: statut
+            label: Statut
+            type: select
+            options:
+              values:
+                - { value: officiel, label: Officiel }
+                - { value: annonce, label: Annoncé (affiché « provisoire ») }
+          - &source { name: source, label: Source, type: string }
+      - name: indiceMinimum
+        label: Indice minimum de traitement
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{fields.date} · indice {fields.indice}" }
+        fields:
+          - { name: date, label: Date d'effet, type: date, required: true }
+          - { name: indice, label: Indice majoré, type: number, required: true }
+          - *statut
+          - *source
+      - name: smic
+        label: SMIC
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{fields.date} · {fields.horaire} €/h" }
+        fields:
+          - { name: date, label: Date d'effet, type: date, required: true }
+          - { name: horaire, label: Montant horaire brut (€), type: number, required: true }
+          - { name: mensuel, label: Montant mensuel brut (€, facultatif), type: number }
+          - *statut
+          - *source
+      - name: grilles
+        label: Grilles indiciaires
+        description: Un grade par ligne, avec ses échelons dans l'ordre.
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{fields.nom}" }
+        fields:
+          - { name: nom, label: Grade, type: string, required: true }
+          - name: echelons
+            label: Échelons
+            type: object
+            list: true
+            fields:
+              - { name: indice, label: Indice majoré, type: number, required: true }
+              - { name: duree, label: Durée dans l'échelon (facultatif), type: string }
+      - name: aValider
+        label: Éléments encore « à valider »
+        type: string
+        list: true
+
+  # ───────────────────────── Primes ─────────────────────────
+  - name: primes
+    label: Primes et indemnités
+    type: file
+    path: config/primes.json
+    format: json
+    fields:
+      - name: liste
+        label: Primes
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{fields.nom}" }
+        fields:
+          - { name: id, label: Repère technique (ne pas modifier), type: string, required: true }
+          - { name: nom, label: Nom, type: string, required: true }
+          - name: categorie
+            label: Catégorie
+            type: select
+            options:
+              creatable: true
+              values: [Ségur et soins, Primes liées au poste, Primes liées à la situation]
+          - name: mode
+            label: Mode de calcul
+            type: select
+            options:
+              values:
+                - { value: points, label: Nombre de points d'indice fixe }
+                - { value: points-saisis, label: Points d'indice saisis par l'agent }
+                - { value: montant, label: Montant mensuel fixe (€) }
+                - { value: pourcentage, label: Pourcentage du traitement brut }
+                - { value: saisie, label: Montant saisi par l'agent }
+          - { name: valeur, label: Valeur (points, € ou %), type: number }
+          - { name: aide, label: Explication, type: text }
+          - *source
+          - *statut
+      - name: aValider
+        label: Éléments encore « à valider »
+        type: string
+        list: true
+
+  # ───────────────────────── Courriers ─────────────────────────
+  - name: courriers
+    label: Modèles de courriers
+    type: file
+    path: config/courriers.json
+    format: json
+    fields:
+      - { name: formule, label: Formule de politesse, type: string }
+      - name: modeles
+        label: Modèles
+        description: "Dans le texte, {dates}, {heures}, {periode}, {delai}, {quotite}, {jours} et {precisions} sont remplacés par ce que l'agent saisit."
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{fields.groupe} · {fields.titre}" }
+        fields:
+          - { name: id, label: Repère technique (unique), type: string, required: true }
+          - { name: groupe, label: Groupe, type: string }
+          - { name: titre, label: Titre, type: string, required: true }
+          - name: champs
+            label: Champs à demander à l'agent
+            type: select
+            options:
+              multiple: true
+              values:
+                - { value: dates, label: Date(s) concernée(s) }
+                - { value: heures, label: Nombre d'heures }
+                - { value: periode, label: Période }
+                - { value: delai, label: Délai de prévenance }
+                - { value: quotite, label: Quotité souhaitée }
+                - { value: jours, label: Nombre de jours }
+                - { value: precisions, label: Précisions }
+          - { name: texte, label: Texte du courrier, type: text, required: true }
+
+  # ───────────────────────── Textes de l'appli ─────────────────────────
+  # Chaque ligne : le texte affiché. Le repère sert à retrouver l'endroit, ne pas le modifier.
+  - name: textes-accueil
+    label: "Textes · Page d'accueil du site"
+    type: file
+    path: config/textes-accueil-site.json
+    format: json
+    fields:
+      - name: textes
+        label: Textes
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{fields.texte}" }
+        fields:
+          - { name: texte, label: Texte affiché, type: text }
+          - { name: cle, label: Repère (ne pas modifier), type: string }
+  - name: textes-mentions
+    label: "Textes · Mentions légales"
+    type: file
+    path: config/textes-mentions.json
+    format: json
+    fields:
+      - name: textes
+        label: Textes
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{fields.texte}" }
+        fields:
+          - { name: texte, label: Texte affiché, type: text }
+          - { name: cle, label: Repère (ne pas modifier), type: string }
+  - name: textes-visite
+    label: "Textes · Bienvenue et visite guidée"
+    type: file
+    path: config/textes-bienvenue-visite.json
+    format: json
+    fields:
+      - name: textes
+        label: Textes
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{fields.texte}" }
+        fields:
+          - { name: texte, label: Texte affiché, type: text }
+          - { name: cle, label: Repère (ne pas modifier), type: string }
+  - name: textes-planning
+    label: "Textes · Planning"
+    type: file
+    path: config/textes-planning.json
+    format: json
+    fields:
+      - name: textes
+        label: Textes
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{fields.texte}" }
+        fields:
+          - { name: texte, label: Texte affiché, type: text }
+          - { name: cle, label: Repère (ne pas modifier), type: string }
+  - name: textes-compteurs
+    label: "Textes · Compteurs"
+    type: file
+    path: config/textes-compteurs.json
+    format: json
+    fields:
+      - name: textes
+        label: Textes
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{fields.texte}" }
+        fields:
+          - { name: texte, label: Texte affiché, type: text }
+          - { name: cle, label: Repère (ne pas modifier), type: string }
+  - name: textes-salaire
+    label: "Textes · Outils et salaire"
+    type: file
+    path: config/textes-outils-salaire.json
+    format: json
+    fields:
+      - name: textes
+        label: Textes
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{fields.texte}" }
+        fields:
+          - { name: texte, label: Texte affiché, type: text }
+          - { name: cle, label: Repère (ne pas modifier), type: string }
+  - name: textes-syndicat
+    label: "Textes · Syndicat"
+    type: file
+    path: config/textes-syndicat.json
+    format: json
+    fields:
+      - name: textes
+        label: Textes
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{fields.texte}" }
+        fields:
+          - { name: texte, label: Texte affiché, type: text }
+          - { name: cle, label: Repère (ne pas modifier), type: string }
+  - name: textes-courriers
+    label: "Textes · Courriers"
+    type: file
+    path: config/textes-courriers.json
+    format: json
+    fields:
+      - name: textes
+        label: Textes
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{fields.texte}" }
+        fields:
+          - { name: texte, label: Texte affiché, type: text }
+          - { name: cle, label: Repère (ne pas modifier), type: string }
+  - name: textes-reglages
+    label: "Textes · Réglages"
+    type: file
+    path: config/textes-reglages.json
+    format: json
+    fields:
+      - name: textes
+        label: Textes
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{fields.texte}" }
+        fields:
+          - { name: texte, label: Texte affiché, type: text }
+          - { name: cle, label: Repère (ne pas modifier), type: string }

@@ -3,13 +3,19 @@ const VERSION = '__VERSION__';
 const CACHE = 'mon-temps-' + VERSION;
 const FICHIERS = [
   './', 'index.html', 'accueil.css', 'accueil.js', 'mentions-legales.html', 'mentions.js', 'manifest.webmanifest',
-  'app/', 'app/index.html', 'app/styles.css', 'app/app.js', 'app/moteur.js', 'app/stockage.js', 'app/etat.js', 'app/commun.js', 'app/vues2.js', 'app/visite.js', 'app/entete.js', 'app/planning.js', 'app/compteurs.js', 'app/outils.js', 'app/extras.js', 'textes.js', 'app/verification.js', 'app/statistiques.js', 'app/courriers.js', 'app/transfert.js', 'app/reseaux.js', 'app/vendor/qrcode.mjs',
-  'config/contenu.json', 'config/regles.json', 'config/codes.json', 'fonts/archivo.woff2', 'fonts/archivo-ext.woff2',
+  'app/', 'app/index.html', 'app/styles.css', 'app/app.js', 'app/moteur.js', 'app/stockage.js', 'app/etat.js', 'app/commun.js', 'app/vues2.js', 'app/visite.js', 'app/entete.js', 'app/planning.js', 'app/compteurs.js', 'app/outils.js', 'app/extras.js', 'textes.js', 'app/verification.js', 'app/statistiques.js', 'app/courriers.js', 'app/transfert.js', 'app/reseaux.js', 'app/vendor/qrcode.mjs', 'app/vendor/jsQR.js',
+  'config/contenu.json', 'config/regles.json', 'config/codes.json', 'config/baremes.json', 'config/primes.json', 'config/courriers.json',
+  'config/textes-index.json', 'config/textes-origine.json', 'config/textes-accueil-site.json', 'config/textes-mentions.json',
+  'config/textes-bienvenue-visite.json', 'config/textes-planning.json', 'config/textes-compteurs.json', 'config/textes-outils-salaire.json',
+  'config/textes-syndicat.json', 'config/textes-courriers.json', 'config/textes-reglages.json',
+  'fonts/archivo.woff2', 'fonts/archivo-ext.woff2',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/maskable-512.png', 'icons/apple-touch-icon.png', 'icons/favicon-64.png'
 ];
+// Logo choisi dans Pages CMS : ajouté au moment de la publication (voir scripts/construire.mjs).
+const EN_PLUS = [/*__LOGO__*/];
 
 self.addEventListener('install', (e) => {
-  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(FICHIERS)).then(() => self.skipWaiting()));
+  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(FICHIERS).then(() => Promise.all(EN_PLUS.map((f) => c.add(f).catch(() => {}))))).then(() => self.skipWaiting()));
 });
 
 self.addEventListener('activate', (e) => {

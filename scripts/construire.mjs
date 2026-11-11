@@ -63,7 +63,9 @@ const domaine = String(cfg.domaine || '').trim().replace(/^https?:\/\//, '').rep
 if (domaine) fs.writeFileSync(path.join(sortie, 'CNAME'), domaine + '\n');
 
 const sw = path.join(sortie, 'sw.js');
-fs.writeFileSync(sw, fs.readFileSync(sw, 'utf8').replace('__VERSION__', version));
+// Le logo (et l'icône) choisis dans Pages CMS sont gardés pour le hors-ligne
+const enPlus = [cfg.logo, cfg.icone].map((c) => String(c || '').replace(/^\/+/, '')).filter((c) => c && fs.existsSync(path.join(sortie, c)));
+fs.writeFileSync(sw, fs.readFileSync(sw, 'utf8').replace('__VERSION__', version).replace('/*__LOGO__*/', enPlus.map((c) => JSON.stringify(c)).join(', ')));
 fs.writeFileSync(path.join(sortie, '.nojekyll'), '');
 
 console.log(`Site prêt : « ${nom} », version ${version}${domaine ? ', domaine ' + domaine : ''}`);
