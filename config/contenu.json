@@ -1,0 +1,139 @@
+{
+  "nom": "Mon Temps",
+  "slogan": "Ton temps de travail, compté par toi.",
+  "etablissement": "CH d'Albi",
+  "syndicat": "CGT CH d'Albi",
+  "couleur": "#E30613",
+  "logo": "/images/logo-cgt-albi.png",
+  "icone": "",
+  "domaine": "",
+  "contacts": {
+    "mailGeneral": "",
+    "mailGreve": "",
+    "mailSignalement": "",
+    "mailAdhesion": "",
+    "telephone": "",
+    "adresse": "",
+    "local": "",
+    "permanences": ""
+  },
+  "reseaux": {
+    "site": "",
+    "facebook": "",
+    "instagram": "",
+    "whatsapp": "",
+    "tiktok": "",
+    "youtube": "",
+    "x": "",
+    "bluesky": "",
+    "threads": "",
+    "telegram": ""
+  },
+  "actualites": [],
+  "agenda": [],
+  "metiers": [
+    "AS",
+    "IDE",
+    "ASH",
+    "AMA",
+    "Adjoint administratif",
+    "AEQ",
+    "OPQ",
+    "AP",
+    "Sage-femme",
+    "TSH",
+    "Puéricultrice",
+    "Technicien de laboratoire",
+    "IADE",
+    "IBODE",
+    "Préparateur en pharmacie",
+    "Manipulateur radio",
+    "Ambulancier",
+    "Kinésithérapeute",
+    "Cadre",
+    "Autre"
+  ],
+  "droits": [
+    {
+      "titre": "Compte épargne-temps (CET)",
+      "texte": "Les jours de congés, de RTT ou de repos non pris peuvent être déposés sur un compte épargne-temps, dans la limite d'un total de 60 jours. La demande se fait à une date fixée par l'établissement. Les jours déposés peuvent ensuite être pris comme des congés.",
+      "lien": "https://www.legifrance.gouv.fr",
+      "source": "Décret n° 2002-788"
+    },
+    {
+      "titre": "Heures supplémentaires",
+      "texte": "Elles sont faites à la demande de la direction. Elles donnent lieu à une récupération ou à une indemnisation. Garde une trace de chaque dépassement : c'est ce que fait l'onglet Preuves.",
+      "lien": "https://www.legifrance.gouv.fr",
+      "source": "Décret n° 2002-598"
+    },
+    {
+      "titre": "Arrêt maladie : ce que tu perçois",
+      "texte": "Le premier jour d'un arrêt ordinaire n'est pas payé (jour de carence). Ensuite le traitement est versé à 90 % pendant trois mois, puis à 50 %. Si la maladie vient du travail, déclare un accident de service ou une maladie professionnelle : le traitement est maintenu en entier.",
+      "lien": "https://www.legifrance.gouv.fr",
+      "source": "Code général de la fonction publique"
+    },
+    {
+      "titre": "Danger grave et imminent",
+      "texte": "Si tu penses raisonnablement que ta situation de travail présente un danger grave et imminent pour ta vie ou ta santé, tu dois le signaler tout de suite. Tu peux te retirer de cette situation, sans sanction ni retenue sur ton traitement.",
+      "lien": "https://www.legifrance.gouv.fr",
+      "source": "Décret n° 82-453"
+    }
+  ],
+  "responsablePublication": "",
+  "adressePostale": "",
+  "liens": [],
+  "statistiques": {
+    "goatcounter": ""
+  },
+  "elections": {
+    "actif": true,
+    "titre": "Élections professionnelles",
+    "dateScrutin": "2026-12-10",
+    "ouvertureVote": "2026-12-03",
+    "afficherDepuisJours": 60,
+    "afficherJusquau": "2026-12-11",
+    "texteIntro": "Le 10 décembre 2026, tous les agents publics votent pour leurs représentants dans les instances où se décident leurs conditions de travail. Chaque voix compte, et voter ne prend que quelques minutes.",
+    "modalites": "Dans la fonction publique hospitalière, c'est l'établissement qui choisit le vote à l'urne ou le vote électronique, et qui fixe la période de vote (au plus du 3 au 10 décembre pour le vote électronique). À renseigner pour le centre hospitalier : mode de vote, lieux et horaires, comment recevoir ses identifiants.",
+    "etapes": [
+      {
+        "titre": "Vérifier que je suis sur la liste électorale",
+        "texte": "La liste est affichée dans l'établissement. En cas d'erreur ou d'oubli, il faut réclamer avant la date limite indiquée par la direction."
+      },
+      {
+        "titre": "Retrouver mes identifiants",
+        "texte": "Pour le vote électronique, ils arrivent par courrier ou par mail. Garde-les, ils servent une seule fois."
+      },
+      {
+        "titre": "Voter pendant la période d'ouverture",
+        "texte": "Le vote est personnel et secret. Il se fait à l'urne le jour du scrutin, ou en ligne pendant la période d'ouverture."
+      },
+      {
+        "titre": "Suivre les résultats",
+        "texte": "Les résultats sont publiés après la clôture du scrutin."
+      }
+    ],
+    "appel": "",
+    "questions": [
+      {
+        "question": "Qui peut voter ?",
+        "reponse": "Les fonctionnaires et les agents contractuels, selon les conditions d'inscription sur la liste électorale. En cas de doute, demande au service des ressources humaines ou au syndicat."
+      },
+      {
+        "question": "Mon employeur peut-il savoir pour qui j'ai voté ?",
+        "reponse": "Non. Le vote est secret, y compris en ligne."
+      }
+    ],
+    "lienOfficiel": "https://www.fonction-publique.gouv.fr/dialogue-social-et-representation/les-elections-professionnelles-2026"
+  },
+  "paie": {
+    "actif": true,
+    "decalageJours": 2,
+    "exceptions": [
+      {
+        "mois": "2026-12",
+        "date": "2026-12-22"
+      }
+    ],
+    "note": "Date de mise en paiement du traitement, avant le délai de la banque. À confirmer avec le service de paie du centre hospitalier."
+  }
+}

@@ -1,0 +1,13 @@
+{
+ "fichiers": [
+  "textes-accueil-site.json",
+  "textes-mentions.json",
+  "textes-bienvenue-visite.json",
+  "textes-planning.json",
+  "textes-compteurs.json",
+  "textes-outils-salaire.json",
+  "textes-syndicat.json",
+  "textes-courriers.json",
+  "textes-reglages.json"
+ ]
+}

@@ -1,0 +1,320 @@
+{
+ "textes": [
+  {
+   "texte": "12 heures entre deux journées, 36 heures dans la semaine, 48 heures au maximum sur 7 jours : l'appli te prévient quand une règle du décret n'est pas respectée.",
+   "cle": "accueil-site-a877d5"
+  },
+  {
+   "texte": "Alertes",
+   "cle": "accueil-site-eadf43"
+  },
+  {
+   "texte": "Android",
+   "cle": "accueil-site-e84e30"
+  },
+  {
+   "texte": "Au premier lancement, une visite guidée te montre tout, pas à pas, avec un faux planning. Tu touches, tu essaies, rien ne s'abîme. Tu peux la relancer quand tu veux.",
+   "cle": "accueil-site-188eda"
+  },
+  {
+   "texte": "Aucune donnée collectée",
+   "cle": "accueil-site-e0ac3b"
+  },
+  {
+   "texte": "Aujourd'hui",
+   "cle": "accueil-site-6a661a"
+  },
+  {
+   "texte": "C'est vraiment gratuit ?",
+   "cle": "accueil-site-05c6f7"
+  },
+  {
+   "texte": "CGT",
+   "cle": "accueil-site-1306c9"
+  },
+  {
+   "texte": "Choisis « Installer l'application »",
+   "cle": "accueil-site-b5121a"
+  },
+  {
+   "texte": "Clique sur l'icône d'installation",
+   "cle": "accueil-site-d6b7d0"
+  },
+  {
+   "texte": "Code source",
+   "cle": "accueil-site-f3f905"
+  },
+  {
+   "texte": "Confidentialité",
+   "cle": "accueil-site-3db25c"
+  },
+  {
+   "texte": "Confirme",
+   "cle": "accueil-site-87be3b"
+  },
+  {
+   "texte": "Confirme « Installer »",
+   "cle": "accueil-site-42a271"
+  },
+  {
+   "texte": "Des preuves, pas des souvenirs",
+   "cle": "accueil-site-521e86"
+  },
+  {
+   "texte": "Elle s'installe depuis cette page, sans passer par un magasin d'applis, et marche ensuite même sans réseau.",
+   "cle": "accueil-site-9c23ab"
+  },
+  {
+   "texte": "Elles ne quittent jamais ton appareil. Les sauvegardes sont chiffrées : sans ton mot de passe, le fichier est illisible.",
+   "cle": "accueil-site-e049e2"
+  },
+  {
+   "texte": "Essayer tout de suite",
+   "cle": "accueil-site-1dfa01"
+  },
+  {
+   "texte": "Et si je change de téléphone ?",
+   "cle": "accueil-site-661d32"
+  },
+  {
+   "texte": "Fais défiler, choisis « Sur l'écran d'accueil »",
+   "cle": "accueil-site-f9bb68"
+  },
+  {
+   "texte": "Fais une sauvegarde depuis l'appli (Réglages › Sauvegarde) : tu obtiens un fichier protégé par ton mot de passe. Sur le nouveau téléphone, tu le restaures en deux gestes.",
+   "cle": "accueil-site-3e3886"
+  },
+  {
+   "texte": "Faut-il être syndiqué·e ?",
+   "cle": "accueil-site-312643"
+  },
+  {
+   "texte": "Firefox ne sait pas installer d'applis web.",
+   "cle": "accueil-site-8c55a2"
+  },
+  {
+   "texte": "Gratuite",
+   "cle": "accueil-site-8bbdb7"
+  },
+  {
+   "texte": "Important sur iPhone : c'est ce qui protège tes données.",
+   "cle": "accueil-site-f7085a"
+  },
+  {
+   "texte": "Installer l'appli",
+   "cle": "accueil-site-eeeb76"
+  },
+  {
+   "texte": "Installer sur mon téléphone",
+   "cle": "accueil-site-a8d6d5"
+  },
+  {
+   "texte": "L'appli s'ouvre dans sa propre fenêtre.",
+   "cle": "accueil-site-912b27"
+  },
+  {
+   "texte": "L'icône rouge apparaît avec tes autres applis.",
+   "cle": "accueil-site-84c5ba"
+  },
+  {
+   "texte": "L'installer en une minute",
+   "cle": "accueil-site-247a08"
+  },
+  {
+   "texte": "Lancer la visite guidée",
+   "cle": "accueil-site-d827f4"
+  },
+  {
+   "texte": "Le carré avec une flèche vers le haut, en bas de l'écran.",
+   "cle": "accueil-site-21de64"
+  },
+  {
+   "texte": "Le menu du navigateur s'ouvre.",
+   "cle": "accueil-site-606831"
+  },
+  {
+   "texte": "Le navigateur habituel de la plupart des téléphones Android.",
+   "cle": "accueil-site-660b90"
+  },
+  {
+   "texte": "Le solde affiché a-t-il une valeur officielle ?",
+   "cle": "accueil-site-ed8ee2"
+  },
+  {
+   "texte": "Les dernières infos",
+   "cle": "accueil-site-947319"
+  },
+  {
+   "texte": "Les heures en plus, les rappels sur repos, les plannings qui changent la veille : note-les en quelques secondes. L'appli fait les comptes et vérifie tes droits.",
+   "cle": "accueil-site-f8ad97"
+  },
+  {
+   "texte": "Mentions légales",
+   "cle": "accueil-site-6ba684"
+  },
+  {
+   "texte": "Mes données sont-elles en sécurité ?",
+   "cle": "accueil-site-ada6db"
+  },
+  {
+   "texte": "Mon cadre ou la direction peuvent-ils voir mon planning ?",
+   "cle": "accueil-site-4c0bd1"
+  },
+  {
+   "texte": "Ni identifiant, ni mot de passe à créer.",
+   "cle": "accueil-site-085724"
+  },
+  {
+   "texte": "Ni la direction, ni le syndicat, ni nous ne voyons ton planning. Il n'existe que sur ton téléphone.",
+   "cle": "accueil-site-d2e54d"
+  },
+  {
+   "texte": "Ni statistiques, ni publicité, ni cookies.",
+   "cle": "accueil-site-154563"
+  },
+  {
+   "texte": "Non : c'est ton propre décompte, établi à partir de tes saisies. Il sert à vérifier ton relevé officiel et à repérer les écarts. En cas de doute, viens en parler.",
+   "cle": "accueil-site-a3df69"
+  },
+  {
+   "texte": "Non. L'appli est ouverte à tous les agents.",
+   "cle": "accueil-site-78adf6"
+  },
+  {
+   "texte": "Non. Tes saisies restent dans ton téléphone. Personne d'autre n'y a accès, pas même le syndicat.",
+   "cle": "accueil-site-4aa71a"
+  },
+  {
+   "texte": "Novembre",
+   "cle": "accueil-site-39e612"
+  },
+  {
+   "texte": "Ordinateur",
+   "cle": "accueil-site-59e95c"
+  },
+  {
+   "texte": "Ou « Ajouter à l'écran d'accueil », selon ton téléphone.",
+   "cle": "accueil-site-636d4d"
+  },
+  {
+   "texte": "Oui, et sans publicité. L'appli est réalisée bénévolement pour les agents.",
+   "cle": "accueil-site-9ea475"
+  },
+  {
+   "texte": "Ouvre cette page dans Chrome",
+   "cle": "accueil-site-61a005"
+  },
+  {
+   "texte": "Ouvre cette page dans Chrome ou Edge",
+   "cle": "accueil-site-c1bbcb"
+  },
+  {
+   "texte": "Ouvre cette page dans Safari",
+   "cle": "accueil-site-c196fd"
+  },
+  {
+   "texte": "Ouvre l'appli depuis son icône",
+   "cle": "accueil-site-7590f0"
+  },
+  {
+   "texte": "Ouvrir l'appli",
+   "cle": "accueil-site-3e16f9"
+  },
+  {
+   "texte": "Pas dans Chrome : sur iPhone, seul Safari sait installer.",
+   "cle": "accueil-site-f4635a"
+  },
+  {
+   "texte": "Pas de compte",
+   "cle": "accueil-site-3d01f8"
+  },
+  {
+   "texte": "Pas de pistage",
+   "cle": "accueil-site-22a856"
+  },
+  {
+   "texte": "Pas de serveur",
+   "cle": "accueil-site-4e8ddf"
+  },
+  {
+   "texte": "Pas à l'aise avec le téléphone ?",
+   "cle": "accueil-site-5d1d8a"
+  },
+  {
+   "texte": "Puis touche « Ajouter » en haut à droite.",
+   "cle": "accueil-site-4826dc"
+  },
+  {
+   "texte": "Questions fréquentes",
+   "cle": "accueil-site-5b6a9a"
+  },
+  {
+   "texte": "Rappelé·e sur un repos ? Planning changé la veille ? C'est daté et gardé. Le jour où ça ne colle pas, tu viens au syndicat avec des faits.",
+   "cle": "accueil-site-f2f499"
+  },
+  {
+   "texte": "Rien n'est envoyé sur internet, jamais.",
+   "cle": "accueil-site-b97b25"
+  },
+  {
+   "texte": "Saisis",
+   "cle": "accueil-site-ebcb52"
+  },
+  {
+   "texte": "Sans compte",
+   "cle": "accueil-site-69fadb"
+  },
+  {
+   "texte": "Sauvegarde chiffrée",
+   "cle": "accueil-site-c76c04"
+  },
+  {
+   "texte": "Solde",
+   "cle": "accueil-site-c8f645"
+  },
+  {
+   "texte": "Tes données restent dans ta poche",
+   "cle": "accueil-site-9e6a8a"
+  },
+  {
+   "texte": "Tes heures, au quart d'heure près",
+   "cle": "accueil-site-bc7750"
+  },
+  {
+   "texte": "Tes repos, vérifiés",
+   "cle": "accueil-site-ff0350"
+  },
+  {
+   "texte": "Touche le bouton Partager",
+   "cle": "accueil-site-69c220"
+  },
+  {
+   "texte": "Touche les trois points ⋮ en haut à droite",
+   "cle": "accueil-site-bb16e0"
+  },
+  {
+   "texte": "Trois choses que ton relevé officiel ne fait pas",
+   "cle": "accueil-site-117d84"
+  },
+  {
+   "texte": "Tu recopies ton planning en deux gestes, puis tu notes seulement ce qui a changé. Ton solde se calcule tout seul, avec tes RTT, tes congés, tes dimanches et fériés.",
+   "cle": "accueil-site-22df2c"
+  },
+  {
+   "texte": "Un fichier protégé par ton mot de passe, que tu gardes où tu veux.",
+   "cle": "accueil-site-f46108"
+  },
+  {
+   "texte": "Un petit écran avec une flèche, à droite de la barre d'adresse.",
+   "cle": "accueil-site-2d01a7"
+  },
+  {
+   "texte": "iPhone",
+   "cle": "accueil-site-867e57"
+  },
+  {
+   "texte": "· l'appli des agents",
+   "cle": "accueil-site-aff3d7"
+  }
+ ]
+}

@@ -1,0 +1,148 @@
+{
+ "textes": [
+  {
+   "texte": "Copier",
+   "cle": "courriers-b84e3e"
+  },
+  {
+   "texte": "Courrier (tu peux le modifier)",
+   "cle": "courriers-0152bf"
+  },
+  {
+   "texte": "Courriers",
+   "cle": "courriers-21415e"
+  },
+  {
+   "texte": "Garde toujours une copie de ce que tu envoies. Un doute sur la formulation ? Montre-le au syndicat avant.",
+   "cle": "courriers-8720fb"
+  },
+  {
+   "texte": "Modèle",
+   "cle": "courriers-df696d"
+  },
+  {
+   "texte": "Par mail",
+   "cle": "courriers-09eb96"
+  },
+  {
+   "texte": "Période",
+   "cle": "courriers-756d30"
+  },
+  {
+   "texte": "Agent infectieux",
+   "cle": "courriers-6be7e4"
+  },
+  {
+   "texte": "Amiante",
+   "cle": "courriers-625bee"
+  },
+  {
+   "texte": "Bruit, chaleur",
+   "cle": "courriers-7ff7ba"
+  },
+  {
+   "texte": "Ce qui s'est passé, en quelques mots",
+   "cle": "courriers-5287ba"
+  },
+  {
+   "texte": "Comment te joindre ?",
+   "cle": "courriers-ca10d4"
+  },
+  {
+   "texte": "Convictions",
+   "cle": "courriers-2f9cf2"
+  },
+  {
+   "texte": "De collègue(s)",
+   "cle": "courriers-0adc41"
+  },
+  {
+   "texte": "De la hiérarchie",
+   "cle": "courriers-63a26e"
+  },
+  {
+   "texte": "De patient(s) ou de proches",
+   "cle": "courriers-ebeb8e"
+  },
+  {
+   "texte": "Discrimination",
+   "cle": "courriers-6c5fb7"
+  },
+  {
+   "texte": "Exposition",
+   "cle": "courriers-ba2cb0"
+  },
+  {
+   "texte": "Exposition à",
+   "cle": "courriers-c1ebeb"
+  },
+  {
+   "texte": "Fumées ou gaz",
+   "cle": "courriers-ff8bc8"
+  },
+  {
+   "texte": "Grossesse",
+   "cle": "courriers-722a39"
+  },
+  {
+   "texte": "Handicap ou santé",
+   "cle": "courriers-9a109c"
+  },
+  {
+   "texte": "L'adresse des délégué·es n'est pas encore renseignée dans l'appli.",
+   "cle": "courriers-ea0e82"
+  },
+  {
+   "texte": "Motif",
+   "cle": "courriers-58a4ec"
+  },
+  {
+   "texte": "Orientation sexuelle",
+   "cle": "courriers-68e4c4"
+  },
+  {
+   "texte": "Origine",
+   "cle": "courriers-cb48ef"
+  },
+  {
+   "texte": "Pense aussi à faire inscrire l'exposition dans ton dossier médical par le service de santé au travail, et à déclarer un accident de service s'il y a eu un incident.",
+   "cle": "courriers-1cffab"
+  },
+  {
+   "texte": "Produit chimique ou médicament dangereux",
+   "cle": "courriers-2ce949"
+  },
+  {
+   "texte": "Préparer le message",
+   "cle": "courriers-738b97"
+  },
+  {
+   "texte": "Rayonnements",
+   "cle": "courriers-c8e56e"
+  },
+  {
+   "texte": "Sang ou liquide biologique",
+   "cle": "courriers-ae9339"
+  },
+  {
+   "texte": "Sexe ou genre",
+   "cle": "courriers-a203ec"
+  },
+  {
+   "texte": "Tu n'as pas à rester seul·e. Ce message part de ta messagerie vers les délégué·es, qui te proposeront un rendez-vous en toute confidentialité.",
+   "cle": "courriers-b114a6"
+  },
+  {
+   "texte": "Une exposition à un produit ou à un agent dangereux doit laisser une trace écrite : elle peut compter des années plus tard. Ce message part de ta messagerie vers les délégué·es, qui te proposeront un rendez-vous en toute confidentialité.",
+   "cle": "courriers-c845f6"
+  },
+  {
+   "texte": "Violence",
+   "cle": "courriers-0ef933"
+  },
+  {
+   "texte": "Âge",
+   "cle": "courriers-eb2b8d"
+  }
+ ]
+}

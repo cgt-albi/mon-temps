@@ -1,0 +1,240 @@
+{
+ "textes": [
+  {
+   "texte": "0 posé dans l'année",
+   "cle": "compteurs-6d137d"
+  },
+  {
+   "texte": "0 posé, dont 0 hors saison",
+   "cle": "compteurs-411220"
+  },
+  {
+   "texte": "0 épargné · 0 pris",
+   "cle": "compteurs-086931"
+  },
+  {
+   "texte": "0h00 de nuit",
+   "cle": "compteurs-d8d04d"
+  },
+  {
+   "texte": "0h00 en plus · 0h00 récupérées",
+   "cle": "compteurs-e2cdeb"
+  },
+  {
+   "texte": "0h00 · 0 dimanche, 0 férié",
+   "cle": "compteurs-116bf6"
+  },
+  {
+   "texte": "1 jour de semaine sans saisie",
+   "cle": "compteurs-56f190"
+  },
+  {
+   "texte": "48 heures sur 7 jours",
+   "cle": "compteurs-da8359"
+  },
+  {
+   "texte": "Amplitude de la journée",
+   "cle": "compteurs-290dd5"
+  },
+  {
+   "texte": "Ce que tu as fait : la durée de tes journées de travail, pause déduite, plus tes dépassements. Maladie, formation et garde d'enfant comptent comme la journée prévue.",
+   "cle": "compteurs-0d66e9"
+  },
+  {
+   "texte": "Ce que tu dois (le « théorique ») : 7 h par jour du lundi au vendredi, ajusté à ta quotité. Les jours fériés et tes congés annuels sont retirés du compte.",
+   "cle": "compteurs-3760e5"
+  },
+  {
+   "texte": "Chaque barre du graphique est le solde d'un mois : vers le haut, des heures en plus ; vers le bas, en rouge, des heures en moins.",
+   "cle": "compteurs-7dc5e6"
+  },
+  {
+   "texte": "Congés annuels",
+   "cle": "compteurs-975b65"
+  },
+  {
+   "texte": "Congés et repos",
+   "cle": "compteurs-94fb8d"
+  },
+  {
+   "texte": "Dimanches et fériés",
+   "cle": "compteurs-31efa7"
+  },
+  {
+   "texte": "Détail mois par mois",
+   "cle": "compteurs-2a71cd"
+  },
+  {
+   "texte": "Fait 0h00 − dû 7h00",
+   "cle": "compteurs-b02702"
+  },
+  {
+   "texte": "Garanties minimales",
+   "cle": "compteurs-642b13"
+  },
+  {
+   "texte": "Garde d'enfant",
+   "cle": "compteurs-c48c59"
+  },
+  {
+   "texte": "Gérer mon CET",
+   "cle": "compteurs-8b00e4"
+  },
+  {
+   "texte": "Heures et sujétions",
+   "cle": "compteurs-207274"
+  },
+  {
+   "texte": "Heures sup et récup",
+   "cle": "compteurs-dffcf1"
+  },
+  {
+   "texte": "Nuits travaillées",
+   "cle": "compteurs-df211a"
+  },
+  {
+   "texte": "Point de départ",
+   "cle": "compteurs-af95ca"
+  },
+  {
+   "texte": "Relevé annuel",
+   "cle": "compteurs-dda41a"
+  },
+  {
+   "texte": "Repos de la quinzaine",
+   "cle": "compteurs-a3ddb5"
+  },
+  {
+   "texte": "Repos hebdo",
+   "cle": "compteurs-1e1c4c"
+  },
+  {
+   "texte": "Repos quotidien",
+   "cle": "compteurs-8a842a"
+  },
+  {
+   "texte": "Respecté",
+   "cle": "compteurs-f4848e"
+  },
+  {
+   "texte": "Solde et théorique",
+   "cle": "compteurs-968b1f"
+  },
+  {
+   "texte": "Ton solde, c'est ce que tu as fait moins ce que tu devais faire, depuis le début de ton suivi.",
+   "cle": "compteurs-b95280"
+  },
+  {
+   "texte": "Un solde négatif n'est pas une dette : c'est le planning qui ne t'a pas donné assez d'heures. Un solde positif, ce sont des heures à récupérer ou à payer.",
+   "cle": "compteurs-cd6887"
+  },
+  {
+   "texte": "autorisations d'absence",
+   "cle": "compteurs-5fa94c"
+  },
+  {
+   "texte": "en dessous de ton dû",
+   "cle": "compteurs-36c123"
+  },
+  {
+   "texte": "nuit",
+   "cle": "compteurs-490b2c"
+  },
+  {
+   "texte": "repère : 104 sur une année pleine",
+   "cle": "compteurs-cb5016"
+  },
+  {
+   "texte": "à récupérer",
+   "cle": "compteurs-7002b3"
+  },
+  {
+   "texte": "Aucun rappel noté. Quand on te rappelle sur un repos, coche la case dans la saisie de la journée.",
+   "cle": "compteurs-f85790"
+  },
+  {
+   "texte": "Changements · 0",
+   "cle": "compteurs-892981"
+  },
+  {
+   "texte": "Dépassements · 0",
+   "cle": "compteurs-706ea9"
+  },
+  {
+   "texte": "Envoyer",
+   "cle": "compteurs-770a1a"
+  },
+  {
+   "texte": "Noter une journée",
+   "cle": "compteurs-e676fd"
+  },
+  {
+   "texte": "Rappels sur repos, changements de dernière minute, dépassements : tout est daté et reste sur ton téléphone, prêt à montrer au syndicat.",
+   "cle": "compteurs-95571f"
+  },
+  {
+   "texte": "Rappels · 0",
+   "cle": "compteurs-7f5bde"
+  },
+  {
+   "texte": "Rien ne quitte ton téléphone tant que tu n'envoies pas toi-même.",
+   "cle": "compteurs-8e3f81"
+  },
+  {
+   "texte": "Alertes au décret 2002-9",
+   "cle": "compteurs-2a202f"
+  },
+  {
+   "texte": "Aucune journée saisie sur cette année.",
+   "cle": "compteurs-f44d56"
+  },
+  {
+   "texte": "Congés annuels posés",
+   "cle": "compteurs-5085fd"
+  },
+  {
+   "texte": "Dans la fenêtre d'impression, choisis « Enregistrer en PDF » pour obtenir un fichier.",
+   "cle": "compteurs-ba0cca"
+  },
+  {
+   "texte": "Dépassements",
+   "cle": "compteurs-a2849c"
+  },
+  {
+   "texte": "Heures comptées",
+   "cle": "compteurs-1f0e8e"
+  },
+  {
+   "texte": "Heures de nuit",
+   "cle": "compteurs-f4faad"
+  },
+  {
+   "texte": "Heures dues",
+   "cle": "compteurs-cb2870"
+  },
+  {
+   "texte": "Imprimer ou enregistrer en PDF",
+   "cle": "compteurs-2bf1da"
+  },
+  {
+   "texte": "Jours saisis",
+   "cle": "compteurs-6794be"
+  },
+  {
+   "texte": "RTT posés",
+   "cle": "compteurs-ed25de"
+  },
+  {
+   "texte": "Relevé établi par l'agent à partir de ses propres saisies dans Mon Temps. Document indicatif, à rapprocher du relevé officiel de l'établissement.",
+   "cle": "compteurs-eaddfc"
+  },
+  {
+   "texte": "Signature de l'agent",
+   "cle": "compteurs-b81983"
+  },
+  {
+   "texte": "Visa de l'encadrement",
+   "cle": "compteurs-86cf7c"
+  }
+ ]
+}

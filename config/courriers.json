@@ -1,0 +1,140 @@
+{
+  "formule": "Cordialement,",
+  "modeles": [
+    {
+      "id": "releve",
+      "groupe": "Temps de travail",
+      "titre": "Demander mon relevé d'heures",
+      "champs": [
+        "periode"
+      ],
+      "texte": "Bonjour,\n\nJe souhaite recevoir le relevé détaillé de mon temps de travail pour {periode} : heures effectuées, solde, heures supplémentaires, congés et RTT pris et restants.\n\nCe document me permettra de vérifier mon décompte. Merci de me le transmettre par écrit."
+    },
+    {
+      "id": "recup",
+      "groupe": "Temps de travail",
+      "titre": "Récupérer des heures",
+      "champs": [
+        "heures",
+        "dates"
+      ],
+      "texte": "Bonjour,\n\nMon décompte fait apparaître {heures} effectuées au-delà de mon temps de travail prévu. Je souhaite les récupérer [[le {dates}|à une date à convenir ensemble]].\n\nJe reste disponible pour en parler."
+    },
+    {
+      "id": "paiement",
+      "groupe": "Temps de travail",
+      "titre": "Faire payer mes heures supplémentaires",
+      "champs": [
+        "heures",
+        "periode"
+      ],
+      "texte": "Bonjour,\n\nJ'ai effectué {heures} supplémentaires sur {periode}, qui n'ont pas pu être récupérées. Je demande leur paiement et vous remercie de m'indiquer sur quelle paie il interviendra."
+    },
+    {
+      "id": "rappel",
+      "groupe": "Planning",
+      "titre": "Rappel sur un repos",
+      "champs": [
+        "dates"
+      ],
+      "texte": "Bonjour,\n\nLe {dates}, j'ai été rappelé·e pour travailler alors que j'étais en repos. Je vous remercie de m'indiquer comment cette journée sera compensée (récupération ou rémunération) et à quelle date mon repos me sera rendu."
+    },
+    {
+      "id": "changement",
+      "groupe": "Planning",
+      "titre": "Changement de planning tardif",
+      "champs": [
+        "dates",
+        "delai"
+      ],
+      "texte": "Bonjour,\n\nMon planning du {dates} a été modifié et je n'en ai été informé·e que {delai} avant. Ces changements tardifs désorganisent ma vie personnelle.\n\nJe demande que les modifications me soient communiquées dans un délai raisonnable et qu'une solution soit trouvée pour cette fois."
+    },
+    {
+      "id": "telephone",
+      "groupe": "Planning",
+      "titre": "Ne plus être appelé·e sur mes repos",
+      "champs": [],
+      "texte": "Bonjour,\n\nJe suis régulièrement contacté·e sur mon téléphone personnel pendant mes repos et mes congés pour revenir travailler.\n\nMon numéro personnel n'a pas vocation à servir à l'organisation du service. Je demande qu'il ne soit plus utilisé à cette fin et qu'il soit retiré des listes de rappel. Je reste bien sûr joignable par les voies habituelles pendant mon temps de travail."
+    },
+    {
+      "id": "effectif",
+      "groupe": "Conditions de travail",
+      "titre": "Alerter sur un sous-effectif",
+      "champs": [
+        "dates",
+        "precisions"
+      ],
+      "texte": "Bonjour,\n\nJe vous alerte sur la situation du service {service} le {dates} : l'effectif présent ne permettait pas d'assurer la prise en charge des patients dans des conditions normales de sécurité.\n\n{precisions}\n\nJe vous demande de prendre les mesures nécessaires pour que cette situation ne se reproduise pas, et de conserver une trace de ce signalement."
+    },
+    {
+      "id": "danger",
+      "groupe": "Conditions de travail",
+      "titre": "Danger grave et imminent",
+      "champs": [
+        "dates",
+        "precisions"
+      ],
+      "texte": "Bonjour,\n\nJe vous signale une situation de travail dont j'ai un motif raisonnable de penser qu'elle présente un danger grave et imminent pour ma vie ou ma santé.\n\nDate et lieu : {dates}\nSituation : {precisions}\n\nJe vous demande de prendre immédiatement les mesures de protection nécessaires. Je me réserve la possibilité d'exercer mon droit de retrait, sans mettre en danger autrui, tant que le danger persiste. Les représentants du personnel sont informés."
+    },
+    {
+      "id": "protection",
+      "groupe": "Conditions de travail",
+      "titre": "Demander la protection fonctionnelle",
+      "champs": [
+        "dates",
+        "precisions"
+      ],
+      "texte": "Madame la Directrice, Monsieur le Directeur,\n\nLe {dates}, dans l'exercice de mes fonctions, j'ai été victime des faits suivants :\n\n{precisions}\n\nJe sollicite le bénéfice de la protection fonctionnelle due par l'administration à ses agents (articles L. 134-1 et suivants du code général de la fonction publique) : mesures de protection, prise en charge des frais de procédure et réparation du préjudice subi."
+    },
+    {
+      "id": "partiel",
+      "groupe": "Carrière",
+      "titre": "Demander un temps partiel",
+      "champs": [
+        "quotite",
+        "dates",
+        "precisions"
+      ],
+      "texte": "Madame la Directrice, Monsieur le Directeur,\n\nJe sollicite l'autorisation de travailler à temps partiel à {quotite} à compter du {dates}, pour une durée d'un an renouvelable.\n\n{precisions}\n\nJe vous remercie de me faire connaître votre réponse par écrit."
+    },
+    {
+      "id": "cet",
+      "groupe": "Carrière",
+      "titre": "Ouvrir ou alimenter mon CET",
+      "champs": [
+        "jours"
+      ],
+      "texte": "Bonjour,\n\nJe demande [[le versement de {jours} jour(s) sur mon compte épargne-temps|l'ouverture d'un compte épargne-temps à mon nom]], au titre des jours que je n'ai pas pu prendre cette année.\n\nMerci de me confirmer par écrit le nombre de jours inscrits sur mon compte après cette opération."
+    },
+    {
+      "id": "report",
+      "groupe": "Carrière",
+      "titre": "Reporter des congés non pris",
+      "champs": [
+        "jours",
+        "precisions"
+      ],
+      "texte": "Bonjour,\n\nIl me reste {jours} jour(s) de congé annuel que je n'ai pas pu prendre cette année[[ ({precisions})| pour des raisons de service]]. Je demande leur report sur l'année prochaine.\n\nMerci de me confirmer votre accord par écrit."
+    },
+    {
+      "id": "formation",
+      "groupe": "Carrière",
+      "titre": "Demander une formation",
+      "champs": [
+        "precisions",
+        "dates"
+      ],
+      "texte": "Bonjour,\n\nJe souhaite suivre la formation suivante : {precisions}[[, prévue {dates}]].\n\nElle s'inscrit dans mon projet professionnel et dans les besoins du service. Je vous remercie de l'inscrire au plan de formation et de m'indiquer la suite donnée à ma demande. En cas de refus, merci de m'en préciser le motif par écrit."
+    },
+    {
+      "id": "entretien",
+      "groupe": "Carrière",
+      "titre": "Contester mon entretien professionnel",
+      "champs": [
+        "dates",
+        "precisions"
+      ],
+      "texte": "Madame la Directrice, Monsieur le Directeur,\n\nJ'ai reçu le {dates} le compte rendu de mon entretien professionnel. Je demande sa révision sur les points suivants :\n\n{precisions}\n\nJe vous remercie de me notifier votre réponse."
+    }
+  ]
+}

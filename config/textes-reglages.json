@@ -1,0 +1,628 @@
+{
+ "textes": [
+  {
+   "texte": "Affichage",
+   "cle": "reglages-8caed9"
+  },
+  {
+   "texte": "Ajouter un code",
+   "cle": "reglages-7d816e"
+  },
+  {
+   "texte": "Alertes sur le repos, les 48h, l'amplitude",
+   "cle": "reglages-13198b"
+  },
+  {
+   "texte": "Clair",
+   "cle": "reglages-c7e206"
+  },
+  {
+   "texte": "Contrôles légaux",
+   "cle": "reglages-f1cd80"
+  },
+  {
+   "texte": "Effacer toutes mes données",
+   "cle": "reglages-ce749e"
+  },
+  {
+   "texte": "Jamais faite",
+   "cle": "reglages-ebe52e"
+  },
+  {
+   "texte": "Les codes de l'établissement sont mis à jour par le syndicat. Tu peux ajouter les tiens ou ajuster un horaire.",
+   "cle": "reglages-5c220b"
+  },
+  {
+   "texte": "Mes codes horaires",
+   "cle": "reglages-1afebb"
+  },
+  {
+   "texte": "Mon poste",
+   "cle": "reglages-5e9785"
+  },
+  {
+   "texte": "Page d'accueil de l'appli",
+   "cle": "reglages-7b5a88"
+  },
+  {
+   "texte": "Prénom",
+   "cle": "reglages-360176"
+  },
+  {
+   "texte": "Revoir la visite guidée",
+   "cle": "reglages-bfa5c0"
+  },
+  {
+   "texte": "Réglages",
+   "cle": "reglages-066a51"
+  },
+  {
+   "texte": "Sauvegarde et transfert",
+   "cle": "reglages-65c739"
+  },
+  {
+   "texte": "Sombre",
+   "cle": "reglages-19bdcd"
+  },
+  {
+   "texte": "Taille du texte",
+   "cle": "reglages-5b21ef"
+  },
+  {
+   "texte": "Thème",
+   "cle": "reglages-d45db5"
+  },
+  {
+   "texte": "Vérifier les chiffres de l'appli",
+   "cle": "reglages-d855e3"
+  },
+  {
+   "texte": "Aucune sauvegarde pour l'instant",
+   "cle": "reglages-f4382d"
+  },
+  {
+   "texte": "Ce navigateur ne garantit pas la conservation des données : les sauvegardes sont d'autant plus importantes. Installer l'appli sur l'écran d'accueil aide.",
+   "cle": "reglages-f3e6f4"
+  },
+  {
+   "texte": "Choisis ton fichier de sauvegarde. Les données actuelles de cet appareil seront remplacées.",
+   "cle": "reglages-58d3b7"
+  },
+  {
+   "texte": "Crée un fichier agenda avec tes 3 prochains mois de travail, à ouvrir dans Google Agenda, Outlook ou l'agenda de l'iPhone.",
+   "cle": "reglages-b162e8"
+  },
+  {
+   "texte": "Créer un fichier de sauvegarde",
+   "cle": "reglages-dfa2d6"
+  },
+  {
+   "texte": "Fichier agenda",
+   "cle": "reglages-51f94a"
+  },
+  {
+   "texte": "Fichier de sauvegarde",
+   "cle": "reglages-b41966"
+  },
+  {
+   "texte": "Le fichier est chiffré : sans le mot de passe, personne ne peut le lire. Garde-le où tu veux (mail à toi-même, cloud, clé USB).",
+   "cle": "reglages-aedb3b"
+  },
+  {
+   "texte": "Le même, encore une fois",
+   "cle": "reglages-037fd2"
+  },
+  {
+   "texte": "Le plus simple : un code QR qui défile sur l'ancien téléphone, que le nouveau lit avec sa caméra. Rien ne passe par internet.",
+   "cle": "reglages-1ef972"
+  },
+  {
+   "texte": "Mettre mon planning dans mon agenda",
+   "cle": "reglages-017a3b"
+  },
+  {
+   "texte": "Mot de passe du fichier",
+   "cle": "reglages-34ef88"
+  },
+  {
+   "texte": "Note-le bien : il ne peut pas être retrouvé.",
+   "cle": "reglages-2fcb50"
+  },
+  {
+   "texte": "Passer sur un autre téléphone",
+   "cle": "reglages-ec01c1"
+  },
+  {
+   "texte": "Recevoir",
+   "cle": "reglages-d63511"
+  },
+  {
+   "texte": "Restaurer",
+   "cle": "reglages-1f76aa"
+  },
+  {
+   "texte": "Restaurer depuis un fichier",
+   "cle": "reglages-3381f1"
+  },
+  {
+   "texte": "Sauvegarde",
+   "cle": "reglages-89e922"
+  },
+  {
+   "texte": "Sauvegarder",
+   "cle": "reglages-76b566"
+  },
+  {
+   "texte": "Ton planning n'existe que sur ce téléphone. Une sauvegarde par mois suffit.",
+   "cle": "reglages-5f9821"
+  },
+  {
+   "texte": "Code à taper sur l'autre téléphone",
+   "cle": "reglages-91e154"
+  },
+  {
+   "texte": "Garde cet écran allumé pendant le transfert. Personne d'autre que toi ne doit voir le code.",
+   "cle": "reglages-e12be9"
+  },
+  {
+   "texte": "Morceau 1 sur 1 · le code défile tout seul",
+   "cle": "reglages-ff90dd"
+  },
+  {
+   "texte": "Sauvegarde › Recevoir",
+   "cle": "reglages-bfde75"
+  },
+  {
+   "texte": "Sur le nouveau téléphone, ouvre l'appli puis",
+   "cle": "reglages-6b55fa"
+  },
+  {
+   "texte": "Tape ensuite le code ci-dessous sur l'autre téléphone.",
+   "cle": "reglages-08ee8e"
+  },
+  {
+   "texte": "Vise ce code avec l'autre téléphone, à 20 cm environ, jusqu'à 100 %.",
+   "cle": "reglages-4c3170"
+  },
+  {
+   "texte": ". Puis vise le code qui défile avec ce téléphone.",
+   "cle": "reglages-a2c97d"
+  },
+  {
+   "texte": "En attente du premier code…",
+   "cle": "reglages-b855c3"
+  },
+  {
+   "texte": "La caméra sert uniquement à lire le code : aucune image n'est enregistrée ni envoyée.",
+   "cle": "reglages-9ed02a"
+  },
+  {
+   "texte": "Ouvrir la caméra",
+   "cle": "reglages-80fca0"
+  },
+  {
+   "texte": "Sauvegarde › Envoyer",
+   "cle": "reglages-dd5c37"
+  },
+  {
+   "texte": "Sur l'ancien téléphone :",
+   "cle": "reglages-02115b"
+  },
+  {
+   "texte": "Ce que l'appli sait de toi",
+   "cle": "reglages-7102bf"
+  },
+  {
+   "texte": "Ce que tu saisis : ton planning, tes notes, ton métier. Tout est enregistré uniquement dans ce téléphone (ou cet ordinateur).",
+   "cle": "reglages-e7b58b"
+  },
+  {
+   "texte": "Ce qui est envoyé",
+   "cle": "reglages-64f539"
+  },
+  {
+   "texte": "Effacer",
+   "cle": "reglages-1e9a49"
+  },
+  {
+   "texte": "Elles sont chiffrées avec ton mot de passe (AES-256). Sans lui, le fichier est illisible, y compris pour nous.",
+   "cle": "reglages-56e49b"
+  },
+  {
+   "texte": "Les mails (grève, signalement, courriers) sont seulement préparés : ils s'ouvrent dans ta propre messagerie, et c'est toi qui décides de les envoyer.",
+   "cle": "reglages-27cd49"
+  },
+  {
+   "texte": "Quand tu envoies un mail",
+   "cle": "reglages-28f89c"
+  },
+  {
+   "texte": "Rien. L'appli n'a ni compte, ni serveur, ni statistiques de visite, ni publicité, ni cookies. Le syndicat ne voit pas ton planning.",
+   "cle": "reglages-55feda"
+  },
+  {
+   "texte": "Réglages › Effacer toutes mes données supprime tout de cet appareil, immédiatement.",
+   "cle": "reglages-955699"
+  },
+  {
+   "texte": "Site hébergé par GitHub Pages, qui enregistre comme tout hébergeur l'adresse IP des visites pour la sécurité. Code source ouvert, consultable par tous.",
+   "cle": "reglages-72752d"
+  },
+  {
+   "texte": "Tes sauvegardes",
+   "cle": "reglages-c02bab"
+  },
+  {
+   "texte": ". Change le chiffre, enregistre : l'appli se met à jour d'elle-même en quelques minutes. Pour retirer le badge « provisoire », supprime la ligne correspondante dans « Valeurs encore provisoires ».",
+   "cle": "reglages-7242f1"
+  },
+  {
+   "texte": "0 % du traitement",
+   "cle": "reglages-2a88ac"
+  },
+  {
+   "texte": "08:00 – 16:18 · pause 30 min · 7h48 comptées",
+   "cle": "reglages-167cad"
+  },
+  {
+   "texte": "08:42 – 17:00 · pause 30 min · 7h48 comptées",
+   "cle": "reglages-ad7e02"
+  },
+  {
+   "texte": "09:42 – 18:00 · pause 30 min · 7h48 comptées",
+   "cle": "reglages-ab4a5f"
+  },
+  {
+   "texte": "1,25 puis 1,27 après 14 h",
+   "cle": "reglages-fda7f8"
+  },
+  {
+   "texte": "10 % du traitement",
+   "cle": "reglages-c6dd89"
+  },
+  {
+   "texte": "104 jours",
+   "cle": "reglages-3f7bf1"
+  },
+  {
+   "texte": "15 jours",
+   "cle": "reglages-8778ea"
+  },
+  {
+   "texte": "25 jours",
+   "cle": "reglages-7007ef"
+  },
+  {
+   "texte": "4 jours",
+   "cle": "reglages-584a60"
+  },
+  {
+   "texte": "49 points d'indice",
+   "cle": "reglages-b1064e"
+  },
+  {
+   "texte": "6 jours",
+   "cle": "reglages-c98cc6"
+  },
+  {
+   "texte": "7,5 % du traitement",
+   "cle": "reglages-7e5484"
+  },
+  {
+   "texte": "90 % pendant 90 jours, puis 50 %",
+   "cle": "reglages-6080a9"
+  },
+  {
+   "texte": "Affichés dans l'appli, onglet Syndicat et bouton téléphone.",
+   "cle": "reglages-97d646"
+  },
+  {
+   "texte": "Amplitude maximale d'un service coupé",
+   "cle": "reglages-a5173b"
+  },
+  {
+   "texte": "Amplitude maximale d'une journée",
+   "cle": "reglages-72a52c"
+  },
+  {
+   "texte": "Appli, logo, contacts",
+   "cle": "reglages-267929"
+  },
+  {
+   "texte": "Arrêt maladie : traitement versé",
+   "cle": "reglages-b0b1f1"
+  },
+  {
+   "texte": "Aucune saisie : l'agent tape son indice",
+   "cle": "reglages-cebeaa"
+  },
+  {
+   "texte": "Barèmes",
+   "cle": "reglages-2415cf"
+  },
+  {
+   "texte": "Codes horaires",
+   "cle": "reglages-0e1375"
+  },
+  {
+   "texte": "Comment corriger",
+   "cle": "reglages-ce369f"
+  },
+  {
+   "texte": "Congés annuels par an",
+   "cle": "reglages-f2e8e6"
+  },
+  {
+   "texte": "Contacts du syndicat",
+   "cle": "reglages-149786"
+  },
+  {
+   "texte": "Date de paie",
+   "cle": "reglages-518062"
+  },
+  {
+   "texte": "Droits annuels à temps plein (ajustés à la quotité de l'agent).",
+   "cle": "reglages-3ee06a"
+  },
+  {
+   "texte": "Durée continue maximale, équipe de jour",
+   "cle": "reglages-1560f2"
+  },
+  {
+   "texte": "Durée continue maximale, équipe de nuit",
+   "cle": "reglages-533f99"
+  },
+  {
+   "texte": "Durée minimale d'une vacation",
+   "cle": "reglages-c7ae93"
+  },
+  {
+   "texte": "Délai de prévenance d'un changement de planning",
+   "cle": "reglages-1aab40"
+  },
+  {
+   "texte": "Envoyer cette liste",
+   "cle": "reglages-81713b"
+  },
+  {
+   "texte": "Garde d'enfant malade (GE) par an",
+   "cle": "reglages-6edb5a"
+  },
+  {
+   "texte": "Grilles indiciaires (grades et échelons)",
+   "cle": "reglages-b08e94"
+  },
+  {
+   "texte": "Heures annuelles pour le taux horaire",
+   "cle": "reglages-2a7657"
+  },
+  {
+   "texte": "Heures supplémentaires : coefficient",
+   "cle": "reglages-fa756f"
+  },
+  {
+   "texte": "Horaires",
+   "cle": "reglages-990e1f"
+  },
+  {
+   "texte": "Imprimer",
+   "cle": "reglages-943021"
+  },
+  {
+   "texte": "Indemnité dimanche et férié pour 8 h",
+   "cle": "reglages-33ae09"
+  },
+  {
+   "texte": "J38 — Journée 38",
+   "cle": "reglages-baf9d6"
+  },
+  {
+   "texte": "Jours de repos par quinzaine",
+   "cle": "reglages-5fdb77"
+  },
+  {
+   "texte": "Jours et congés",
+   "cle": "reglages-1e14c4"
+  },
+  {
+   "texte": "Local et permanences",
+   "cle": "reglages-07e9de"
+  },
+  {
+   "texte": "M41 — Matin 41",
+   "cle": "reglages-9d0de7"
+  },
+  {
+   "texte": "M52 — Matin 52",
+   "cle": "reglages-16e96e"
+  },
+  {
+   "texte": "Mail des signalements",
+   "cle": "reglages-0c5ea2"
+  },
+  {
+   "texte": "Mail général",
+   "cle": "reglages-0e0f06"
+  },
+  {
+   "texte": "Majoration des heures de nuit",
+   "cle": "reglages-9e94dd"
+  },
+  {
+   "texte": "Maximum sur 7 jours",
+   "cle": "reglages-3f0639"
+  },
+  {
+   "texte": "Ouvre le formulaire d'édition (app.pagescms.org), onglet",
+   "cle": "reglages-e6a190"
+  },
+  {
+   "texte": "Prime : Complément de traitement indiciaire (CTI, « Ségur »)",
+   "cle": "reglages-72952b"
+  },
+  {
+   "texte": "Prime : Indemnité de résidence",
+   "cle": "reglages-b67694"
+  },
+  {
+   "texte": "Prime : Indemnité de sujétion spéciale",
+   "cle": "reglages-e39c2b"
+  },
+  {
+   "texte": "Prime : Nouvelle bonification indiciaire (NBI)",
+   "cle": "reglages-fb0b4c"
+  },
+  {
+   "texte": "Prime : Prime d'exercice en soins critiques",
+   "cle": "reglages-50f571"
+  },
+  {
+   "texte": "Prime : Prime de service",
+   "cle": "reglages-0c09ee"
+  },
+  {
+   "texte": "Prime : Supplément familial de traitement",
+   "cle": "reglages-36aa63"
+  },
+  {
+   "texte": "Période estivale (congés hors saison)",
+   "cle": "reglages-2c4701"
+  },
+  {
+   "texte": "RTT par an",
+   "cle": "reglages-b2ff92"
+  },
+  {
+   "texte": "Repos hebdomadaires attendus par an",
+   "cle": "reglages-6989ff"
+  },
+  {
+   "texte": "Règles de calcul",
+   "cle": "reglages-73bc8a"
+  },
+  {
+   "texte": "Règles légales utilisées pour les alertes.",
+   "cle": "reglages-6b6f61"
+  },
+  {
+   "texte": "Salaire et indemnités",
+   "cle": "reglages-8267a5"
+  },
+  {
+   "texte": "Servent aux estimations d'Outils › Mon salaire et aux calculateurs.",
+   "cle": "reglages-6724ec"
+  },
+  {
+   "texte": "Source : Accords du Ségur de la santé, juillet 2020",
+   "cle": "reglages-9e628b"
+  },
+  {
+   "texte": "Source : Autorisations spéciales d'absence, à confirmer au niveau local",
+   "cle": "reglages-603427"
+  },
+  {
+   "texte": "Source : Baremes › Grilles indiciaires",
+   "cle": "reglages-7cba1f"
+  },
+  {
+   "texte": "Source : Calcul du taux horaire des agents publics",
+   "cle": "reglages-d280a6"
+  },
+  {
+   "texte": "Source : Calendrier de paie de la fonction publique, à confirmer avec le service de paie du centre hospitalier",
+   "cle": "reglages-0a2fb9"
+  },
+  {
+   "texte": "Source : Décret n° 2002-8",
+   "cle": "reglages-303039"
+  },
+  {
+   "texte": "Source : Décret n° 2002-9, art. 6 et 7",
+   "cle": "reglages-6cd7f2"
+  },
+  {
+   "texte": "Source : Décret n° 2022-19 du 10 janvier 2022 et textes d'extension",
+   "cle": "reglages-efee14"
+  },
+  {
+   "texte": "Source : Décret n° 2023-519",
+   "cle": "reglages-cff555"
+  },
+  {
+   "texte": "Source : Protocole du centre hospitalier (à renseigner)",
+   "cle": "reglages-8ab8f4"
+  },
+  {
+   "texte": "Source : Réglementation des heures de nuit",
+   "cle": "reglages-3e0511"
+  },
+  {
+   "texte": "Source : Supplément familial de traitement",
+   "cle": "reglages-6f5113"
+  },
+  {
+   "texte": "Source : Textes sur la NBI dans la fonction publique hospitalière",
+   "cle": "reglages-5fbed3"
+  },
+  {
+   "texte": "Source : À renseigner (texte officiel et règle du centre hospitalier)",
+   "cle": "reglages-223d27"
+  },
+  {
+   "texte": "Source : À renseigner (texte officiel)",
+   "cle": "reglages-65a299"
+  },
+  {
+   "texte": "Source : À renseigner (zone du centre hospitalier)",
+   "cle": "reglages-3e15b7"
+  },
+  {
+   "texte": "Temps de travail et repos",
+   "cle": "reglages-5daa80"
+  },
+  {
+   "texte": "Téléphone",
+   "cle": "reglages-301dc8"
+  },
+  {
+   "texte": "Un code par horaire du planning. Les pauses non comptées sont à confirmer.",
+   "cle": "reglages-fd3593"
+  },
+  {
+   "texte": "Valeur d'une journée",
+   "cle": "reglages-772d5d"
+  },
+  {
+   "texte": "Valeur du point d'indice (mensuelle) (depuis le samedi 1 juillet 2023)",
+   "cle": "reglages-3c17be"
+  },
+  {
+   "texte": "Voici tous les chiffres que l'appli utilise. Compare-les au protocole du centre hospitalier et aux textes officiels. Une valeur marquée",
+   "cle": "reglages-0cd042"
+  },
+  {
+   "texte": "Vérifier les chiffres",
+   "cle": "reglages-bc039b"
+  },
+  {
+   "texte": "dernier jour ouvré − 2 jours · 2026-12 : 2026-12-22",
+   "cle": "reglages-a9827a"
+  },
+  {
+   "texte": "est encore à confirmer.",
+   "cle": "reglages-51c896"
+  },
+  {
+   "texte": "saisie par l'agent",
+   "cle": "reglages-44708c"
+  },
+  {
+   "texte": "validé",
+   "cle": "reglages-2d7b24"
+  },
+  {
+   "texte": "à valider",
+   "cle": "reglages-ea7ebf"
+  }
+ ]
+}

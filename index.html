@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mon Temps — ton temps de travail, compté par toi</title>
+<meta name="description" content="L'appli gratuite de la CGT pour suivre ton temps de travail à l'hôpital : planning, heures en plus, repos, preuves. Sans compte, sans collecte.">
+<meta name="theme-color" content="#E30613">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/favicon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preload" href="fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="accueil.css">
+</head>
+<body>
+<header class="barre">
+  <div class="enveloppe barre-in">
+    <a class="marque" href="./"><i aria-hidden="true" data-logo></i><span data-syndicat>CGT CH d'Albi</span></a>
+    <a class="btn-clair" href="app/">Ouvrir l'appli</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="enveloppe hero-in">
+      <div class="hero-texte">
+        <p class="sur-titre"><span data-nom>Mon Temps</span> · l'appli des agents</p>
+        <h1>Ton temps de travail, compté par&nbsp;toi.</h1>
+        <p class="chapo">Les heures en plus, les rappels sur repos, les plannings qui changent la veille : note-les en quelques secondes. L'appli fait les comptes et vérifie tes droits.</p>
+        <div class="actions">
+          <a class="btn-blanc" href="#installer">Installer sur mon téléphone</a>
+          <a class="btn-ligne" href="app/">Essayer tout de suite</a>
+        </div>
+        <ul class="garanties" aria-label="Garanties">
+          <li>Gratuite</li><li>Sans compte</li><li>Aucune donnée collectée</li>
+        </ul>
+      </div>
+      <div class="telephone" aria-hidden="true">
+        <div class="ecran">
+          <div class="t-haut"><span class="t-marque"><i></i>CGT</span></div>
+          <div class="t-titre">Novembre <span>2026</span></div>
+          <div class="t-stats"><div><small>Solde</small><b class="vert">+3h12</b></div><div><small>Saisis</small><b>11</b></div><div><small>Alertes</small><b>0</b></div></div>
+          <div class="t-grille" id="mini-grille"></div>
+          <div class="t-carte"><small>Aujourd'hui</small><div><b>M41</b><span>08:00 – 16:18</span></div></div>
+          <div class="t-nav"><span class="actif"></span><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc enveloppe" aria-labelledby="t-quoi">
+    <h2 id="t-quoi" class="titre-section">Trois choses que ton relevé officiel ne fait pas</h2>
+    <div class="trois">
+      <article>
+        <span class="num">01</span>
+        <h3>Tes heures, au quart d'heure près</h3>
+        <p>Tu recopies ton planning en deux gestes, puis tu notes seulement ce qui a changé. Ton solde se calcule tout seul, avec tes RTT, tes congés, tes dimanches et fériés.</p>
+      </article>
+      <article>
+        <span class="num">02</span>
+        <h3>Tes repos, vérifiés</h3>
+        <p>12 heures entre deux journées, 36 heures dans la semaine, 48 heures au maximum sur 7 jours : l'appli te prévient quand une règle du décret n'est pas respectée.</p>
+      </article>
+      <article>
+        <span class="num">03</span>
+        <h3>Des preuves, pas des souvenirs</h3>
+        <p>Rappelé·e sur un repos ? Planning changé la veille ? C'est daté et gardé. Le jour où ça ne colle pas, tu viens au syndicat avec des faits.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="sombre" aria-labelledby="t-donnees">
+    <div class="enveloppe deux">
+      <div>
+        <h2 id="t-donnees" class="titre-section">Tes données restent dans ta poche</h2>
+        <p class="chapo-sombre">Ni la direction, ni le syndicat, ni nous ne voyons ton planning. Il n'existe que sur ton téléphone.</p>
+      </div>
+      <ul class="points">
+        <li><b>Pas de compte</b><span>Ni identifiant, ni mot de passe à créer.</span></li>
+        <li><b>Pas de serveur</b><span>Rien n'est envoyé sur internet, jamais.</span></li>
+        <li><b>Pas de pistage</b><span>Ni statistiques, ni publicité, ni cookies.</span></li>
+        <li><b>Sauvegarde chiffrée</b><span>Un fichier protégé par ton mot de passe, que tu gardes où tu veux.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bloc enveloppe" id="installer" aria-labelledby="t-installer">
+    <h2 id="t-installer" class="titre-section">L'installer en une minute</h2>
+    <p class="intro">Elle s'installe depuis cette page, sans passer par un magasin d'applis, et marche ensuite même sans réseau.</p>
+    <div class="onglets" role="tablist" aria-label="Ton appareil">
+      <button role="tab" id="o-android" aria-controls="p-android" aria-selected="true">Android</button>
+      <button role="tab" id="o-iphone" aria-controls="p-iphone" aria-selected="false">iPhone</button>
+      <button role="tab" id="o-pc" aria-controls="p-pc" aria-selected="false">Ordinateur</button>
+    </div>
+    <div class="panneau" role="tabpanel" id="p-android" aria-labelledby="o-android">
+      <button class="btn-rouge" id="installer-direct" hidden>Installer l'appli</button>
+      <ol class="etapes">
+        <li><b>Ouvre cette page dans Chrome</b><span>Le navigateur habituel de la plupart des téléphones Android.</span></li>
+        <li><b>Touche les trois points ⋮ en haut à droite</b><span>Le menu du navigateur s'ouvre.</span></li>
+        <li><b>Choisis « Installer l'application »</b><span>Ou « Ajouter à l'écran d'accueil », selon ton téléphone.</span></li>
+        <li><b>Confirme</b><span>L'icône rouge apparaît avec tes autres applis.</span></li>
+      </ol>
+    </div>
+    <div class="panneau" role="tabpanel" id="p-iphone" aria-labelledby="o-iphone" hidden>
+      <ol class="etapes">
+        <li><b>Ouvre cette page dans Safari</b><span>Pas dans Chrome : sur iPhone, seul Safari sait installer.</span></li>
+        <li><b>Touche le bouton Partager</b><span>Le carré avec une flèche vers le haut, en bas de l'écran.</span></li>
+        <li><b>Fais défiler, choisis « Sur l'écran d'accueil »</b><span>Puis touche « Ajouter » en haut à droite.</span></li>
+        <li><b>Ouvre l'appli depuis son icône</b><span>Important sur iPhone : c'est ce qui protège tes données.</span></li>
+      </ol>
+    </div>
+    <div class="panneau" role="tabpanel" id="p-pc" aria-labelledby="o-pc" hidden>
+      <ol class="etapes">
+        <li><b>Ouvre cette page dans Chrome ou Edge</b><span>Firefox ne sait pas installer d'applis web.</span></li>
+        <li><b>Clique sur l'icône d'installation</b><span>Un petit écran avec une flèche, à droite de la barre d'adresse.</span></li>
+        <li><b>Confirme « Installer »</b><span>L'appli s'ouvre dans sa propre fenêtre.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="bloc enveloppe aide" aria-labelledby="t-aide">
+    <div>
+      <h2 id="t-aide" class="titre-section">Pas à l'aise avec le téléphone ?</h2>
+      <p class="intro">Au premier lancement, une visite guidée te montre tout, pas à pas, avec un faux planning. Tu touches, tu essaies, rien ne s'abîme. Tu peux la relancer quand tu veux.</p>
+    </div>
+    <a class="btn-rouge" href="app/">Lancer la visite guidée</a>
+  </section>
+
+  <section class="bloc enveloppe" id="actus-accueil" aria-labelledby="t-actus" hidden>
+    <h2 id="t-actus" class="titre-section">Les dernières infos</h2>
+    <div class="actus-accueil" id="liste-actus"></div>
+  </section>
+
+  <section class="bloc enveloppe" aria-labelledby="t-faq">
+    <h2 id="t-faq" class="titre-section">Questions fréquentes</h2>
+    <div class="faq">
+      <details><summary>C'est vraiment gratuit ?</summary><p>Oui, et sans publicité. L'appli est réalisée bénévolement pour les agents.</p></details>
+      <details><summary>Mon cadre ou la direction peuvent-ils voir mon planning ?</summary><p>Non. Tes saisies restent dans ton téléphone. Personne d'autre n'y a accès, pas même le syndicat.</p></details>
+      <details><summary>Faut-il être syndiqué·e ?</summary><p>Non. L'appli est ouverte à tous les agents.</p></details>
+      <details><summary>Et si je change de téléphone ?</summary><p>Fais une sauvegarde depuis l'appli (Réglages › Sauvegarde) : tu obtiens un fichier protégé par ton mot de passe. Sur le nouveau téléphone, tu le restaures en deux gestes.</p></details>
+      <details><summary>Le solde affiché a-t-il une valeur officielle ?</summary><p>Non : c'est ton propre décompte, établi à partir de tes saisies. Il sert à vérifier ton relevé officiel et à repérer les écarts. En cas de doute, viens en parler.</p></details>
+      <details><summary>Mes données sont-elles en sécurité ?</summary><p>Elles ne quittent jamais ton appareil. Les sauvegardes sont chiffrées : sans ton mot de passe, le fichier est illisible.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer class="pied">
+  <div class="enveloppe pied-in">
+    <div><p class="marque"><i aria-hidden="true"></i><span data-syndicat>CGT CH d'Albi</span></p><p id="contact-pied"></p><div class="reseaux-pied" id="reseaux-pied"></div></div>
+    <div class="liens"><a href="app/#/confidentialite">Confidentialité</a><a href="mentions-legales.html">Mentions légales</a><a id="lien-source" href="https://github.com/">Code source</a></div>
+  </div>
+</footer>
+<script type="module" src="accueil.js"></script>
+<script src="textes.js" defer></script>
+</body>
+</html>

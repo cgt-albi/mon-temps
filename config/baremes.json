@@ -1,0 +1,55 @@
+{
+  "pointIndice": [
+    {
+      "date": "2022-07-01",
+      "valeur": 4.85003,
+      "statut": "officiel",
+      "source": "Décret n° 2022-994"
+    },
+    {
+      "date": "2023-07-01",
+      "valeur": 4.92278,
+      "statut": "officiel",
+      "source": "Décret n° 2023-519"
+    }
+  ],
+  "indiceMinimum": [
+    {
+      "date": "2024-01-01",
+      "indice": 366,
+      "statut": "officiel",
+      "source": "Minimum de traitement dans la fonction publique"
+    },
+    {
+      "date": "2027-01-01",
+      "indice": 372,
+      "statut": "annonce",
+      "source": "Proposition du gouvernement du 2 octobre 2026, à confirmer"
+    }
+  ],
+  "smic": [
+    {
+      "date": "2026-01-01",
+      "horaire": 12.02,
+      "statut": "officiel",
+      "source": "Décret n° 2025-1228"
+    },
+    {
+      "date": "2026-06-01",
+      "horaire": 12.31,
+      "mensuel": 1867.02,
+      "statut": "officiel",
+      "source": "Arrêté du 22 mai 2026"
+    },
+    {
+      "date": "2026-12-01",
+      "horaire": 12.5,
+      "statut": "annonce",
+      "source": "Annonce du gouvernement du 9 novembre 2026 (+1,6 %), montant exact à confirmer au décret"
+    }
+  ],
+  "grilles": [],
+  "aValider": [
+    "grilles"
+  ]
+}

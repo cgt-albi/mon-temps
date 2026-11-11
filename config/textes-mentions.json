@@ -1,0 +1,48 @@
+{
+ "textes": [
+  {
+   "texte": "Avertissement",
+   "cle": "mentions-b1ddfc"
+  },
+  {
+   "texte": "Code source et licence",
+   "cle": "mentions-d2e3cb"
+  },
+  {
+   "texte": "Données personnelles",
+   "cle": "mentions-3b205c"
+  },
+  {
+   "texte": "GitHub Pages — GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.",
+   "cle": "mentions-7f72df"
+  },
+  {
+   "texte": "Hébergement",
+   "cle": "mentions-efe158"
+  },
+  {
+   "texte": "L'application ne collecte aucune donnée personnelle. Toutes les informations saisies restent enregistrées sur l'appareil de l'utilisateur, qui peut les effacer à tout moment depuis les réglages. Aucun cookie, aucune mesure d'audience, aucun service tiers n'est utilisé. Comme tout hébergeur, GitHub peut conserver temporairement l'adresse IP des visiteurs pour des raisons de sécurité.",
+   "cle": "mentions-af9918"
+  },
+  {
+   "texte": "Le code source est public et publié sous licence libre (voir le fichier LICENCE du dépôt). Police de caractères Archivo sous licence SIL Open Font License 1.1.",
+   "cle": "mentions-505960"
+  },
+  {
+   "texte": "Les calculs sont réalisés à partir des saisies de l'utilisateur et des règles en vigueur connues. Ils ont une valeur indicative et ne remplacent pas le relevé officiel de l'établissement.",
+   "cle": "mentions-933394"
+  },
+  {
+   "texte": "Les messages préparés par l'application (déclaration de grève, signalement, courriers) s'ouvrent dans la messagerie personnelle de l'utilisateur, qui décide seul de leur envoi.",
+   "cle": "mentions-111a5f"
+  },
+  {
+   "texte": "Syndicat CGT CH d'Albi.",
+   "cle": "mentions-1b6a78"
+  },
+  {
+   "texte": "Éditeur",
+   "cle": "mentions-eb7b6c"
+  }
+ ]
+}

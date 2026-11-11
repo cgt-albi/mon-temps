@@ -1,0 +1,256 @@
+{
+ "textes": [
+  {
+   "texte": "14 modèles : heures, planning, temps partiel, alerte…",
+   "cle": "syndicat-fe4438"
+  },
+  {
+   "texte": "Agir",
+   "cle": "syndicat-657ccf"
+  },
+  {
+   "texte": "Amiante, produits chimiques, agents biologiques",
+   "cle": "syndicat-b57978"
+  },
+  {
+   "texte": "Ces messages partent de ta propre messagerie, directement aux délégué·es. L'appli ne garde rien.",
+   "cle": "syndicat-2cdf2f"
+  },
+  {
+   "texte": "Confidentiel",
+   "cle": "syndicat-bc216d"
+  },
+  {
+   "texte": "De la hiérarchie, de collègues, de patients",
+   "cle": "syndicat-d3c176"
+  },
+  {
+   "texte": "Et demander un rendez-vous",
+   "cle": "syndicat-590bc4"
+  },
+  {
+   "texte": "Les coordonnées du syndicat seront ajoutées très bientôt.",
+   "cle": "syndicat-95c1c2"
+  },
+  {
+   "texte": "Préparer un courrier",
+   "cle": "syndicat-e8c821"
+  },
+  {
+   "texte": "Signaler une discrimination",
+   "cle": "syndicat-a47496"
+  },
+  {
+   "texte": "Signaler une exposition",
+   "cle": "syndicat-8adb43"
+  },
+  {
+   "texte": "Signaler une violence",
+   "cle": "syndicat-83d023"
+  },
+  {
+   "texte": "Comment ça se passe au CH d'Albi",
+   "cle": "syndicat-7ba4c3"
+  },
+  {
+   "texte": "J'ai voté",
+   "cle": "syndicat-7eb3b4"
+  },
+  {
+   "texte": "Mode d'emploi",
+   "cle": "syndicat-f8848f"
+  },
+  {
+   "texte": "Seulement pour toi : ça reste sur ton téléphone",
+   "cle": "syndicat-bfac7c"
+  },
+  {
+   "texte": "Site officiel",
+   "cle": "syndicat-e4fbb6"
+  },
+  {
+   "texte": "jeudi 10 décembre 2026",
+   "cle": "syndicat-8cf213"
+  },
+  {
+   "texte": "48 heures au maximum",
+   "cle": "syndicat-563661"
+  },
+  {
+   "texte": "Au moins 12 heures de repos consécutives entre deux journées de travail. Ce minimum peut être abaissé à 11 heures seulement par décision du chef d'établissement, après un accord collectif.",
+   "cle": "syndicat-bfa6d1"
+  },
+  {
+   "texte": "Au moins 36 heures de repos consécutives chaque semaine. Et sur deux semaines : 4 jours de repos, dont au moins 2 qui se suivent, dont un dimanche.",
+   "cle": "syndicat-140fc6"
+  },
+  {
+   "texte": "Durée d'une journée",
+   "cle": "syndicat-f35d8a"
+  },
+  {
+   "texte": "Dès que tu travailles plus de 6 heures d'affilée, tu as droit à une pause de 20 minutes.",
+   "cle": "syndicat-703baa"
+  },
+  {
+   "texte": "Décret 2002-9, art. 6",
+   "cle": "syndicat-032ec4"
+  },
+  {
+   "texte": "Décret 2002-9, art. 7",
+   "cle": "syndicat-cc9331"
+  },
+  {
+   "texte": "En travail continu : 9 heures au plus pour une équipe de jour, 10 heures pour une équipe de nuit. Une dérogation est possible quand la continuité du service l'exige, mais la journée ne peut jamais s'étendre sur plus de 12 heures.",
+   "cle": "syndicat-5b2598"
+  },
+  {
+   "texte": "La pause",
+   "cle": "syndicat-19fc8d"
+  },
+  {
+   "texte": "Les accords propres au CH d'Albi peuvent préciser ces règles. En cas de doute, parles-en au syndicat.",
+   "cle": "syndicat-135386"
+  },
+  {
+   "texte": "Les règles de base du temps de travail à l'hôpital public, en clair. Chaque fiche renvoie au texte officiel.",
+   "cle": "syndicat-9fda51"
+  },
+  {
+   "texte": "Repos de la semaine",
+   "cle": "syndicat-ad6380"
+  },
+  {
+   "texte": "Repos entre deux journées",
+   "cle": "syndicat-ae1e49"
+  },
+  {
+   "texte": "Si ta journée est coupée en deux, elle ne peut pas s'étaler sur plus de 10 h 30 du début à la fin, et chacune des deux parties dure au moins 3 heures.",
+   "cle": "syndicat-cac0ee"
+  },
+  {
+   "texte": "Sur n'importe quelle période de 7 jours, le travail effectif ne peut pas dépasser 48 heures, heures supplémentaires comprises.",
+   "cle": "syndicat-c91aac"
+  },
+  {
+   "texte": "Coordonnées bientôt disponibles",
+   "cle": "syndicat-f65265"
+  },
+  {
+   "texte": "Le numéro de la permanence et l'adresse mail seront ajoutés ici très prochainement.",
+   "cle": "syndicat-075797"
+  },
+  {
+   "texte": "Nous contacter",
+   "cle": "syndicat-c55230"
+  },
+  {
+   "texte": "Un problème grave à signaler ?",
+   "cle": "syndicat-eb3488"
+  },
+  {
+   "texte": "Une question sur ton planning, tes droits, ta paie ? Un problème dans ton service ? CGT CH d'Albi te répond, que tu sois syndiqué·e ou non.",
+   "cle": "syndicat-3a7f67"
+  },
+  {
+   "texte": "Violence, discrimination, exposition : en toute confidentialité",
+   "cle": "syndicat-5e3208"
+  },
+  {
+   "texte": "Ajoute les journées et les preuves au fil de l'eau : plus c'est précis, plus le dossier pèse.",
+   "cle": "syndicat-aa3d70"
+  },
+  {
+   "texte": "Changements de planning",
+   "cle": "syndicat-3b75a2"
+  },
+  {
+   "texte": "Rappels sur repos",
+   "cle": "syndicat-6c9e56"
+  },
+  {
+   "texte": "Rien à signaler sur cette période.",
+   "cle": "syndicat-bf67ba"
+  },
+  {
+   "texte": "Solde de la période",
+   "cle": "syndicat-8697ce"
+  },
+  {
+   "texte": "T · CH d'Albi · quotité 100 %",
+   "cle": "syndicat-d97d55"
+  },
+  {
+   "texte": "Un document unique avec ton bilan, les alertes, les rappels, les changements de planning et les dépassements de la période. Tu l'enregistres en PDF et tu l'envoies toi-même.",
+   "cle": "syndicat-62f6e7"
+  },
+  {
+   "texte": "Un mois",
+   "cle": "syndicat-26f12d"
+  },
+  {
+   "texte": "Une année",
+   "cle": "syndicat-ef6d5a"
+  },
+  {
+   "texte": "Écrire au syndicat",
+   "cle": "syndicat-1c2da8"
+  },
+  {
+   "texte": "Adresse mail de ton cadre",
+   "cle": "syndicat-9dc193"
+  },
+  {
+   "texte": "Ajouter un jour",
+   "cle": "syndicat-b1eece"
+  },
+  {
+   "texte": "Date 1",
+   "cle": "syndicat-171167"
+  },
+  {
+   "texte": "Faire grève est un droit. Prévenir de ton intention aide à organiser la continuité des soins ; tu restes libre de changer d'avis le jour même.",
+   "cle": "syndicat-54c680"
+  },
+  {
+   "texte": "Jour(s) de grève",
+   "cle": "syndicat-303f4e"
+  },
+  {
+   "texte": "Le mail s'ouvre dans ta messagerie : relis-le avant d'envoyer.",
+   "cle": "syndicat-319ea5"
+  },
+  {
+   "texte": "Nom et prénom",
+   "cle": "syndicat-46eb4b"
+  },
+  {
+   "texte": "Préparer le mail",
+   "cle": "syndicat-24223a"
+  },
+  {
+   "texte": "Service",
+   "cle": "syndicat-c2ba7e"
+  },
+  {
+   "texte": "Ajouter une période",
+   "cle": "syndicat-1ce2c6"
+  },
+  {
+   "texte": "Commentaire",
+   "cle": "syndicat-721a8d"
+  },
+  {
+   "texte": "Désiderata",
+   "cle": "syndicat-f37537"
+  },
+  {
+   "texte": "Nature",
+   "cle": "syndicat-d212ce"
+  },
+  {
+   "texte": "Note tes souhaits de congés ; l'appli les met en forme pour ton cadre.",
+   "cle": "syndicat-0b147b"
+  }
+ ]
+}

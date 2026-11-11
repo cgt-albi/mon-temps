@@ -1,0 +1,115 @@
+[
+  {
+    "code": "M41",
+    "libelle": "Matin 41",
+    "type": "travail",
+    "debut": "08:00",
+    "fin": "16:18",
+    "pauseMin": 30
+  },
+  {
+    "code": "M52",
+    "libelle": "Matin 52",
+    "type": "travail",
+    "debut": "08:42",
+    "fin": "17:00",
+    "pauseMin": 30
+  },
+  {
+    "code": "J38",
+    "libelle": "Journée 38",
+    "type": "travail",
+    "debut": "09:42",
+    "fin": "18:00",
+    "pauseMin": 30
+  },
+  {
+    "code": "RH",
+    "libelle": "Repos hebdomadaire",
+    "type": "repos"
+  },
+  {
+    "code": "RF",
+    "libelle": "Repos férié",
+    "type": "repos"
+  },
+  {
+    "code": "RTT",
+    "libelle": "Réduction du temps de travail",
+    "type": "rtt"
+  },
+  {
+    "code": "CA",
+    "libelle": "Congé annuel",
+    "type": "conge",
+    "compteCA": true
+  },
+  {
+    "code": "CAF",
+    "libelle": "Congé annuel fractionné",
+    "type": "conge",
+    "compteCA": true
+  },
+  {
+    "code": "CH",
+    "libelle": "Congé d'hiver",
+    "type": "conge",
+    "compteCA": true
+  },
+  {
+    "code": "CF-1",
+    "libelle": "Congé de fractionnement",
+    "type": "conge"
+  },
+  {
+    "code": "HS",
+    "libelle": "Congé hors saison",
+    "type": "conge"
+  },
+  {
+    "code": "REC",
+    "libelle": "Récupération d'heures",
+    "type": "recup"
+  },
+  {
+    "code": "CET",
+    "libelle": "Jour pris sur le CET",
+    "type": "cet"
+  },
+  {
+    "code": "TPPO",
+    "libelle": "Temps partiel",
+    "type": "repos"
+  },
+  {
+    "code": "GE",
+    "libelle": "Garde d'enfant malade",
+    "type": "assimile",
+    "compte": "ge"
+  },
+  {
+    "code": "MAL",
+    "libelle": "Maladie",
+    "type": "assimile"
+  },
+  {
+    "code": "AT",
+    "libelle": "Accident du travail",
+    "type": "assimile"
+  },
+  {
+    "code": "FOR",
+    "libelle": "Formation",
+    "type": "assimile"
+  },
+  {
+    "code": "SYN",
+    "libelle": "Activité syndicale",
+    "type": "assimile"
+  },
+  {
+    "code": "GRE",
+    "libelle": "Grève",
+    "type": "greve"
+  }
+]

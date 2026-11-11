@@ -1,0 +1,240 @@
+{
+ "textes": [
+  {
+   "texte": "Choisir…",
+   "cle": "bienvenue-visite-dc80b6"
+  },
+  {
+   "texte": "Commencer",
+   "cle": "bienvenue-visite-62c3f6"
+  },
+  {
+   "texte": "Continuer",
+   "cle": "bienvenue-visite-83d7c4"
+  },
+  {
+   "texte": "Et depuis janvier ?",
+   "cle": "bienvenue-visite-87f664"
+  },
+  {
+   "texte": "J'ai une sauvegarde",
+   "cle": "bienvenue-visite-409208"
+  },
+  {
+   "texte": "Je change de téléphone",
+   "cle": "bienvenue-visite-afa3d9"
+  },
+  {
+   "texte": "Je commence aujourd'hui, sans historique",
+   "cle": "bienvenue-visite-ffdd75"
+  },
+  {
+   "texte": "Je recopie mon dernier relevé (2 min)",
+   "cle": "bienvenue-visite-d50d21"
+  },
+  {
+   "texte": "Je saisirai tout depuis le 1ᵉʳ janvier",
+   "cle": "bienvenue-visite-fcec49"
+  },
+  {
+   "texte": "Le relevé, c'est ton compteur d'heures sur Octime ou sur papier. Tu pourras le recopier plus tard dans Compteurs › Point de départ.",
+   "cle": "bienvenue-visite-69e972"
+  },
+  {
+   "texte": "Les heures en plus, les rappels, les changements.",
+   "cle": "bienvenue-visite-8b8052"
+  },
+  {
+   "texte": "Métier",
+   "cle": "bienvenue-visite-2e6bd3"
+  },
+  {
+   "texte": "Pas de compte, pas de serveur, aucune collecte.",
+   "cle": "bienvenue-visite-eab3fc"
+  },
+  {
+   "texte": "Pour calculer ce que tu dois. Tout reste modifiable dans les réglages.",
+   "cle": "bienvenue-visite-8502cf"
+  },
+  {
+   "texte": "Prénom (facultatif)",
+   "cle": "bienvenue-visite-76e9d4"
+  },
+  {
+   "texte": "Rien ne sort de ton téléphone",
+   "cle": "bienvenue-visite-9d5326"
+  },
+  {
+   "texte": "Solde d'heures, RTT, congés, dimanches et fériés.",
+   "cle": "bienvenue-visite-eba34a"
+  },
+  {
+   "texte": "Temps partiel 50 %",
+   "cle": "bienvenue-visite-785306"
+  },
+  {
+   "texte": "Temps partiel 60 %",
+   "cle": "bienvenue-visite-66558f"
+  },
+  {
+   "texte": "Temps partiel 70 %",
+   "cle": "bienvenue-visite-dea1d3"
+  },
+  {
+   "texte": "Temps partiel 80 %",
+   "cle": "bienvenue-visite-324b87"
+  },
+  {
+   "texte": "Temps partiel 90 %",
+   "cle": "bienvenue-visite-cfbadf"
+  },
+  {
+   "texte": "Temps plein (100 %)",
+   "cle": "bienvenue-visite-c0b580"
+  },
+  {
+   "texte": "Tes compteurs à jour",
+   "cle": "bienvenue-visite-88228c"
+  },
+  {
+   "texte": "Ton planning, réellement fait",
+   "cle": "bienvenue-visite-e523a2"
+  },
+  {
+   "texte": "Ton poste",
+   "cle": "bienvenue-visite-3ad37f"
+  },
+  {
+   "texte": "Tu installes l'appli en cours d'année : ton solde d'heures, tes RTT et tes congés ont déjà bougé. Pour des compteurs justes, l'appli doit partir du bon point.",
+   "cle": "bienvenue-visite-90f755"
+  },
+  {
+   "texte": "Étape 1 sur 3",
+   "cle": "bienvenue-visite-ed8aa8"
+  },
+  {
+   "texte": "Étape 2 sur 3",
+   "cle": "bienvenue-visite-9ac985"
+  },
+  {
+   "texte": "Ton mois en un coup d'œil",
+   "cle": "bienvenue-visite-fc9d3f"
+  },
+  {
+   "texte": "Chaque case porte le code du planning de l'hôpital. Case pleine : la journée est faite. Pointillés : elle est encore prévue.",
+   "cle": "bienvenue-visite-634fe4"
+  },
+  {
+   "texte": "Noter ta journée",
+   "cle": "bienvenue-visite-bde11f"
+  },
+  {
+   "texte": "Touche la case d'aujourd'hui, encadrée en rouge.",
+   "cle": "bienvenue-visite-57b277"
+  },
+  {
+   "texte": "Ce que tu as vraiment fait",
+   "cle": "bienvenue-visite-296bcb"
+  },
+  {
+   "texte": "Le prévu est déjà connu. Si la journée a changé, choisis le bon code. Sinon, laisse tel quel.",
+   "cle": "bienvenue-visite-d74626"
+  },
+  {
+   "texte": "Partie plus tard ?",
+   "cle": "bienvenue-visite-0346b2"
+  },
+  {
+   "texte": "Touche « + » pour ajouter les minutes en plus. Même un quart d'heure compte.",
+   "cle": "bienvenue-visite-d98750"
+  },
+  {
+   "texte": "Et voilà",
+   "cle": "bienvenue-visite-32514f"
+  },
+  {
+   "texte": "Touche « Enregistrer la journée ». C'est tout, chaque jour : quelques secondes.",
+   "cle": "bienvenue-visite-83dd8c"
+  },
+  {
+   "texte": "Recopier le planning du mois",
+   "cle": "bienvenue-visite-019f6f"
+  },
+  {
+   "texte": "Quand le planning du mois sort, ce bouton te permet de le recopier en quelques gestes : un code, puis tous les jours concernés.",
+   "cle": "bienvenue-visite-b5390f"
+  },
+  {
+   "texte": "Tes compteurs",
+   "cle": "bienvenue-visite-8f92f8"
+  },
+  {
+   "texte": "Touche « Compteurs » en bas de l'écran.",
+   "cle": "bienvenue-visite-4a7817"
+  },
+  {
+   "texte": "Ton solde d'heures",
+   "cle": "bienvenue-visite-f6d0c3"
+  },
+  {
+   "texte": "Ce que tu as fait, moins ce que tu dois. Une barre par mois : au-dessus, des heures en plus ; en dessous, des heures en moins.",
+   "cle": "bienvenue-visite-9b2dd5"
+  },
+  {
+   "texte": "Tes droits, vérifiés",
+   "cle": "bienvenue-visite-fbf35c"
+  },
+  {
+   "texte": "L'appli contrôle les repos et les durées prévus par le décret. Une ligne rouge : une règle n'a pas été respectée. Un point rouge apparaît aussi sur le jour, dans le planning.",
+   "cle": "bienvenue-visite-44f0aa"
+  },
+  {
+   "texte": "Mes preuves",
+   "cle": "bienvenue-visite-d1dc75"
+  },
+  {
+   "texte": "Touche « Mes preuves ».",
+   "cle": "bienvenue-visite-c1f633"
+  },
+  {
+   "texte": "Garder une trace",
+   "cle": "bienvenue-visite-2e7b72"
+  },
+  {
+   "texte": "Rappels sur repos, changements de dernière minute, dépassements : tout est daté. Tu peux tout envoyer au syndicat d'un geste.",
+   "cle": "bienvenue-visite-4389f4"
+  },
+  {
+   "texte": "Retour au planning",
+   "cle": "bienvenue-visite-24cd1b"
+  },
+  {
+   "texte": "Touche « Planning ».",
+   "cle": "bienvenue-visite-03ce71"
+  },
+  {
+   "texte": "Le bouclier : ta sauvegarde",
+   "cle": "bienvenue-visite-079ef9"
+  },
+  {
+   "texte": "Tes données ne sont que sur ce téléphone. Vert : la sauvegarde est récente. Orange : pense à en refaire une. Une fois par mois suffit.",
+   "cle": "bienvenue-visite-bc7781"
+  },
+  {
+   "texte": "Tes réglages",
+   "cle": "bienvenue-visite-1837cf"
+  },
+  {
+   "texte": "Le bouton « Aa » change tout de suite le thème (clair ou sombre) et la taille du texte. L'engrenage ouvre tous les réglages : ton poste, tes horaires, l'affichage.",
+   "cle": "bienvenue-visite-4c428a"
+  },
+  {
+   "texte": "C'est parti",
+   "cle": "bienvenue-visite-ab46a5"
+  },
+  {
+   "texte": "Fin de la visite. On quitte le mode essai : ton vrai planning, vide, t'attend. Commence par « Remplir plusieurs jours d'un coup ».",
+   "cle": "bienvenue-visite-06576c"
+  }
+ ]
+}

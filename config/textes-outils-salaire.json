@@ -1,0 +1,432 @@
+{
+ "textes": [
+  {
+   "texte": "80 % payé 85,7 %, 90 % payé 91,4 %",
+   "cle": "outils-salaire-fa6536"
+  },
+  {
+   "texte": "Arrêt maladie : ce que je perds",
+   "cle": "outils-salaire-84c1ac"
+  },
+  {
+   "texte": "Bilan, alertes, rappels : un PDF prêt à envoyer",
+   "cle": "outils-salaire-655b05"
+  },
+  {
+   "texte": "Ce que valent mes heures en plus",
+   "cle": "outils-salaire-d3a4c3"
+  },
+  {
+   "texte": "Contacter le syndicat",
+   "cle": "outils-salaire-9f310b"
+  },
+  {
+   "texte": "Dossier pour le syndicat",
+   "cle": "outils-salaire-b32494"
+  },
+  {
+   "texte": "Déclarer mon intention de grève",
+   "cle": "outils-salaire-915a7d"
+  },
+  {
+   "texte": "Démarches",
+   "cle": "outils-salaire-25faf2"
+  },
+  {
+   "texte": "Désiderata de congés",
+   "cle": "outils-salaire-fd2414"
+  },
+  {
+   "texte": "Essayer des dates de congés avant de les demander",
+   "cle": "outils-salaire-61a3bd"
+  },
+  {
+   "texte": "Et si je pose… ?",
+   "cle": "outils-salaire-e067a8"
+  },
+  {
+   "texte": "Grève : la retenue",
+   "cle": "outils-salaire-30b031"
+  },
+  {
+   "texte": "Jour de carence et traitement à 90 %",
+   "cle": "outils-salaire-0acbe7"
+  },
+  {
+   "texte": "Le mail à ton cadre, prêt à partir",
+   "cle": "outils-salaire-4fed1a"
+  },
+  {
+   "texte": "Les indemnités pour une garde",
+   "cle": "outils-salaire-ae842d"
+  },
+  {
+   "texte": "Mes droits",
+   "cle": "outils-salaire-afda30"
+  },
+  {
+   "texte": "Modèles de courriers",
+   "cle": "outils-salaire-f822d6"
+  },
+  {
+   "texte": "Mon relevé annuel",
+   "cle": "outils-salaire-48b885"
+  },
+  {
+   "texte": "Mon salaire",
+   "cle": "outils-salaire-ebbe44"
+  },
+  {
+   "texte": "Nuit, dimanche, férié",
+   "cle": "outils-salaire-a9a2b0"
+  },
+  {
+   "texte": "Pour une heure, une demi-journée, un jour",
+   "cle": "outils-salaire-cdfbe5"
+  },
+  {
+   "texte": "Récupération, temps partiel, relevé d'heures, alerte…",
+   "cle": "outils-salaire-607525"
+  },
+  {
+   "texte": "Salaire",
+   "cle": "outils-salaire-21a1da"
+  },
+  {
+   "texte": "Temps de travail et repos, en clair",
+   "cle": "outils-salaire-757e5a"
+  },
+  {
+   "texte": "Temps partiel : ce que je touche",
+   "cle": "outils-salaire-010c81"
+  },
+  {
+   "texte": "Tes dates, mises en forme pour ton cadre",
+   "cle": "outils-salaire-eedcbb"
+  },
+  {
+   "texte": "Traitement, taux horaire, ce que mes saisies doivent rapporter",
+   "cle": "outils-salaire-2a3a47"
+  },
+  {
+   "texte": "À imprimer ou à enregistrer en PDF",
+   "cle": "outils-salaire-cc3837"
+  },
+  {
+   "texte": "Ajouter cette prime",
+   "cle": "outils-salaire-472b79"
+  },
+  {
+   "texte": "Aucune prime cochée pour l'instant.",
+   "cle": "outils-salaire-7c931c"
+  },
+  {
+   "texte": "Autre prime (nom)",
+   "cle": "outils-salaire-c13ce9"
+  },
+  {
+   "texte": "Ce que mes saisies doivent rapporter",
+   "cle": "outils-salaire-693646"
+  },
+  {
+   "texte": "Coche celles qui figurent sur ta fiche de paie : l'estimation s'ajuste. Si ton montant diffère, saisis-le : il remplace le calcul automatique.",
+   "cle": "outils-salaire-297e02"
+  },
+  {
+   "texte": "Dimanches et fériés · 0h00",
+   "cle": "outils-salaire-3e60b3"
+  },
+  {
+   "texte": "Dépassements comptés comme s'ils étaient payés (et non récupérés), au coefficient 1,25.",
+   "cle": "outils-salaire-634494"
+  },
+  {
+   "texte": "Dépassements · 0h00",
+   "cle": "outils-salaire-363895"
+  },
+  {
+   "texte": "Heures de nuit · 0h00",
+   "cle": "outils-salaire-23ffaa"
+  },
+  {
+   "texte": "Indice majoré",
+   "cle": "outils-salaire-527269"
+  },
+  {
+   "texte": "L'indice majoré est écrit en haut de ta fiche de paie (« IM » ou « indice »). Il dépend de ton grade et de ton échelon.",
+   "cle": "outils-salaire-414a8b"
+  },
+  {
+   "texte": "Mes primes",
+   "cle": "outils-salaire-4b9fd9"
+  },
+  {
+   "texte": "Mon traitement de base",
+   "cle": "outils-salaire-6b242c"
+  },
+  {
+   "texte": "Montant mensuel brut (€)",
+   "cle": "outils-salaire-df77b4"
+  },
+  {
+   "texte": "Quotité",
+   "cle": "outils-salaire-360f78"
+  },
+  {
+   "texte": "Renseigne ton indice pour voir ton traitement.",
+   "cle": "outils-salaire-855eba"
+  },
+  {
+   "texte": "Total attendu en plus du traitement",
+   "cle": "outils-salaire-343dd9"
+  },
+  {
+   "texte": "À comparer avec ta fiche de paie. Ces éléments sont souvent versés avec un ou deux mois de décalage.",
+   "cle": "outils-salaire-b77fde"
+  },
+  {
+   "texte": "1 heure",
+   "cle": "outils-salaire-2eafa6"
+  },
+  {
+   "texte": "2 heures",
+   "cle": "outils-salaire-c16dfd"
+  },
+  {
+   "texte": "Arrêt maladie",
+   "cle": "outils-salaire-2ad411"
+  },
+  {
+   "texte": "Durée de l'arrêt (jours, week-ends compris)",
+   "cle": "outils-salaire-5ea20b"
+  },
+  {
+   "texte": "Durée de la grève",
+   "cle": "outils-salaire-9565fc"
+  },
+  {
+   "texte": "En congé de maladie ordinaire, le premier jour n'est pas payé (jour de carence). Ensuite, le traitement est versé à 90 % pendant les trois premiers mois, puis à moitié.",
+   "cle": "outils-salaire-dd9a4b"
+  },
+  {
+   "texte": "En journée",
+   "cle": "outils-salaire-68cbc3"
+  },
+  {
+   "texte": "Estimation en brut, pour t'aider à vérifier. Seule ta fiche de paie fait foi.",
+   "cle": "outils-salaire-8ba11b"
+  },
+  {
+   "texte": "Heures de nuit (21 h – 6 h)",
+   "cle": "outils-salaire-8bc7d7"
+  },
+  {
+   "texte": "Heures supplémentaires dans le mois",
+   "cle": "outils-salaire-ab32f9"
+  },
+  {
+   "texte": "Heures un dimanche ou un férié",
+   "cle": "outils-salaire-28a3c2"
+  },
+  {
+   "texte": "Indemnité dimanche et férié · 60 € pour 8 h",
+   "cle": "outils-salaire-b39572"
+  },
+  {
+   "texte": "La nuit",
+   "cle": "outils-salaire-89ef1e"
+  },
+  {
+   "texte": "Les heures de nuit sont majorées d'un quart du taux horaire. Le dimanche et les jours fériés, une indemnité forfaitaire s'ajoute, au prorata des heures faites.",
+   "cle": "outils-salaire-243fec"
+  },
+  {
+   "texte": "Moment",
+   "cle": "outils-salaire-9cbb6f"
+  },
+  {
+   "texte": "Nombre de fois",
+   "cle": "outils-salaire-f602b3"
+  },
+  {
+   "texte": "Pas de jour de carence",
+   "cle": "outils-salaire-167b4a"
+  },
+  {
+   "texte": "Primes mensuelles (€, facultatif)",
+   "cle": "outils-salaire-27d790"
+  },
+  {
+   "texte": "Prolongation, accident de travail, affection de longue durée, grossesse…",
+   "cle": "outils-salaire-a93d11"
+  },
+  {
+   "texte": "Renseigne ton traitement et la durée de l'arrêt.",
+   "cle": "outils-salaire-59caab"
+  },
+  {
+   "texte": "Renseigne ton traitement et le nombre d'heures.",
+   "cle": "outils-salaire-5d2e55"
+  },
+  {
+   "texte": "Renseigne ton traitement pour la majoration de nuit.",
+   "cle": "outils-salaire-e4a183"
+  },
+  {
+   "texte": "Renseigne ton traitement à temps plein.",
+   "cle": "outils-salaire-a2b4e8"
+  },
+  {
+   "texte": "Renseigne ton traitement.",
+   "cle": "outils-salaire-4e083e"
+  },
+  {
+   "texte": "Retenue pour grève",
+   "cle": "outils-salaire-fdb7d7"
+  },
+  {
+   "texte": "Total brut",
+   "cle": "outils-salaire-b40bf6"
+  },
+  {
+   "texte": "Traitement brut mensuel (€)",
+   "cle": "outils-salaire-6d150a"
+  },
+  {
+   "texte": "Traitement brut à temps plein (€)",
+   "cle": "outils-salaire-c18c92"
+  },
+  {
+   "texte": "Un dimanche ou un jour férié",
+   "cle": "outils-salaire-5cc27a"
+  },
+  {
+   "texte": "Une demi-journée",
+   "cle": "outils-salaire-e13480"
+  },
+  {
+   "texte": "Une heure supplémentaire payée vaut ton taux horaire, majoré. La nuit, elle compte double ; le dimanche et les jours fériés, elle est majorée des deux tiers.",
+   "cle": "outils-salaire-481b32"
+  },
+  {
+   "texte": "Une journée",
+   "cle": "outils-salaire-020d25"
+  },
+  {
+   "texte": "À 80 % et à 90 %, le traitement est un peu supérieur au temps travaillé. Aux autres quotités, il suit exactement la quotité.",
+   "cle": "outils-salaire-781671"
+  },
+  {
+   "texte": "À l'hôpital, la retenue est proportionnelle à la durée de la grève : un trentième du mois pour une journée, moins pour une demi-journée ou quelques heures.",
+   "cle": "outils-salaire-af7614"
+  },
+  {
+   "texte": "7 jours posés : CA",
+   "cle": "outils-salaire-87e7e3"
+  },
+  {
+   "texte": "CA · Congé annuel",
+   "cle": "outils-salaire-7fde34"
+  },
+  {
+   "texte": "CET · Jour pris sur le CET",
+   "cle": "outils-salaire-73449f"
+  },
+  {
+   "texte": "CF-1 · Congé de fractionnement",
+   "cle": "outils-salaire-92b09a"
+  },
+  {
+   "texte": "Ce que ça change",
+   "cle": "outils-salaire-2f3dd0"
+  },
+  {
+   "texte": "Congés annuels restants",
+   "cle": "outils-salaire-8220b9"
+  },
+  {
+   "texte": "Essaie des dates avant de les demander : tu vois l'effet sur tes congés et tes RTT. Rien n'est enregistré dans ton planning.",
+   "cle": "outils-salaire-09fb92"
+  },
+  {
+   "texte": "Et si je pose…",
+   "cle": "outils-salaire-a7113e"
+  },
+  {
+   "texte": "HS · Congé hors saison",
+   "cle": "outils-salaire-148b7f"
+  },
+  {
+   "texte": "Je pose",
+   "cle": "outils-salaire-8b066e"
+  },
+  {
+   "texte": "Poser pour de vrai",
+   "cle": "outils-salaire-571691"
+  },
+  {
+   "texte": "REC · Récupération d'heures",
+   "cle": "outils-salaire-a7ca60"
+  },
+  {
+   "texte": "RTT restants",
+   "cle": "outils-salaire-f76917"
+  },
+  {
+   "texte": "RTT · Réduction du temps de travail",
+   "cle": "outils-salaire-fabfa2"
+  },
+  {
+   "texte": "Week-ends, repos et fériés ne sont pas comptés.",
+   "cle": "outils-salaire-e00790"
+  },
+  {
+   "texte": "0 épargné · 0 pris avec le code CET dans le planning",
+   "cle": "outils-salaire-93ed37"
+  },
+  {
+   "texte": "Ajouter",
+   "cle": "outils-salaire-18d925"
+  },
+  {
+   "texte": "Aucun mouvement noté. Si tu as déjà un CET, commence par y inscrire ton solde actuel.",
+   "cle": "outils-salaire-a30560"
+  },
+  {
+   "texte": "Date",
+   "cle": "outils-salaire-447497"
+  },
+  {
+   "texte": "Je verse des jours",
+   "cle": "outils-salaire-c85e9d"
+  },
+  {
+   "texte": "Jours",
+   "cle": "outils-salaire-d828e6"
+  },
+  {
+   "texte": "Jours payés ou retirés",
+   "cle": "outils-salaire-13789e"
+  },
+  {
+   "texte": "Mon CET",
+   "cle": "outils-salaire-5f940a"
+  },
+  {
+   "texte": "Noter un mouvement",
+   "cle": "outils-salaire-127d24"
+  },
+  {
+   "texte": "Pour utiliser un jour de CET, pose le code",
+   "cle": "outils-salaire-ee1c22"
+  },
+  {
+   "texte": "dans ton planning : il est retiré du solde automatiquement.",
+   "cle": "outils-salaire-030473"
+  },
+  {
+   "texte": "jour",
+   "cle": "outils-salaire-7751a4"
+  }
+ ]
+}

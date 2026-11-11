@@ -1,0 +1,75 @@
+{
+  "liste": [
+    {
+      "id": "cti",
+      "nom": "Complément de traitement indiciaire (CTI, « Ségur »)",
+      "categorie": "Ségur et soins",
+      "mode": "points",
+      "valeur": 49,
+      "aide": "49 points d'indice, soit environ 241 € brut par mois à temps plein. Versé à la plupart des agents des établissements publics de santé.",
+      "source": "Accords du Ségur de la santé, juillet 2020",
+      "statut": "officiel"
+    },
+    {
+      "id": "pesc",
+      "nom": "Prime d'exercice en soins critiques",
+      "categorie": "Ségur et soins",
+      "mode": "montant",
+      "valeur": 118,
+      "aide": "118 € brut par mois à l'origine, pour les infirmiers et cadres de santé, puis étendue à d'autres agents des services de soins critiques selon des conditions précises.",
+      "source": "Décret n° 2022-19 du 10 janvier 2022 et textes d'extension",
+      "statut": "officiel"
+    },
+    {
+      "id": "iss",
+      "nom": "Indemnité de sujétion spéciale",
+      "categorie": "Primes liées au poste",
+      "mode": "pourcentage",
+      "valeur": 10,
+      "aide": "Pourcentage du traitement de base, variable selon le corps. À vérifier sur ta fiche de paie.",
+      "source": "À renseigner (texte officiel)",
+      "statut": "annonce"
+    },
+    {
+      "id": "prime-service",
+      "nom": "Prime de service",
+      "categorie": "Primes liées au poste",
+      "mode": "pourcentage",
+      "valeur": 7.5,
+      "aide": "Pourcentage du traitement annuel, versé en une ou deux fois, parfois modulé selon l'établissement. Ici mensualisé.",
+      "source": "À renseigner (texte officiel et règle du centre hospitalier)",
+      "statut": "annonce"
+    },
+    {
+      "id": "nbi",
+      "nom": "Nouvelle bonification indiciaire (NBI)",
+      "categorie": "Primes liées au poste",
+      "mode": "points-saisis",
+      "valeur": 0,
+      "aide": "Un nombre de points fixé selon ta fonction. Le nombre est écrit sur ta fiche de paie.",
+      "source": "Textes sur la NBI dans la fonction publique hospitalière",
+      "statut": "officiel"
+    },
+    {
+      "id": "residence",
+      "nom": "Indemnité de résidence",
+      "categorie": "Primes liées à la situation",
+      "mode": "pourcentage",
+      "valeur": 0,
+      "aide": "0 %, 1 % ou 3 % du traitement selon la zone de la commune de travail. À vérifier sur ta fiche de paie.",
+      "source": "À renseigner (zone du centre hospitalier)",
+      "statut": "annonce"
+    },
+    {
+      "id": "sft",
+      "nom": "Supplément familial de traitement",
+      "categorie": "Primes liées à la situation",
+      "mode": "saisie",
+      "valeur": 0,
+      "aide": "Dépend du nombre d'enfants à charge et de ton indice. Recopie le montant de ta fiche de paie.",
+      "source": "Supplément familial de traitement",
+      "statut": "officiel"
+    }
+  ],
+  "aValider": []
+}

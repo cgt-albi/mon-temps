@@ -1,0 +1,300 @@
+{
+ "textes": [
+  {
+   "texte": "Alerte",
+   "cle": "planning-83ce3c"
+  },
+  {
+   "texte": "Année",
+   "cle": "planning-8863a5"
+  },
+  {
+   "texte": "Compteurs",
+   "cle": "planning-2e2930"
+  },
+  {
+   "texte": "Dépassement",
+   "cle": "planning-e2a54c"
+  },
+  {
+   "texte": "Fait",
+   "cle": "planning-f507fe"
+  },
+  {
+   "texte": "Férié",
+   "cle": "planning-74038f"
+  },
+  {
+   "texte": "Jour",
+   "cle": "planning-45760b"
+  },
+  {
+   "texte": "Mois",
+   "cle": "planning-2b7eca"
+  },
+  {
+   "texte": "Outils",
+   "cle": "planning-7a095a"
+  },
+  {
+   "texte": "Preuves",
+   "cle": "planning-a0b6f0"
+  },
+  {
+   "texte": "Prévu",
+   "cle": "planning-7fe9fc"
+  },
+  {
+   "texte": "Remplir plusieurs jours d'un coup",
+   "cle": "planning-c5c4cd"
+  },
+  {
+   "texte": "Rien de saisi pour aujourd'hui",
+   "cle": "planning-434e0b"
+  },
+  {
+   "texte": "Saisir",
+   "cle": "planning-d02ca0"
+  },
+  {
+   "texte": "Semaine",
+   "cle": "planning-c96476"
+  },
+  {
+   "texte": "Solde du mois",
+   "cle": "planning-a8a436"
+  },
+  {
+   "texte": "Syndicat",
+   "cle": "planning-1f9ca5"
+  },
+  {
+   "texte": "provisoire",
+   "cle": "planning-bc07bf"
+  },
+  {
+   "texte": "Choisis d'abord un code",
+   "cle": "planning-9eb084"
+  },
+  {
+   "texte": "Dérouler un cycle de travail",
+   "cle": "planning-7b5cdb"
+  },
+  {
+   "texte": "Les jours remplis ici sont enregistrés comme « prévus ». Tu corriges ensuite seulement les journées qui ont changé.",
+   "cle": "planning-4eeca8"
+  },
+  {
+   "texte": "Recopie ton planning du mois en deux gestes : choisis un code, puis touche tous les jours concernés. Recommence avec le code suivant.",
+   "cle": "planning-5f224a"
+  },
+  {
+   "texte": "Remplir",
+   "cle": "planning-7c9f1d"
+  },
+  {
+   "texte": "12 novembre",
+   "cle": "planning-11dab9"
+  },
+  {
+   "texte": "Ce que j'ai fait",
+   "cle": "planning-54f547"
+  },
+  {
+   "texte": "Ce qui était prévu",
+   "cle": "planning-832624"
+  },
+  {
+   "texte": "Enregistrer la journée",
+   "cle": "planning-62429d"
+  },
+  {
+   "texte": "Horaire",
+   "cle": "planning-862be8"
+  },
+  {
+   "texte": "Note",
+   "cle": "planning-3b0649"
+  },
+  {
+   "texte": "jeudi",
+   "cle": "planning-fe3cfe"
+  },
+  {
+   "texte": "Composer un cycle",
+   "cle": "planning-1d21fa"
+  },
+  {
+   "texte": "Cycles de travail",
+   "cle": "planning-3f31e4"
+  },
+  {
+   "texte": "Dérouler sur",
+   "cle": "planning-5f87c0"
+  },
+  {
+   "texte": "Enregistrer",
+   "cle": "planning-aed882"
+  },
+  {
+   "texte": "Les jours déjà confirmés (« ce que j'ai fait ») ne sont jamais modifiés. Les jours seulement prévus sont remplacés après confirmation.",
+   "cle": "planning-19714d"
+  },
+  {
+   "texte": "Nom du cycle",
+   "cle": "planning-500a7c"
+  },
+  {
+   "texte": "Poser sur 56 jours",
+   "cle": "planning-ca128f"
+  },
+  {
+   "texte": "Retirer le dernier",
+   "cle": "planning-3f7177"
+  },
+  {
+   "texte": "Ton roulement se répète ? Compose-le une fois (par exemple deux matins, deux soirs, trois repos), puis déroule-le sur plusieurs semaines d'un seul geste.",
+   "cle": "planning-506e2d"
+  },
+  {
+   "texte": "Touche les codes ci-dessous, dans l'ordre des jours.",
+   "cle": "planning-53b8d9"
+  },
+  {
+   "texte": "Tout effacer",
+   "cle": "planning-fa7ad0"
+  },
+  {
+   "texte": "Congés annuels pris",
+   "cle": "planning-017372"
+  },
+  {
+   "texte": "Dimanches et fériés travaillés",
+   "cle": "planning-975d19"
+  },
+  {
+   "texte": "Dont congés hors saison",
+   "cle": "planning-2347a0"
+  },
+  {
+   "texte": "Déjà pris ou travaillés depuis le 1",
+   "cle": "planning-b3b030"
+  },
+  {
+   "texte": "Heures",
+   "cle": "planning-261818"
+  },
+  {
+   "texte": "Heures en moins",
+   "cle": "planning-e8be21"
+  },
+  {
+   "texte": "Heures en plus",
+   "cle": "planning-ddd5b9"
+  },
+  {
+   "texte": "Je commence le suivi le",
+   "cle": "planning-ea49f7"
+  },
+  {
+   "texte": "Minutes",
+   "cle": "planning-f670ea"
+  },
+  {
+   "texte": "Mon solde d'heures à cette date",
+   "cle": "planning-318412"
+  },
+  {
+   "texte": "Pas tous les chiffres ? Remplis ce que tu as : tu pourras compléter plus tard depuis Compteurs › Point de départ.",
+   "cle": "planning-5371eb"
+  },
+  {
+   "texte": "Pris avant mai ou après octobre",
+   "cle": "planning-e6b9e2"
+  },
+  {
+   "texte": "RTT pris",
+   "cle": "planning-d7d768"
+  },
+  {
+   "texte": "Tu commences à suivre ton temps en cours d'année ? Recopie ici ce qui s'est passé avant, d'après ton dernier relevé d'heures (écran Octime, relevé papier ou demande à ton cadre). L'appli part de ces chiffres.",
+   "cle": "planning-bd882e"
+  },
+  {
+   "texte": "janvier",
+   "cle": "planning-76951e"
+  },
+  {
+   "texte": "Absence comptée (maladie, formation…)",
+   "cle": "planning-ead59d"
+  },
+  {
+   "texte": "Auto",
+   "cle": "planning-06b928"
+  },
+  {
+   "texte": "Code",
+   "cle": "planning-ca0dba"
+  },
+  {
+   "texte": "Congé",
+   "cle": "planning-4d4091"
+  },
+  {
+   "texte": "Couleur dans le planning",
+   "cle": "planning-2ec248"
+  },
+  {
+   "texte": "Début",
+   "cle": "planning-4f2a10"
+  },
+  {
+   "texte": "Fin",
+   "cle": "planning-0475de"
+  },
+  {
+   "texte": "Jour de CET",
+   "cle": "planning-5c4b39"
+  },
+  {
+   "texte": "Journée en deux fois",
+   "cle": "planning-8fd585"
+  },
+  {
+   "texte": "Libellé",
+   "cle": "planning-607ff8"
+  },
+  {
+   "texte": "Pause non comptée (minutes)",
+   "cle": "planning-adbef9"
+  },
+  {
+   "texte": "Repos",
+   "cle": "planning-e77ec8"
+  },
+  {
+   "texte": "Reprise",
+   "cle": "planning-3a811a"
+  },
+  {
+   "texte": "Récupération",
+   "cle": "planning-50e98c"
+  },
+  {
+   "texte": "Service coupé",
+   "cle": "planning-9a93c1"
+  },
+  {
+   "texte": "Travail de jour",
+   "cle": "planning-cdb357"
+  },
+  {
+   "texte": "Travail de nuit",
+   "cle": "planning-5eb34d"
+  },
+  {
+   "texte": "Type",
+   "cle": "planning-a1fa27"
+  }
+ ]
+}
