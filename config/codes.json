@@ -39,6 +39,11 @@
     "type": "rtt"
   },
   {
+    "code": "RC",
+    "libelle": "Repos compensateur",
+    "type": "repos"
+  },
+  {
     "code": "CA",
     "libelle": "Congé annuel",
     "type": "conge",

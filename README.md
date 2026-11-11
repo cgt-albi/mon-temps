@@ -30,6 +30,25 @@ Si une saisie casse quelque chose, la publication s'arrête et **l'ancienne vers
 
 ---
 
+## Paramétrer le temps de travail : 3 briques, c'est tout
+
+Tout se règle dans Pages CMS, sans toucher au code. Il n'y a que trois briques :
+
+| Brique | Où (Pages CMS) | Ce qu'elle dit |
+|---|---|---|
+| **Code** | Codes horaires | Un horaire ou un type de jour (M41, N12, RH, CA, RC…). Son **type** dit l'effet sur le solde d'heures : travail (compte ses heures), repos ou RTT (le dû du jour reste à faire), congé (le jour est retiré du dû), absence comptée (compte comme la journée prévue). |
+| **Compteur de jours** | Règles de calcul › Compteurs de jours | Un droit compté à part (RC, sujétions…) : quels codes le consomment, combien de jours par an. Il apparaît tout seul dans l'onglet Compteurs de l'agent concerné. |
+| **Régime de travail** | Règles de calcul › Régimes de travail | Un type de poste (12 h, 10 h, 7 h 48…) : ses codes de travail, et ses droits propres (RTT, RC…). L'agent choisit le sien. |
+
+Exemple, les RC des postes en 12 h :
+1. **Codes horaires** : le code `RC` existe déjà (type « Repos »).
+2. **Compteurs de jours** : le compteur `rc` existe déjà ; laisser « Droit par an pour tous » vide.
+3. **Régimes de travail** › « Postes en 12 h » › **Droits propres** : repère `rc`, nombre de jours par an.
+
+Le dû journalier reste celui des règles générales (7 h), sauf si un régime en précise un autre.
+Chaque compteur et chaque régime apparaît dans Réglages › **Vérifier les chiffres de l'appli**.
+Les tests de publication refusent une erreur de saisie (code inconnu dans un régime ou un compteur, repère en double) : l'ancienne version reste alors en ligne.
+
 ## Mettre à jour les chiffres officiels (SMIC, point d'indice, grilles)
 
 Dans Pages CMS, ouvrir **Barèmes**. Chaque série est une liste datée : pour une revalorisation, **ajouter une ligne** avec sa date d'effet. L'appli prend toujours la dernière ligne dont la date est passée, donc une valeur annoncée peut être saisie à l'avance : elle s'applique toute seule le jour J. Tant que le statut est « Annoncé », l'appli affiche « provisoire ».

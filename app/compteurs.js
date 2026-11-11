@@ -79,7 +79,8 @@ export function vueCompteurs(p) {
   const vues = new Set(alertes.map((a) => a.regle));
   const listeAlertes = alertes.slice().reverse().slice(0, S.vue.toutesAlertes ? 999 : 3).map((a) => `<li class="alerte grave">${ic('alerte')}<div><div class="t">${esc(a.regle)}${a.futur ? ' · à venir' : ''}</div><div class="m">${esc(a.message)} <a href="#/planning/jour/${a.date}">Voir le jour</a></div></div></li>`).join('');
   const detail = S.vue.detailMois ? `<table class="mois-table"><thead><tr><th>Mois</th><th>Fait</th><th>Dû</th><th>Solde</th></tr></thead><tbody>${b.mois.map((x, i) => x ? `<tr><td>${esc(M.MOIS[i].replace(/^./, (c) => c.toUpperCase()))}</td><td>${M.formatDuree(x.realise)}</td><td>${M.formatDuree(x.theorique)}</td><td class="${x.solde < 0 ? 'neg' : 'pos'}">${M.formatDuree(x.solde, true)}</td></tr>` : '').join('')}</tbody></table>` : '';
-  const info = S.vue.info ? INFOS(R)[S.vue.info] : null;
+  const infosCompteurs = Object.fromEntries(R.compteurs.map((x) => ['c-' + x.id, { titre: x.nom, p: [x.explication || 'Compteur paramétré par le syndicat.', x.source ? 'Source : ' + x.source : ''].filter(Boolean) }]));
+  const info = S.vue.info ? { ...INFOS(R), ...infosCompteurs }[S.vue.info] : null;
   return {
     nav: 'compteurs',
     html: `${barreHaut()}<div class="ligne-titre"><h1>Compteurs <span class="pale">${y}</span></h1>
@@ -110,6 +111,9 @@ export function vueCompteurs(p) {
           ${tuile('rtt', `RTT${badgeProvisoire(S.cfg, 'regles.rttParAn')}`, rttReste, ` / ${b.rttDroit}`, `${b.rttPris} posé${b.rttPris > 1 ? 's' : ''} dans l'année`, pct(rttReste, b.rttDroit), 'var(--kp-azur)')}
           ${tuile('cet', 'CET', cet.solde, ' j', `${cet.epargne} épargné${cet.epargne > 1 ? 's' : ''} · ${cet.pris} pris`, null, '', '<a class="lien-tuile" href="#/cet">Gérer mon CET</a>')}
           ${tuile('rh', `Repos hebdo${badgeProvisoire(S.cfg, 'regles.rhParAn')}`, b.rhPris, ' RH', `repère : ${b.rhRepere} sur une année pleine`, pct(b.rhPris, b.rhRepere), 'var(--kp-gris)')}
+          ${b.compteurs.filter((x) => x.droit > 0 || x.pris > 0).map((x) => x.droit > 0
+    ? tuile('c-' + x.id, `${esc(x.nom)}${badgeProvisoire(S.cfg, 'regles.compteurs.' + x.id)}`, x.reste, ` / ${x.droit}`, `${x.pris} pris dans l'année`, pct(x.reste, x.droit), 'var(--kp-turquoise)')
+    : tuile('c-' + x.id, esc(x.nom), x.pris, ' j', 'pris dans l\'année', null, '')).join('')}
           ${tuile('ge', `Garde d'enfant${badgeProvisoire(S.cfg, 'regles.gardeEnfantJours')}`, b.gePris, ` / ${b.geDroit} j`, 'autorisations d\'absence', pct(b.gePris, b.geDroit), 'var(--kp-ambre)')}
         </div>
 

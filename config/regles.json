@@ -41,7 +41,21 @@
         "J38"
       ],
       "duJournalier": "",
-      "rttParAn": ""
+      "rttParAn": null,
+      "droits": []
+    }
+  ],
+  "compteurs": [
+    {
+      "id": "rc",
+      "nom": "Repos compensateurs (RC)",
+      "codes": [
+        "RC"
+      ],
+      "droitParAn": null,
+      "proratiseQuotite": true,
+      "explication": "Jours de repos accordés en compensation, notamment aux agents en postes de 12 h ou de 10 h. Le nombre de jours dépend de ton régime de travail. Un RC pris ne change pas ton dû de la journée : il se compense avec les heures en plus de tes longues journées.",
+      "source": "Protocole du centre hospitalier (à renseigner)"
     }
   ],
   "aValider": [
@@ -55,6 +69,7 @@
     "regles.coefHeuresSup1",
     "elections",
     "paie",
-    "regles.regimes"
+    "regles.regimes",
+    "regles.compteurs"
   ]
 }

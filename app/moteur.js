@@ -177,6 +177,17 @@ export function duJournalierHeures(etat, cfg) {
   const v = reg && reg.duJournalier !== undefined && reg.duJournalier !== '' ? heuresDecimales(reg.duJournalier) : NaN;
   return Number.isFinite(v) && v > 0 ? v : cfg.regles.valeurJourneeHeures;
 }
+// ---------- Compteurs de jours supplémentaires (RC, jours de sujétion…) ----------
+// Décrits par le syndicat dans Pages CMS (Règles de calcul › Compteurs de jours).
+// Un compteur dit quels codes le consomment et combien de jours on y a droit.
+// Un régime de travail peut donner un autre droit pour ce compteur.
+export function droitCompteur(compteur, etat, cfg) {
+  const reg = regimeDe(etat, cfg);
+  const propre = reg && (reg.droits || []).find((d) => d && d.compteur === compteur.id);
+  const brut = propre && propre.jours !== '' && propre.jours != null ? Number(propre.jours) : Number(compteur.droitParAn);
+  if (!Number.isFinite(brut) || brut <= 0) return 0;
+  return compteur.proratiseQuotite === false ? brut : Math.round(brut * quotite(etat, cfg) * 2) / 2;
+}
 export function rttParAn(etat, cfg) {
   const reg = regimeDe(etat, cfg);
   const v = reg && reg.rttParAn !== undefined && reg.rttParAn !== '' && reg.rttParAn !== null ? Number(reg.rttParAn) : NaN;
@@ -256,6 +267,7 @@ export function bilanAnnee(annee, etat, cfg, jusqua = aujourdhui(), profondeur =
   // Compteurs sur l'année entière (prévus compris) pour les congés.
   let rtt = 0, ca = 0, recup = 0, caHorsSaison = 0, rh = 0, ge = 0, nuits = 0, cetPris = 0, feriesTravailles = 0, dimanchesTravailles = 0;
   const caJours = [];
+  const extras = (cfg.regles.compteurs || []).map((c) => ({ c, codes: new Set((c.codes || []).map((x) => String(x).trim().toUpperCase())), pris: 0 }));
   const djf = { minutes: 0, jours: new Set() };
   const ps = cfg.regles.periodeEstivale || { debut: '05-01', fin: '10-31' };
   // Avec un point de départ, les jours d'avant sont comptés par les chiffres du relevé.
@@ -264,6 +276,7 @@ export function bilanAnnee(annee, etat, cfg, jusqua = aujourdhui(), profondeur =
     const d = depuisNum(n); const j = journee(d, etat, codes);
     if (!j || !j.info) continue;
     if (j.info.type === 'rtt') rtt++;
+    for (const x of extras) if (x.codes.has(String(j.code).toUpperCase())) x.pris++;
     if (j.info.type === 'recup') recup++;
     if (j.info.type === 'cet') cetPris++;
     if (d <= fin && (j.info.compte === 'rh' || j.code === 'RH')) rh++;
@@ -296,7 +309,8 @@ export function bilanAnnee(annee, etat, cfg, jusqua = aujourdhui(), profondeur =
     nuits, cetPris, feriesTravailles, dimanchesTravailles, recupMin: recup * Math.round(duJournalierHeures(etat, cfg) * 60 * q),
     rttPris: rtt, rttDroit: Math.round(rttParAn(etat, cfg) * q), recupPris: recup,
     caPris: ca, caDroit: Math.round((cfg.regles.caParAn || 25) * q), caHorsSaison, bonusHS, bonusFrac,
-    djfMinutes: djf.minutes + djfMinAvant, djfJours: djf.jours.size + djfJoursAvant
+    djfMinutes: djf.minutes + djfMinAvant, djfJours: djf.jours.size + djfJoursAvant,
+    compteurs: extras.map(({ c, pris }) => { const p2 = pris + v('pris_' + c.id); const droit = droitCompteur(c, etat, cfg); return { id: c.id, nom: c.nom, pris: p2, droit, reste: droit - p2 }; })
   };
 }
 

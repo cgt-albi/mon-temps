@@ -198,9 +198,9 @@ content:
           values:
             - { value: travail, label: Travail de jour }
             - { value: nuit, label: Travail de nuit }
-            - { value: repos, label: Repos }
-            - { value: rtt, label: RTT }
-            - { value: conge, label: Congé }
+            - { value: repos, label: "Repos : le dû du jour reste à faire (RH, RC…)" }
+            - { value: rtt, label: "RTT : comme un repos, compté dans les RTT" }
+            - { value: conge, label: "Congé : le jour est retiré du dû" }
             - { value: recup, label: Récupération }
             - { value: cet, label: Compte épargne-temps }
             - { value: assimile, label: "Absence comptée comme travaillée (maladie, formation…)" }
@@ -285,6 +285,40 @@ content:
           - name: rttParAn
             label: RTT par an pour ce régime (facultatif)
             type: number
+          - name: droits
+            label: Droits propres à ce régime (RC, sujétions…)
+            description: "Un droit par compteur de jours. Le repère doit être celui du compteur (ex. rc)."
+            type: object
+            list:
+              collapsible: { collapsed: true, summary: "{fields.compteur} : {fields.jours} j" }
+            fields:
+              - { name: compteur, label: Repère du compteur (ex. rc), type: string, required: true }
+              - { name: jours, label: Jours par an (temps plein), type: number, required: true }
+      - name: compteurs
+        label: Compteurs de jours (RC, sujétions, autres droits…)
+        description: "Pour compter à part un type de jour. 1) Créer le code dans « Codes horaires » (son type dit l'effet sur le solde). 2) Créer ici le compteur avec ce code. 3) Si le droit dépend du poste, le donner dans « Régimes de travail › Droits propres »."
+        type: object
+        list:
+          collapsible: { collapsed: true, summary: "{fields.nom}" }
+        fields:
+          - name: id
+            label: Repère technique (unique, sans espace, ne plus le changer ensuite)
+            type: string
+            required: true
+            pattern: { regex: "^[a-z0-9-]+$", message: "Minuscules, chiffres et tirets seulement, par ex. rc" }
+          - { name: nom, label: Nom affiché, type: string, required: true }
+          - name: codes
+            label: Codes qui consomment ce compteur
+            description: Un code par ligne, tel qu'il est dans « Codes horaires » (ex. RC).
+            type: string
+            list: true
+          - name: droitParAn
+            label: Droit par an pour tous (facultatif)
+            description: Laisser vide si le droit dépend du régime, ou pour un simple décompte sans droit.
+            type: number
+          - { name: proratiseQuotite, label: Réduit pour les temps partiels, type: boolean, default: true }
+          - { name: explication, label: "Explication montrée à l'agent (bouton « ? »)", type: text }
+          - { name: source, label: Source (texte officiel ou protocole), type: string }
       - { name: rhParAn, label: Repos hebdomadaires par an, type: number }
       - name: periodeEstivale
         label: Période estivale

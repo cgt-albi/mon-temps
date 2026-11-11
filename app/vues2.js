@@ -295,6 +295,7 @@ export function vueReport(p) {
         <div class="carte" style="display:flex;flex-direction:column;gap:.75rem">
           <h2>Déjà pris ou travaillés depuis le 1<sup>er</sup> janvier</h2>
           <div class="rangee">${nb('rttPris', 'RTT pris', pd.rttPris)}${nb('caPris', 'Congés annuels pris', pd.caPris)}</div>
+          ${S.cfg.regles.compteurs.length ? `<div class="rangee" style="flex-wrap:wrap">${S.cfg.regles.compteurs.map((x) => nb('pris_' + x.id, esc(x.nom) + ' pris', pd['pris_' + x.id])).join('')}</div>` : ''}
           <div class="rangee">${nb('caHorsSaison', 'Dont congés hors saison', pd.caHorsSaison, 'Pris avant mai ou après octobre')}${nb('djfJours', 'Dimanches et fériés travaillés', pd.djfJours)}</div>
         </div>
         <p class="petit" style="margin:0">Pas tous les chiffres ? Remplis ce que tu as : tu pourras compléter plus tard depuis Compteurs › Point de départ.</p>
@@ -312,7 +313,7 @@ export function vueReport(p) {
         const n = (id) => Math.max(0, Number(el.querySelector('#' + id).value) || 0);
         const date = el.querySelector('#date').value || `${y}-01-01`;
         if (date.slice(0, 4) !== String(y)) { toast(`Choisis une date en ${y}`); return; }
-        S.etat.departs[y] = { date, soldeMin: signe * (n('h') * 60 + Math.min(59, n('m'))), rttPris: n('rttPris'), caPris: n('caPris'), caHorsSaison: Math.min(n('caHorsSaison'), n('caPris')), djfJours: n('djfJours') };
+        S.etat.departs[y] = { date, soldeMin: signe * (n('h') * 60 + Math.min(59, n('m'))), rttPris: n('rttPris'), caPris: n('caPris'), caHorsSaison: Math.min(n('caHorsSaison'), n('caPris')), djfJours: n('djfJours'), ...Object.fromEntries(S.cfg.regles.compteurs.map((x) => ['pris_' + x.id, n('pris_' + x.id)])) };
         sauver(); toast('Point de départ enregistré'); fin();
       };
       const s = el.querySelector('#suppr');

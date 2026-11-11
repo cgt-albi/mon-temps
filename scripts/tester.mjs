@@ -43,6 +43,21 @@ for (const r of regs) {
   t('sans régime : règle générale', M.duJournalierHeures(etSans, cfgR) === regles.valeurJourneeHeures && M.rttParAn(etSans, cfgR) === regles.rttParAn);
 }
 
+// Compteurs de jours
+for (const c of regles.compteurs || []) {
+  for (const x of c.codes || []) t(`compteur ${c.nom} : le code ${x} existe`, cfg.codes.some((k) => k.code === x));
+}
+for (const r of regs) for (const d of r.droits || []) t(`régime ${r.nom} : le compteur ${d.compteur} existe`, (regles.compteurs || []).some((c) => c.id === d.compteur));
+{
+  const cfgC = { ...cfg, regles: { ...regles, compteurs: [{ id: 'rc', nom: 'RC', codes: ['RC'], droitParAn: 2 }], regimes: [{ id: 'p12', nom: '12 h', codes: [], droits: [{ compteur: 'rc', jours: 10 }] }] } };
+  const et = (reg, q) => ({ profil: { regime: reg, quotite: q }, jours: { '2026-03-02': { prevu: { code: 'RC' } }, '2026-03-03': { prevu: { code: 'RC' } } }, codesPerso: [], departs: {} });
+  const rc = (e) => M.bilanAnnee(2026, e, cfgC, '2026-12-31').compteurs.find((x) => x.id === 'rc');
+  t('compteur : jours pris comptés', rc(et('', 100)).pris === 2);
+  t('compteur : droit général', rc(et('', 100)).droit === 2 && rc(et('', 100)).reste === 0);
+  t('compteur : droit du régime', rc(et('p12', 100)).droit === 10 && rc(et('p12', 100)).reste === 8);
+  t('compteur : temps partiel', rc(et('p12', 80)).droit === 8);
+}
+
 // Dates et fériés
 t('Pâques 2026', M.feries(2026)['2026-04-06'] === 'Lundi de Pâques');
 t('Pentecôte 2027', M.feries(2027)['2027-05-17'] === 'Lundi de Pentecôte');

@@ -79,7 +79,8 @@ export async function chargerConfig(prefixe = '../') {
   const [contenu, regles, codes, baremes, primes, courriers] = await Promise.all([lire('contenu.json'), lire('regles.json'), lire('codes.json'), lire('baremes.json', {}), lire('primes.json', { liste: [] }), lire('courriers.json', { modeles: [] })]);
   const { aValider, ...r } = regles;
   r.valeurJourneeHeures = heuresDecimales(r.valeurJourneeHeures);
-  r.regimes = (r.regimes || []).filter((x) => x && x.id && x.nom).map((x) => ({ ...x, id: String(x.id).trim(), codes: (x.codes || []).filter(Boolean) }));
+  r.regimes = (r.regimes || []).filter((x) => x && x.id && x.nom).map((x) => ({ ...x, id: String(x.id).trim(), codes: (x.codes || []).filter(Boolean), droits: (x.droits || []).filter((d) => d && d.compteur) }));
+  r.compteurs = (r.compteurs || []).filter((x) => x && x.id && x.nom).map((x) => ({ ...x, id: String(x.id).trim(), codes: (x.codes || []).filter(Boolean) }));
   const aujourdhui = new Date().toLocaleDateString('sv-SE');
   const pt = valeurAu(baremes.pointIndice, aujourdhui), im = valeurAu(baremes.indiceMinimum, aujourdhui), sm = valeurAu(baremes.smic, aujourdhui);
   r.valeurPointMensuel = pt ? Number(pt.valeur) : 4.92278;
