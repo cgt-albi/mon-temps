@@ -193,6 +193,13 @@ export function vueReglages() {
           <div style="display:flex;justify-content:space-between;align-items:center;gap:.75rem"><span>Taille du texte</span>${seg('taille', [[0, '<span style="font-size:.8125rem">A</span>', 'Normale'], [1, '<span style="font-size:1rem">A</span>', 'Grande'], [2, '<span style="font-size:1.1875rem">A</span>', 'Très grande']], R.taille || 0)}</div>
           <label style="display:flex;justify-content:space-between;align-items:center;gap:.75rem;cursor:pointer"><span>Contrôles légaux<span class="petit" style="display:block">Alertes sur le repos, les 48h, l'amplitude</span></span><input type="checkbox" id="controles" ${R.controles ? 'checked' : ''} style="width:1.375rem;height:1.375rem;accent-color:var(--rouge)"></label>
         </div>
+        <p class="etiquette">Rappel de mon horaire</p>
+        <div class="carte" style="display:flex;flex-direction:column;gap:.75rem">
+          <label style="display:flex;justify-content:space-between;align-items:center;gap:.75rem;cursor:pointer"><span>Me rappeler mon horaire du lendemain<span class="petit" style="display:block">Une notification la veille : « Demain · M41 · 08:00 – 16:18 ». Calculée sur ton téléphone, rien n'est envoyé.</span></span><input type="checkbox" id="rappel" ${(R.rappel && R.rappel.actif) ? 'checked' : ''}></label>
+          ${(R.rappel && R.rappel.actif) ? `<label style="display:flex;justify-content:space-between;align-items:center;gap:.75rem;cursor:pointer"><span>Seulement les jours travaillés<span class="petit" style="display:block">Pas de rappel pour les repos et les congés</span></span><input type="checkbox" id="rappelTravail" ${R.rappel.seulementTravail ? 'checked' : ''}></label>` : ''}
+          <p class="petit" id="rappel-etat" style="margin:0"></p>
+          <button type="button" class="btn" id="rappel-essai">${ic('cloche')}M'envoyer un exemple</button>
+        </div>
         <ul class="liste">
           <li><a class="lien" href="#/sauvegarde"><span>Sauvegarde et transfert</span><span class="val" style="color:${js === null || js > 30 ? 'var(--ambre)' : 'var(--sourdine)'};font-weight:700">${js === null ? 'Jamais faite' : js === 0 ? 'Aujourd\'hui' : `Il y a ${js} j`}${chevron()}</span></a></li>
           <li><button class="lien" id="visite"><span>Revoir la visite guidée</span>${chevron()}</button></li>
@@ -212,6 +219,7 @@ export function vueReglages() {
       el.querySelectorAll('[data-taille]').forEach((b) => b.onclick = () => { R.taille = Number(b.dataset.taille); appliquerAffichage(); sauver(); S.rendre(); });
       el.querySelector('#controles').onchange = (e) => { R.controles = e.target.checked; sauver(); };
       el.querySelector('#visite').onclick = () => Visite.demarrerEssai();
+      brancherRappel(el, R);
       el.querySelector('#toutEffacer').onclick = async () => {
         if (S.demo) { toast('Impossible en mode essai'); return; }
         const r = prompt('Tout ton planning, tes preuves et tes réglages seront effacés de ce téléphone. Pense à faire une sauvegarde avant.\n\nTape EFFACER pour confirmer.');
@@ -353,6 +361,7 @@ export function vueSauvegarde() {
         <section class="carte" style="display:flex;flex-direction:column;gap:.5rem">
           <h2>Mettre mon planning dans mon agenda</h2>
           <p class="petit" style="margin:0">Crée un fichier agenda avec tes 3 prochains mois de travail, à ouvrir dans Google Agenda, Outlook ou l'agenda de l'iPhone.</p>
+          <label style="display:flex;justify-content:space-between;align-items:center;gap:.75rem;cursor:pointer"><span>Avec un rappel la veille à 20 h<span class="petit" style="display:block">Ton agenda te prévient, même sur iPhone</span></span><input type="checkbox" id="icsRappel" checked></label>
           <button class="btn" id="ics">${ic('telecharger')}Fichier agenda</button>
         </section>
         <p class="petit" id="protege" style="display:flex;gap:.5rem;margin:0"></p>
@@ -381,7 +390,7 @@ export function vueSauvegarde() {
         } catch (err) { toast(err.message, 4000); }
       };
       el.querySelector('#ics').onclick = () => {
-        const t = exporterIcs(); if (!t) { toast('Aucune journée de travail à venir'); return; }
+        const t = exporterIcs(el.querySelector('#icsRappel').checked); if (!t) { toast('Aucune journée de travail à venir'); return; }
         telechargerFichier('mon-planning.ics', t, 'text/calendar');
       };
       const r = await St.protegerStockage();
@@ -390,13 +399,17 @@ export function vueSauvegarde() {
   };
 }
 
-function exporterIcs() {
+function exporterIcs(rappel = false) {
   const C = codes(); const today = M.aujourdhui(); const out = [];
   const fmt = (n) => { const d = M.depuisNum(Math.floor(n / 1440)); const m = n % 1440; return `${d.replace(/-/g, '')}T${M.pad(Math.floor(m / 60))}${M.pad(m % 60)}00`; };
   const stamp = new Date().toISOString().replace(/[-:]/g, '').slice(0, 15) + 'Z';
   for (let i = 0; i < 92; i++) {
     const d = M.ajouterJours(today, i); const j = M.journee(d, S.etat, C);
-    for (const [a, b] of M.blocs(j)) out.push(['BEGIN:VEVENT', `UID:${d}-${a}@mon-temps`, `DTSTAMP:${stamp}`, `DTSTART:${fmt(a)}`, `DTEND:${fmt(b)}`, `SUMMARY:${j.code}${j.info && j.info.libelle ? ' — ' + j.info.libelle : ''}`, 'END:VEVENT'].join('\r\n'));
+    M.blocs(j).forEach(([a, b], k) => {
+      // Rappel la veille à 20 h, sur le premier créneau de la journée
+      const alarme = rappel && k === 0 ? ['BEGIN:VALARM', 'ACTION:DISPLAY', `DESCRIPTION:Demain : ${j.code}`, `TRIGGER:-PT${Math.max(0, a - (M.jourNum(d) * 1440 - 240))}M`, 'END:VALARM'] : [];
+      out.push(['BEGIN:VEVENT', `UID:${d}-${a}@mon-temps`, `DTSTAMP:${stamp}`, `DTSTART:${fmt(a)}`, `DTEND:${fmt(b)}`, `SUMMARY:${j.code}${j.info && j.info.libelle ? ' — ' + j.info.libelle : ''}`, ...alarme, 'END:VEVENT'].join('\r\n'));
+    });
   }
   if (!out.length) return null;
   return ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Mon Temps//FR', 'CALSCALE:GREGORIAN', ...out, 'END:VCALENDAR'].join('\r\n');
@@ -516,5 +529,61 @@ export function vueConfidentialite() {
         <div class="carte"><h2>Effacer</h2><p class="texte" style="margin-top:.375rem">Réglages › Effacer toutes mes données supprime tout de cet appareil, immédiatement.</p></div>
         <p class="petit">Site hébergé par GitHub Pages, qui enregistre comme tout hébergeur l'adresse IP des visites pour la sécurité. ${c.responsablePublication ? `Responsable de la publication : ${esc(c.responsablePublication)}. ` : ''}${c.adressePostale ? esc(c.adressePostale) + '. ' : ''}Code source ouvert, consultable par tous.</p>
       </div>`
+  };
+}
+
+// ---------- Rappel de l'horaire du lendemain ----------
+// Sans serveur : Android (Chrome, appli installée) réveille l'appli environ une fois par jour
+// et le service worker affiche la notification (voir rappel.js). Sur iPhone, ce n'est pas possible :
+// on propose alors le fichier agenda avec rappel la veille.
+async function etatRappel() {
+  if (!('serviceWorker' in navigator) || !('Notification' in window)) return 'non';
+  const reg = await navigator.serviceWorker.getRegistration('../').catch(() => null) || await navigator.serviceWorker.ready.catch(() => null);
+  if (!reg) return 'non';
+  if (!('periodicSync' in reg)) return 'agenda';
+  try { const p = await navigator.permissions.query({ name: 'periodic-background-sync' }); if (p.state !== 'granted') return 'installer'; } catch (e) { return 'installer'; }
+  return 'ok';
+}
+const MESSAGES_RAPPEL = {
+  non: 'Ce navigateur ne sait pas afficher de notifications. Utilise plutôt Planning › Fichier agenda, avec le rappel la veille.',
+  agenda: 'Ton téléphone (iPhone ou navigateur) ne réveille pas les applis web sans serveur. Pour un rappel fiable : Planning › Fichier agenda, avec le rappel la veille.',
+  installer: 'Pour les rappels automatiques, installe d\'abord l\'appli sur ton écran d\'accueil (page d\'accueil › Installer), puis ouvre-la depuis son icône.',
+  ok: 'Le téléphone choisit le moment exact, en général en fin de journée. Si un soir il n\'a pas pu, tu reçois le rappel le matin même.'
+};
+function brancherRappel(el, R) {
+  const boite = el.querySelector('#rappel'), info = el.querySelector('#rappel-etat'), essai = el.querySelector('#rappel-essai');
+  if (!boite) return;
+  etatRappel().then((e) => { info.textContent = MESSAGES_RAPPEL[e]; });
+  const reg = () => navigator.serviceWorker.ready;
+  boite.onchange = async () => {
+    if (S.demo) { toast('Impossible en mode essai'); boite.checked = false; return; }
+    if (!boite.checked) {
+      R.rappel = { ...(R.rappel || {}), actif: false }; sauver();
+      try { const r = await reg(); if (r.periodicSync) await r.periodicSync.unregister('rappel-demain'); } catch (e) { /* rien */ }
+      toast('Rappel coupé'); S.rendre(); return;
+    }
+    const e = await etatRappel();
+    if (e === 'non' || e === 'agenda') { boite.checked = false; toast(MESSAGES_RAPPEL[e], 6000); return; }
+    const p = await Notification.requestPermission();
+    if (p !== 'granted') { boite.checked = false; toast('Notifications refusées : autorise-les dans les réglages du téléphone pour cette appli.', 6000); return; }
+    if (e === 'installer') { boite.checked = false; toast(MESSAGES_RAPPEL.installer, 6000); return; }
+    try { const r = await reg(); await r.periodicSync.register('rappel-demain', { minInterval: 12 * 3600 * 1000 }); }
+    catch (err) { boite.checked = false; toast('Le téléphone a refusé les rappels automatiques. Réessaie après avoir installé l\'appli.', 6000); return; }
+    R.rappel = { ...(R.rappel || {}), actif: true }; await St.enregistrer(S.etat);
+    toast('Rappel activé'); S.rendre();
+  };
+  const t = el.querySelector('#rappelTravail');
+  if (t) t.onchange = () => { R.rappel = { ...(R.rappel || {}), seulementTravail: t.checked }; sauver(); };
+  essai.onclick = async () => {
+    if (!('serviceWorker' in navigator) || !('Notification' in window)) { toast(MESSAGES_RAPPEL.non, 6000); return; }
+    const p = await Notification.requestPermission();
+    if (p !== 'granted') { toast('Notifications refusées : autorise-les dans les réglages du téléphone pour cette appli.', 6000); return; }
+    await St.enregistrer(S.etat);
+    const r = await reg();
+    const reponse = new Promise((ok) => { const f = (m) => { if (m.data && m.data.type === 'rappel-essai') { navigator.serviceWorker.removeEventListener('message', f); ok(m.data); } }; navigator.serviceWorker.addEventListener('message', f); setTimeout(() => ok(null), 8000); });
+    r.active.postMessage({ type: 'rappel-essai' });
+    const res = await reponse;
+    if (res && res.raison === 'rien') toast('Aucun horaire saisi dans les 3 semaines à venir : remplis d\'abord ton planning.', 5000);
+    else if (res && res.ok) toast('Exemple envoyé');
   };
 }
