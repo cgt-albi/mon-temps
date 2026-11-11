@@ -1,0 +1,78 @@
+name: Publier le site
+
+# Se lance tout seul à chaque modification (y compris depuis Pages CMS),
+# ou à la main depuis l'onglet « Actions » (bouton « Run workflow »).
+#
+# Deux modes :
+# - Mode anonyme (recommandé) : ce dépôt reste PRIVÉ, et le site est copié dans le dépôt
+#   public du compte dédié. Il suffit de créer le secret PUBLICATION_TOKEN et la variable
+#   DEPOT_PUBLIC (ex. « mon-compte-dedie/mon-compte-dedie.github.io »).
+# - Sinon : publication GitHub Pages classique de ce dépôt (il doit être public).
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: publication
+  cancel-in-progress: true
+
+jobs:
+  construire:
+    runs-on: ubuntu-latest
+    outputs:
+      anonyme: ${{ steps.mode.outputs.anonyme }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Vérifier les fichiers de réglages
+        run: node -e "for (const f of ['contenu','regles','codes','baremes','primes','courriers','textes-index','textes-origine']) JSON.parse(require('fs').readFileSync('config/'+f+'.json','utf8')); console.log('Réglages valides')"
+      - name: Tester le moteur de calcul
+        run: node scripts/tester.mjs
+      - name: Outil pour fabriquer les icônes
+        run: npm install --no-save --no-audit --no-fund sharp@0.33.5
+      - name: Préparer le site
+        run: node scripts/construire.mjs
+      - id: mode
+        env:
+          JETON: ${{ secrets.PUBLICATION_TOKEN }}
+          DEPOT: ${{ vars.DEPOT_PUBLIC }}
+        run: |
+          if [ -n "$JETON" ] && [ -n "$DEPOT" ]; then echo "anonyme=oui" >> "$GITHUB_OUTPUT"; else echo "anonyme=non" >> "$GITHUB_OUTPUT"; fi
+      - name: Publier dans le dépôt public du compte dédié
+        if: steps.mode.outputs.anonyme == 'oui'
+        env:
+          JETON: ${{ secrets.PUBLICATION_TOKEN }}
+          DEPOT: ${{ vars.DEPOT_PUBLIC }}
+        run: |
+          cd _site
+          git init -q -b main
+          git config user.name "Publication"
+          git config user.email "publication@invalid.invalid"
+          git add -A
+          git commit -q -m "Mise à jour du site"
+          git push -q --force "https://x-access-token:${JETON}@github.com/${DEPOT}.git" main
+          echo "Publié dans ${DEPOT}"
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.mode.outputs.anonyme == 'non'
+        with:
+          path: _site
+
+  pages:
+    needs: construire
+    if: needs.construire.outputs.anonyme == 'non'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploiement.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - id: deploiement
+        uses: actions/deploy-pages@v4
