@@ -33,7 +33,7 @@ jobs:
         with:
           node-version: 22
       - name: Vérifier les fichiers de réglages
-        run: node -e "for (const f of ['contenu','regles','codes','baremes','primes','courriers','textes-index','textes-origine']) JSON.parse(require('fs').readFileSync('config/'+f+'.json','utf8')); console.log('Réglages valides')"
+        run: node -e "for (const f of require('fs').readdirSync('config').filter((x) => x.endsWith('.json')).map((x) => x.slice(0, -5))) JSON.parse(require('fs').readFileSync('config/'+f+'.json','utf8')); console.log('Réglages valides')"
       - name: Tester le moteur de calcul
         run: node scripts/tester.mjs
       - name: Outil pour fabriquer les icônes

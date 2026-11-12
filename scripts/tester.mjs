@@ -4,12 +4,13 @@ import fs from 'node:fs';
 import path from 'node:path';
 import * as M from '../app/moteur.js';
 import * as O from '../app/octime.js';
+import { fusionner } from './fusion.mjs';
 
 let ok = 0, ko = 0;
 const t = (nom, cond) => { if (cond) ok++; else { ko++; console.error('ÉCHEC :', nom); } };
 const racine = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const lire = (f) => JSON.parse(fs.readFileSync(path.join(racine, 'config', f), 'utf8'));
-const contenu = lire('contenu.json'); const { aValider, ...regles } = lire('regles.json');
+const fus = fusionner(racine); const contenu = fus.contenu; const { aValider, ...regles } = fus.regles;
 regles.valeurJourneeHeures = M.heuresDecimales(regles.valeurJourneeHeures);
 const cfg = { ...contenu, regles, aValider, codes: lire('codes.json') };
 t('codes : une liste', Array.isArray(cfg.codes) && cfg.codes.length > 0);

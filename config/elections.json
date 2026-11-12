@@ -1,0 +1,42 @@
+{
+  "elections": {
+    "actif": true,
+    "titre": "Élections professionnelles",
+    "dateScrutin": "2026-12-10",
+    "ouvertureVote": "2026-12-03",
+    "afficherDepuisJours": 60,
+    "afficherJusquau": "2026-12-11",
+    "texteIntro": "Le 10 décembre 2026, tous les agents publics votent pour leurs représentants dans les instances où se décident leurs conditions de travail. Chaque voix compte, et voter ne prend que quelques minutes.",
+    "modalites": "Dans la fonction publique hospitalière, c'est l'établissement qui choisit le vote à l'urne ou le vote électronique, et qui fixe la période de vote (au plus du 3 au 10 décembre pour le vote électronique). À renseigner pour le centre hospitalier : mode de vote, lieux et horaires, comment recevoir ses identifiants.",
+    "etapes": [
+      {
+        "titre": "Vérifier que je suis sur la liste électorale",
+        "texte": "La liste est affichée dans l'établissement. En cas d'erreur ou d'oubli, il faut réclamer avant la date limite indiquée par la direction."
+      },
+      {
+        "titre": "Retrouver mes identifiants",
+        "texte": "Pour le vote électronique, ils arrivent par courrier ou par mail. Garde-les, ils servent une seule fois."
+      },
+      {
+        "titre": "Voter pendant la période d'ouverture",
+        "texte": "Le vote est personnel et secret. Il se fait à l'urne le jour du scrutin, ou en ligne pendant la période d'ouverture."
+      },
+      {
+        "titre": "Suivre les résultats",
+        "texte": "Les résultats sont publiés après la clôture du scrutin."
+      }
+    ],
+    "appel": "",
+    "questions": [
+      {
+        "question": "Qui peut voter ?",
+        "reponse": "Les fonctionnaires et les agents contractuels, selon les conditions d'inscription sur la liste électorale. En cas de doute, demande au service des ressources humaines ou au syndicat."
+      },
+      {
+        "question": "Mon employeur peut-il savoir pour qui j'ai voté ?",
+        "reponse": "Non. Le vote est secret, y compris en ligne."
+      }
+    ],
+    "lienOfficiel": "https://www.fonction-publique.gouv.fr/dialogue-social-et-representation/les-elections-professionnelles-2026"
+  }
+}

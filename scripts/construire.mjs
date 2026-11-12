@@ -6,12 +6,13 @@
 // Lancé automatiquement par GitHub Actions à chaque modification.
 import fs from 'node:fs';
 import path from 'node:path';
+import { fusionner } from './fusion.mjs';
 
 const racine = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const sortie = path.join(racine, '_site');
 const ignorer = new Set(['.git', '.github', '_site', 'scripts', 'node_modules', 'README.md', 'tests', '.pages.yml', 'package.json', 'package-lock.json', '.gitignore']);
 
-const cfg = JSON.parse(fs.readFileSync(path.join(racine, 'config/contenu.json'), 'utf8'));
+const { contenu: cfg, regles: reglesFusion } = fusionner(racine);
 const nom = String(cfg.nom || 'Mon Temps').trim();
 const couleur = /^#[0-9a-fA-F]{6}$/.test(cfg.couleur || '') ? cfg.couleur : '#E30613';
 const version = (process.env.GITHUB_SHA || String(Date.now())).slice(0, 12);
@@ -19,6 +20,9 @@ const version = (process.env.GITHUB_SHA || String(Date.now())).slice(0, 12);
 fs.rmSync(sortie, { recursive: true, force: true });
 fs.mkdirSync(sortie);
 for (const e of fs.readdirSync(racine)) if (!ignorer.has(e)) fs.cpSync(path.join(racine, e), path.join(sortie, e), { recursive: true });
+// réglages réassemblés pour l'appli (voir scripts/fusion.mjs)
+fs.writeFileSync(path.join(sortie, 'config/contenu.json'), JSON.stringify(cfg, null, 1));
+fs.writeFileSync(path.join(sortie, 'config/regles.json'), JSON.stringify(reglesFusion, null, 1));
 
 const echappe = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
 for (const f of ['index.html', 'app/index.html', 'mentions-legales.html']) {

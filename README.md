@@ -106,7 +106,7 @@ suivre la page d'aide « Managing a custom domain for your GitHub Pages site ».
 - `index.html`, `accueil.*` : page d'accueil
 - `app/` : l'appli (planning, compteurs, preuves, syndicat, réglages, sauvegarde, transfert par QR code, visite guidée)
 - `app/moteur.js` : calculs et contrôles légaux, testés à chaque publication (`scripts/tester.mjs`)
-- `config/contenu.json`, `config/codes.json`, `config/regles.json` : tout le contenu modifiable (via Pages CMS)
+- `config/*.json` : tout le contenu modifiable (via Pages CMS), un fichier par rubrique ; `appli`, `contacts`, `actualites`, `elections`, `paie` et `droits` sont réassemblés en `contenu.json` à la publication, `regles` et `regimes` en `regles.json` (voir `scripts/fusion.mjs`)
 - `images/` : logos et images envoyés depuis Pages CMS
 - `.pages.yml` : les formulaires de Pages CMS
 

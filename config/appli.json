@@ -1,0 +1,38 @@
+{
+  "nom": "Mon Temps",
+  "slogan": "Ton temps de travail, compté par toi.",
+  "messageMiseAJour": "",
+  "etablissement": "CH d'Albi",
+  "syndicat": "CGT CH d'Albi",
+  "couleur": "#E30613",
+  "logo": "/images/logo-cgt-albi.png",
+  "icone": "",
+  "domaine": "",
+  "metiers": [
+    "AS",
+    "IDE",
+    "ASH",
+    "AMA",
+    "Adjoint administratif",
+    "AEQ",
+    "OPQ",
+    "AP",
+    "Sage-femme",
+    "TSH",
+    "Puéricultrice",
+    "Technicien de laboratoire",
+    "IADE",
+    "IBODE",
+    "Préparateur en pharmacie",
+    "Manipulateur radio",
+    "Ambulancier",
+    "Kinésithérapeute",
+    "Cadre",
+    "Autre"
+  ],
+  "responsablePublication": "",
+  "adressePostale": "",
+  "statistiques": {
+    "goatcounter": ""
+  }
+}

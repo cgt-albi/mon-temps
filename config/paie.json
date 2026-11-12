@@ -1,0 +1,13 @@
+{
+  "paie": {
+    "actif": true,
+    "decalageJours": 2,
+    "exceptions": [
+      {
+        "mois": "2026-12",
+        "date": "2026-12-22"
+      }
+    ],
+    "note": "Date de mise en paiement du traitement, avant le délai de la banque. À confirmer avec le service de paie du centre hospitalier."
+  }
+}

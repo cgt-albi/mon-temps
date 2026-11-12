@@ -1,0 +1,25 @@
+{
+  "contacts": {
+    "mailGeneral": "",
+    "mailGreve": "",
+    "mailSignalement": "",
+    "mailAdhesion": "",
+    "telephone": "",
+    "adresse": "",
+    "local": "",
+    "permanences": ""
+  },
+  "reseaux": {
+    "site": "",
+    "facebook": "",
+    "instagram": "",
+    "whatsapp": "",
+    "tiktok": "",
+    "youtube": "",
+    "x": "",
+    "bluesky": "",
+    "threads": "",
+    "telegram": ""
+  },
+  "liens": []
+}
