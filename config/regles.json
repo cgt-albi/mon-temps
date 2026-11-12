@@ -1,8 +1,10 @@
 {
   "valeurJourneeHeures": "7:00",
   "quotiteParDefaut": 100,
-  "rttParAn": 15,
+  "rttParAn": 20,
   "caParAn": 25,
+  "horsSaisonJours1": 3,
+  "horsSaisonJours2": 6,
   "periodeEstivale": {
     "debut": "05-01",
     "fin": "10-31"
@@ -33,15 +35,29 @@
   "regimes": [
     {
       "id": "journee-7h48",
-      "nom": "Journées de 7 h 48",
-      "description": "Exemple à adapter : postes de jour en 7 h 48. Chaque journée travaillée donne 48 minutes d'avance sur le dû de 7 h.",
-      "codes": [
-        "M41",
-        "M52",
-        "J38"
-      ],
+      "nom": "Jour, postes en 7 h 48",
+      "description": "Personnel de jour, 39 h par semaine en moyenne (journées de 7 h 48), dû de 7 h par jour ouvré. Accord local RTT du 25 février 2002 et charte du temps de travail.",
+      "codes": [],
       "duJournalier": "",
-      "rttParAn": null,
+      "rttParAn": 20,
+      "droits": []
+    },
+    {
+      "id": "jour-10-12h",
+      "nom": "Jour, postes de 10 h à 12 h",
+      "description": "Dérogation pour les journées longues (amplitude maximale de 12 h) : 36 h par semaine en moyenne et 6 jours de RTT (accord local du 25 février 2002).",
+      "codes": [],
+      "duJournalier": "",
+      "rttParAn": 6,
+      "droits": []
+    },
+    {
+      "id": "nuit",
+      "nom": "Nuit exclusive",
+      "description": "Agents travaillant au moins 90 % de leur temps la nuit : 32 h 30 par semaine, valeur d'une nuit non travaillée 6 h 30, nuit travaillée 10 h, pas de RTT (charte du temps de travail).",
+      "codes": [],
+      "duJournalier": "6:30",
+      "rttParAn": 0,
       "droits": []
     }
   ],
@@ -54,22 +70,40 @@
       ],
       "droitParAn": null,
       "proratiseQuotite": true,
-      "explication": "Jours de repos accordés en compensation, notamment aux agents en postes de 12 h ou de 10 h. Le nombre de jours dépend de ton régime de travail. Un RC pris ne change pas ton dû de la journée : il se compense avec les heures en plus de tes longues journées.",
-      "source": "Protocole du centre hospitalier (à renseigner)"
+      "explication": "Les RC sont des heures de récupération générées par les heures que tu fais en plus de ton dû, pour ramener ta moyenne à 35 h par semaine (32 h 30 la nuit). Ils ne peuvent être posés qu'une fois générés : ton solde d'heures te dit où tu en es. Ce compteur t'aide à suivre combien tu en as posé.",
+      "source": "Note Octime PR.1455 du CH d'Albi (31/08/2026)",
+      "paliersDJF": []
+    },
+    {
+      "id": "rs",
+      "nom": "Repos supplémentaires (dimanches et fériés)",
+      "codes": [
+        "RS"
+      ],
+      "droitParAn": null,
+      "proratiseQuotite": false,
+      "explication": "Si tu travailles au moins 10 dimanches ou jours fériés dans l'année, tu es « en repos variables » et tu gagnes 1 jour de repos supplémentaire ; 2 jours à partir de 20. L'appli les ajoute toute seule dès que le seuil est atteint. Ils se posent après avoir été gagnés, sur l'année de référence.",
+      "source": "Charte du temps de travail du CH d'Albi (2009) et note Octime PR.1455 (2026)",
+      "paliersDJF": [
+        {
+          "dimanchesFeries": 10,
+          "jours": 1
+        },
+        {
+          "dimanchesFeries": 20,
+          "jours": 2
+        }
+      ]
     }
   ],
   "aValider": [
-    "regles.valeurJourneeHeures",
     "regles.rttParAn",
     "regles.delaiPrevenanceHeures",
-    "codes.pause",
     "contacts",
-    "regles.gardeEnfantJours",
-    "regles.rhParAn",
-    "regles.coefHeuresSup1",
     "elections",
     "paie",
     "regles.regimes",
-    "regles.compteurs"
+    "regles.compteurs",
+    "regles.horsSaisonJours1"
   ]
 }

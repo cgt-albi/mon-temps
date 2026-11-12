@@ -203,7 +203,7 @@ content:
             - { value: conge, label: "Congé : le jour est retiré du dû" }
             - { value: recup, label: Récupération }
             - { value: cet, label: Compte épargne-temps }
-            - { value: assimile, label: "Absence comptée comme travaillée (maladie, formation…)" }
+            - { value: assimile, label: "Absence : vaut le dû du jour, 7 h (maladie, formation, ASA…)" }
             - { value: greve, label: Grève }
       - name: debut
         label: Début (HH:MM)
@@ -235,6 +235,7 @@ content:
             - { value: olive, label: Olive }
             - { value: indigo, label: Indigo }
       - { name: compteCA, label: Décompté des congés annuels, type: boolean }
+      - { name: compteBonusCA, label: "Jour gagné posé (hors saison, fractionnement) : décompté du bonus de congés", type: boolean }
       - name: compte
         label: Compteur particulier (facultatif)
         type: select
@@ -258,6 +259,13 @@ content:
       - { name: quotiteParDefaut, label: Quotité par défaut (%), type: number }
       - { name: rttParAn, label: RTT par an, type: number }
       - { name: caParAn, label: Congés annuels par an, type: number }
+      - name: horsSaisonJours1
+        label: Congés hors saison, 1er jour gagné à partir de (jours de CA)
+        description: "Jours de CA pris hors de la période estivale. Charte 2009 : 3 ; note Octime 2026 : 4."
+        type: number
+      - name: horsSaisonJours2
+        label: Congés hors saison, 2e jour gagné à partir de (jours de CA)
+        type: number
       - name: regimes
         label: Régimes de travail (postes en 12 h, 10 h, 7 h 48…)
         description: "L'agent choisit son régime dans son profil. Il ne voit alors que les codes de travail de son régime (plus repos, congés, absences). Une case vide reprend la règle générale."
@@ -317,6 +325,15 @@ content:
             description: Laisser vide si le droit dépend du régime, ou pour un simple décompte sans droit.
             type: number
           - { name: proratiseQuotite, label: Réduit pour les temps partiels, type: boolean, default: true }
+          - name: paliersDJF
+            label: Jours gagnés selon les dimanches et fériés travaillés (facultatif)
+            description: "Ex. repos supplémentaires : 10 dimanches/fériés → 1 jour ; 20 → 2 jours. Le plus haut palier atteint compte."
+            type: object
+            list:
+              collapsible: { collapsed: true, summary: "{fields.dimanchesFeries} → {fields.jours} j" }
+            fields:
+              - { name: dimanchesFeries, label: À partir de (dimanches et fériés travaillés), type: number, required: true }
+              - { name: jours, label: Jours gagnés, type: number, required: true }
           - { name: explication, label: "Explication montrée à l'agent (bouton « ? »)", type: text }
           - { name: source, label: Source (texte officiel ou protocole), type: string }
       - { name: rhParAn, label: Repos hebdomadaires par an, type: number }

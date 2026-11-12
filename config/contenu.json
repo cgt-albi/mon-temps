@@ -55,16 +55,71 @@
   ],
   "droits": [
     {
+      "titre": "Ton temps de travail au CH d'Albi",
+      "texte": "La référence est de 35 h par semaine de jour, 32 h 30 la nuit.\n• De jour, une journée travaillée vaut en général 7 h 48 et une journée non travaillée 7 h. Chaque journée de 7 h 48 te donne donc 48 minutes d'avance, que tu récupères en RTT ou en repos compensateurs.\n• La nuit, une nuit travaillée vaut 10 h et une nuit non travaillée 6 h 30.\n• Durée annuelle de jour : 1 596 h en repos fixes, 1 582 h si tu travailles au moins 10 dimanches et fériés, 1 568 h à partir de 20 (hors jours hors saison et de fractionnement). Nuit exclusive : 1 450 h.\n• Une journée d'absence (maladie, formation, autorisation d'absence) vaut 7 h, ou 6 h 30 la nuit, réduite selon ton temps partiel. Elle ne te fait donc pas gagner d'heures, ni de RTT.",
+      "source": "Charte du temps de travail du CH d'Albi (2009) et Accord local RTT du CH d'Albi (2002)"
+    },
+    {
+      "titre": "Dimanches, fériés et repos variables",
+      "texte": "• Tu es « en repos variables » si tu travailles au moins 10 dimanches ou jours fériés dans l'année. Tu gagnes alors 1 jour de repos supplémentaire (RS), et 2 jours à partir de 20. L'appli les compte toute seule.\n• Férié travaillé (repos variables) : tu récupères le temps réellement travaillé. 7 h 48 travaillées = 7 h 48 récupérées, 10 h = 10 h.\n• Férié tombant sur ton repos hebdomadaire (repos variables) : il est compensé, au prorata si tu es à temps partiel.\n• En repos fixes ou en nuit exclusive, un férié tombant sur un repos n'est pas récupéré. À temps partiel, un férié tombant sur un jour où tu ne travailles pas d'habitude non plus.\n• Un férié pendant un arrêt maladie ou maternité est considéré comme pris.",
+      "source": "Charte du temps de travail du CH d'Albi (2009) et Note Octime PR.1455 du CH d'Albi (2026)"
+    },
+    {
+      "titre": "Congés annuels et jours en plus",
+      "texte": "• 25 jours ouvrés par an à temps plein, au prorata à temps partiel. Contractuels : 2 jours par mois (contrat de plus de 15 jours).\n• À poser dans l'année ; tolérance jusqu'au 15 janvier suivant (ils deviennent alors des CA-1). Au plus 31 jours d'affilée. Tu peux avoir 3 semaines consécutives l'été, sauf contrainte du service.\n• Hors saison : 1 jour en plus si tu prends 3 à 5 jours de CA en dehors du 1er mai au 31 octobre, 2 jours à partir de 6. La note Octime de 2026 parle de 4 ou 5 jours au lieu de 3 : demande au syndicat. À poser au plus tard le 30 avril suivant.\n• Fractionnement : 1 jour en plus si tu prends tes CA en au moins 3 périodes d'au moins 5 jours ouvrés (4 si la période contient un férié). À poser au plus tard le 30 avril suivant.\n• Agents contractuels : les jours hors saison à partir de la 2e année de présence.\n• On ne peut pas poser de congé sur un arrêt maladie.",
+      "source": "Charte du temps de travail du CH d'Albi (2009) et Note Octime PR.1455 du CH d'Albi (2026)"
+    },
+    {
+      "titre": "RTT et repos compensateurs",
+      "texte": "• Les RTT et les RC sont des heures que tu as faites en plus de ton dû : ils ramènent ta moyenne à 35 h par semaine (32 h 30 la nuit). On ne peut les poser qu'une fois gagnés.\n• Jour en 7 h 48 : 20 jours de RTT par an selon l'accord local. Journées longues (jusqu'à 12 h) : 6 jours. Nuit exclusive : pas de RTT. Le syndicat vérifie le chiffre exact pour 2026.\n• Ils se posent par journée ou demi-journée, dans le cycle de travail, 3 jours à la suite au maximum. Ils peuvent être collés à des congés annuels, mais pas posés un week-end ni un férié.\n• Une absence (maladie, formation…) ne génère pas de RTT.\n• Si le service doit reporter des jours, l'ordre est : heures dues, RTT non planifiés, RTT planifiés, fériés.\n• Les contractuels en remplacement peuvent travailler sur la base de 35 h effectives, sans RTT.",
+      "source": "Charte du temps de travail du CH d'Albi (2009), Accord local RTT du CH d'Albi (2002) et Note Octime PR.1455 du CH d'Albi (2026)"
+    },
+    {
+      "titre": "Autorisations spéciales d'absence (ASA)",
+      "texte": "Chaque jour d'ASA vaut 7 h (6 h 30 la nuit), au prorata à temps partiel.\n• Ton mariage ou PACS : 5 jours, dans les 15 jours autour de l'événement.\n• Mariage d'un enfant : 1 jour.\n• Naissance ou adoption : 3 jours, dans les 15 jours autour de la naissance.\n• Décès ou maladie très grave du conjoint, d'un parent, d'un enfant, d'un beau-parent : 3 jours. Décès d'un frère, d'une sœur, d'un beau-frère, d'une belle-sœur, d'un grand-parent : 1 jour.\n• Enfant malade de moins de 16 ans : 6 jours par an et par famille, 12 si tu l'élèves seul·e ou si ton conjoint n'a pas droit à ce congé. Sans limite d'âge si l'enfant est handicapé. Certificat médical indiquant que ta présence est indispensable.\n• Démarche : demande signée avec ton cadre, puis justificatif à la DRH au plus vite. En attendant la décision, l'absence apparaît en « AAQ » (absence à qualifier) dans Octime ; sans justificatif, elle le reste.\n• Une consultation ou une hospitalisation programmée n'est pas une ASA.\n• Contractuels : mêmes droits dès 1 an d'ancienneté.",
+      "source": "Charte du temps de travail du CH d'Albi (2009) et note de la DRH sur les agents contractuels"
+    },
+    {
+      "titre": "Arrêt maladie : les démarches",
+      "texte": "• Préviens ton cadre et ton service au plus tôt : arrêt, prolongation, reprise.\n• Envoie le certificat sous 48 heures.\n  – Titulaires et stagiaires : volets 2 et 3 à la DRH, garde le volet 1.\n  – Contractuels, praticiens et internes : volets 1 et 2 à la CPAM, volet 3 à la DRH, garde une copie du volet 1.\n• Fonctionnaires : un premier retard donne lieu à un courrier ; un nouveau retard dans les 24 mois entraîne une réduction de 50 % du traitement sur la période, sauf hospitalisation ou impossibilité d'envoyer l'arrêt dans les 8 jours.\n• Arrêt de 21 jours ou plus : visite de reprise obligatoire auprès de la médecine du travail (05 63 47 42 21, poste 34221), ou à défaut certificat de reprise du médecin traitant.\n• Pendant l'arrêt : pas de RTT générés, pas de congé posé, et un férié est considéré comme pris.",
+      "source": "Note d'information de la DRH n° 03/2015 et charte du temps de travail du CH d'Albi"
+    },
+    {
+      "titre": "Accident du travail ou de trajet",
+      "texte": "• Préviens tout de suite ton cadre (ou le cadre de garde, ou le directeur d'astreinte le week-end) et la DRH.\n• Fais la déclaration auprès du bureau des carrières de la DRH sous 48 h (24 h selon la charte pour les titulaires), avec ton certificat médical (formulaire Cerfa n° 11138).\n• Volets 1 et 2 à la Sécurité sociale sous 48 h, volet 4 lisible à la DRH sous 48 h ; garde le volet 3.\n• Même démarche pour une prolongation, une rechute ou le certificat final. Après un arrêt prolongé ou des soins, prends rendez-vous avec la médecine du travail.\n• Rechute (contractuels) : tu es en maladie ordinaire le temps que la CPAM reconnaisse la rechute ; transmets sa décision à la DRH.\n• Accident de trajet causé par un tiers : joins le constat ou le procès-verbal.\n• Contacts : bureau des carrières, postes 34278 ou 33223, 05 63 47 42 78, rh.carrierespnm@ch-albi.fr. Médecine du travail : poste 34221.",
+      "source": "Plaquette DRH PR.753 et charte du temps de travail du CH d'Albi"
+    },
+    {
+      "titre": "Pauses et temps de repas",
+      "texte": "• Pause de 20 minutes comprise dans l'horaire dès que tu travailles plus de 6 h d'affilée. Elle ne se récupère pas.\n• Repas de 30 minutes compté comme temps de travail pour : personnels soignants et PARM ; personnels de laboratoire, de radiologie et de médecine nucléaire quand ils sont seuls à assurer la continuité (hors secrétaires médicales) ; restauration, diététique, ouvriers d'entretien postés.\n• 30 minutes en plus pour compenser le repas : personnel administratif (y compris secrétaires médicales), pharmacie, stérilisation, kinésithérapeutes et autres personnels techniques.\n• Si tu dois rester joignable pour intervenir pendant ta pause ou ton repas, c'est du temps de travail effectif.\n• Habillage et déshabillage (5 + 5 minutes) compris dans le temps de travail quand la tenue est obligatoire.",
+      "source": "Charte du temps de travail du CH d'Albi (2009)"
+    },
+    {
+      "titre": "Grossesse : facilités de service",
+      "texte": "• Déclare ta grossesse à la DRH avant la fin du 4e mois.\n• Dès le 3e mois : 1 heure par jour de présence (non cumulable, au prorata à temps partiel), sur avis de la médecine du travail ou de ton médecin.\n• Il faut l'autorisation écrite de la DRH, obtenue avec un certificat médical : sans elle, pas de facilité, et rien de rétroactif.",
+      "source": "Charte du temps de travail du CH d'Albi (2009)"
+    },
+    {
+      "titre": "Astreintes",
+      "texte": "• Pendant une astreinte, chaque intervention, trajet compris, est du temps de travail effectif.\n• Au maximum 72 heures d'astreinte sur 15 jours et un week-end par mois.\n• Le temps d'astreinte lui-même n'est pas du temps de travail : il est compensé ou indemnisé selon le décret en vigueur.",
+      "source": "Charte du temps de travail du CH d'Albi (2009)"
+    },
+    {
+      "titre": "Agents contractuels",
+      "texte": "• Autorisations d'absence : les mêmes que les titulaires dès 1 an d'ancienneté.\n• Congés : 2 jours par mois ; jours hors saison à partir de la 2e année.\n• En remplacement, tu peux travailler sur la base de 35 h effectives, sans RTT.\n• Maladie : régime général. Selon ton ancienneté, indemnités de la Sécurité sociale ou maintien du traitement (plein ou demi). Congé de grave maladie possible à partir de 3 ans d'ancienneté.\n• Compte épargne-temps et congé parental : à partir d'1 an de service continu.\n• Démission : préavis de 8 jours (moins de 6 mois de service), 1 mois (de 6 mois à 2 ans), 2 mois (plus de 2 ans), sauf pendant la période d'essai.",
+      "source": "Note de la DRH sur les agents contractuels et charte du temps de travail du CH d'Albi"
+    },
+    {
       "titre": "Compte épargne-temps (CET)",
-      "texte": "Les jours de congés, de RTT ou de repos non pris peuvent être déposés sur un compte épargne-temps, dans la limite d'un total de 60 jours. La demande se fait à une date fixée par l'établissement. Les jours déposés peuvent ensuite être pris comme des congés.",
+      "texte": "Les jours de congés, de RTT ou de repos non pris peuvent être déposés sur un compte épargne-temps, dans la limite d'un total de 60 jours. Les jours déposés peuvent ensuite être pris comme des congés.\nAu CH d'Albi, selon la charte :\n• Ouvert aux titulaires et aux contractuels ayant au moins 1 an de service continu, sur demande écrite visée par le cadre.\n• Alimentation : 5 jours de CA et 15 jours de RTT par an au maximum, plus la moitié des heures supplémentaires ni payées ni récupérées.\n• Un jour placé vaut 7 h ; la nuit, le CET peut être alimenté en heures.\n• Délai pour poser : 1 mois pour moins de 6 jours, 2 mois de 6 à 20 jours, 4 mois au-delà.\n• Utilisable de plein droit après un congé de maternité, d'adoption ou de paternité.\nCertaines règles ont changé depuis 2009 : vérifie avec le syndicat.",
       "lien": "https://www.legifrance.gouv.fr",
-      "source": "Décret n° 2002-788"
+      "source": "Décret n° 2002-788 et charte du temps de travail du CH d'Albi"
     },
     {
       "titre": "Heures supplémentaires",
-      "texte": "Elles sont faites à la demande de la direction. Elles donnent lieu à une récupération ou à une indemnisation. Garde une trace de chaque dépassement : c'est ce que fait l'onglet Preuves.",
+      "texte": "Elles sont faites à la demande de la direction, validées par la DRH, puis payées ou récupérées.\n• Paiement : sur la base de ton traitement, × 1,25 pour les 14 premières heures du mois, × 1,27 ensuite ; majoré de 100 % la nuit et des 2/3 le dimanche et les jours fériés.\n• Plafond : 15 heures par mois ; 18 heures pour les infirmiers spécialisés, cadres de santé, sages-femmes, encadrement technique et ouvrier, et manipulateurs en électroradiologie.\n• À temps partiel, en principe pas d'heures supplémentaires.\n• Les dépassements d'horaire dans le cycle se récupèrent dans le cycle ; ils ne sont pas payés en heures supplémentaires.\nGarde une trace de chaque dépassement : c'est ce que fait l'onglet Preuves.",
       "lien": "https://www.legifrance.gouv.fr",
-      "source": "Décret n° 2002-598"
+      "source": "Décret n° 2002-598 et charte du temps de travail du CH d'Albi"
     },
     {
       "titre": "Arrêt maladie : ce que tu perçois",

@@ -23,6 +23,40 @@ for (const c of cfg.codes) {
 }
 t('nom présent', typeof cfg.nom === 'string' && cfg.nom.trim().length > 0);
 
+// Absences : 7 h, pas la durée du poste prévu (charte CH d'Albi)
+{
+  const e = { profil: { quotite: 100 }, jours: { '2026-03-03': { prevu: { code: 'M41' }, realise: { code: 'MAL' } } }, codesPerso: [], departs: {} };
+  const b = M.bilanPeriode('2026-03-03', '2026-03-03', e, cfg);
+  t('absence sur un poste de 7 h 48 : vaut 7 h, solde nul', b.realise === 420 && b.realise - b.theorique === 0);
+  const e2 = { profil: { quotite: 80 }, jours: { '2026-03-03': { prevu: { code: 'M41' }, realise: { code: 'FOR' } } }, codesPerso: [], departs: {} };
+  t('absence à 80 % : 5 h 36', M.bilanPeriode('2026-03-03', '2026-03-03', e2, cfg).realise === 336);
+}
+
+// Jours gagnés : hors saison, fractionnement (férié), repos supplémentaires
+{
+  const vide = () => ({ profil: { quotite: 100 }, jours: {}, codesPerso: [], departs: {} });
+  const poser = (e, dates, code = 'CA') => dates.forEach((d) => { e.jours[d] = { prevu: { code } }; });
+  const ouvres = (debut, n) => { const out = []; let d = debut; while (out.length < n) { if (M.jourSemaine(d) < 5 && !M.nomFerie(d)) out.push(d); d = M.ajouterJours(d, 1); } return out; };
+  const b = (e, c = cfg) => M.bilanAnnee(2026, e, c, '2026-12-31');
+  let e = vide(); poser(e, ouvres('2026-02-02', 3));
+  t('hors saison : 3 jours → 1 jour (seuil par défaut)', b(e).bonusHS === 1);
+  t('hors saison : seuil réglable à 4', b(e, { ...cfg, regles: { ...regles, horsSaisonJours1: 4 } }).bonusHS === 0);
+  e = vide(); poser(e, ouvres('2026-02-02', 6)); t('hors saison : 6 jours → 2 jours', b(e).bonusHS === 2);
+  // fractionnement : 3 périodes de 5 jours ; la 3e contient le lundi de Pâques (6 avril 2026) → 4 jours suffisent
+  e = vide(); poser(e, [...ouvres('2026-06-01', 5), ...ouvres('2026-07-06', 5), '2026-04-07', '2026-04-08', '2026-04-09', '2026-04-10']);
+  t('fractionnement : 4 jours suffisent si la période contient un férié', b(e).bonusFrac === 1);
+  e = vide(); poser(e, [...ouvres('2026-06-01', 5), ...ouvres('2026-07-06', 5), ...ouvres('2026-09-07', 4)]);
+  t('fractionnement : 4 jours sans férié ne suffisent pas', b(e).bonusFrac === 0);
+  // jour hors saison posé : pris sur le bonus, sans compter lui-même comme CA hors saison
+  e = vide(); poser(e, ouvres('2026-02-02', 3)); poser(e, ['2026-03-02'], 'CH');
+  const bb = b(e); t('CH posé : décompté du bonus, pas compté hors saison', bb.caPris === 4 && bb.caHorsSaison === 3 && bb.bonusHS === 1);
+  // repos supplémentaires selon les dimanches travaillés
+  const rs = (n) => { const x = vide(); let d = '2026-01-04'; for (let i = 0; i < n; i++) { x.jours[d] = { prevu: { code: 'M41' } }; d = M.ajouterJours(d, 7); } return b(x).compteurs.find((c) => c.id === 'rs'); };
+  t('RS : 9 dimanches → 0 jour', rs(9).droit === 0);
+  t('RS : 10 dimanches → 1 jour', rs(10).droit === 1);
+  t('RS : 20 dimanches → 2 jours', rs(20).droit === 2);
+}
+
 // Régimes de travail
 const regs = regles.regimes || [];
 const idsVus = new Set();
@@ -72,7 +106,7 @@ t('heures de nuit', M.minutesNuit([[M.jourNum('2026-01-05') * 1440 + 20 * 60, M.
 
 // Semaine type sans infraction
 const etat = { profil: { quotite: 100 }, jours: {}, preuves: [], codesPerso: [], departs: {} };
-const code = cfg.codes.find((c) => c.type === 'travail').code;
+const code = 'M41';
 for (let n = M.jourNum('2026-03-02'); n < M.jourNum('2026-03-30'); n++) {
   const d = M.depuisNum(n); etat.jours[d] = { prevu: { code: M.jourSemaine(d) >= 5 ? 'RH' : code } };
 }

@@ -36,7 +36,7 @@ Tout se règle dans Pages CMS, sans toucher au code. Il n'y a que trois briques 
 
 | Brique | Où (Pages CMS) | Ce qu'elle dit |
 |---|---|---|
-| **Code** | Codes horaires | Un horaire ou un type de jour (M41, N12, RH, CA, RC…). Son **type** dit l'effet sur le solde d'heures : travail (compte ses heures), repos ou RTT (le dû du jour reste à faire), congé (le jour est retiré du dû), absence comptée (compte comme la journée prévue). |
+| **Code** | Codes horaires | Un horaire ou un type de jour (M41, N12, RH, CA, RC…). Son **type** dit l'effet sur le solde d'heures : travail (compte ses heures), repos ou RTT (le dû du jour reste à faire), congé (le jour est retiré du dû), absence (vaut le dû du jour, 7 h, comme le prévoit la charte). |
 | **Compteur de jours** | Règles de calcul › Compteurs de jours | Un droit compté à part (RC, sujétions…) : quels codes le consomment, combien de jours par an. Il apparaît tout seul dans l'onglet Compteurs de l'agent concerné. |
 | **Régime de travail** | Règles de calcul › Régimes de travail | Un type de poste (12 h, 10 h, 7 h 48…) : ses codes de travail, et ses droits propres (RTT, RC…). L'agent choisit le sien. |
 

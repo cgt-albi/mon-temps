@@ -188,6 +188,13 @@ export function droitCompteur(compteur, etat, cfg) {
   if (!Number.isFinite(brut) || brut <= 0) return 0;
   return compteur.proratiseQuotite === false ? brut : Math.round(brut * quotite(etat, cfg) * 2) / 2;
 }
+// Jours gagnés selon le nombre de dimanches et fériés travaillés dans l'année (ex. repos supplémentaires :
+// 1 jour à partir de 10, 2 jours à partir de 20). Paliers réglables dans Pages CMS.
+export function joursGagnesDJF(compteur, djfJours) {
+  let j = 0;
+  for (const p of compteur.paliersDJF || []) if (p && djfJours >= Number(p.dimanchesFeries)) j = Math.max(j, Number(p.jours) || 0);
+  return j;
+}
 export function rttParAn(etat, cfg) {
   const reg = regimeDe(etat, cfg);
   const v = reg && reg.rttParAn !== undefined && reg.rttParAn !== '' && reg.rttParAn !== null ? Number(reg.rttParAn) : NaN;
@@ -213,9 +220,10 @@ export function creditJour(date, j, etat, cfg, codes) {
   const t = j.info.type;
   if (t === 'travail' || t === 'nuit') return j.effMin;
   if (t === 'assimile' || t === 'greve') {
+    // Charte du temps de travail du CH d'Albi : une journée d'absence vaut 7 h (6 h 30 la nuit), proratisée,
+    // quelle que soit la durée du poste prévu ; une absence ne génère donc pas d'heures en plus (ni de RTT).
     const prevu = j.prevuCode ? codes.get(j.prevuCode) : null;
-    if (estTravail(prevu)) return dureeEffectiveCode(prevu);
-    return estJourOuvreTheorique(date, cfg) ? Math.round(duJournalierHeures(etat, cfg) * 60 * quotite(etat, cfg)) : 0;
+    return estTravail(prevu) || estJourOuvreTheorique(date, cfg) ? Math.round(duJournalierHeures(etat, cfg) * 60 * quotite(etat, cfg)) : 0;
   }
   return 0;
 }
@@ -281,7 +289,8 @@ export function bilanAnnee(annee, etat, cfg, jusqua = aujourdhui(), profondeur =
     if (j.info.type === 'cet') cetPris++;
     if (d <= fin && (j.info.compte === 'rh' || j.code === 'RH')) rh++;
     if (j.info.compte === 'ge' || j.code === 'GE') ge++;
-    if (j.code === 'CA' || (j.info.type === 'conge' && j.info.compteCA)) {
+    if (j.info.compteBonusCA) ca++; // jour hors saison ou de fractionnement posé : pris sur le bonus ajouté au droit
+    else if (j.code === 'CA' || (j.info.type === 'conge' && j.info.compteCA)) {
       ca++; caJours.push(d);
       const md = d.slice(5);
       if (md < ps.debut || md > ps.fin) caHorsSaison++;
@@ -295,10 +304,13 @@ export function bilanAnnee(annee, etat, cfg, jusqua = aujourdhui(), profondeur =
   const v = (k) => (pd && Number(pd[k])) || 0;
   rtt += v('rttPris'); ca += v('caPris'); caHorsSaison += v('caHorsSaison');
   const djfJoursAvant = v('djfJours'), djfMinAvant = v('djfMin');
-  // Jours supplémentaires : hors saison (3 à 5 CA → 1 j, 6 et plus → 2 j) et fractionnement (3 périodes de 5 jours ouvrés).
-  const bonusHS = caHorsSaison >= 6 ? 2 : caHorsSaison >= 3 ? 1 : 0;
+  // Jours supplémentaires (seuils réglables dans Pages CMS) :
+  // hors saison (par défaut 3 à 5 CA hors saison → 1 j, 6 et plus → 2 j) ;
+  // fractionnement : 3 périodes d'au moins 5 jours ouvrés de CA, ou 4 si la période contient un férié.
+  const hs1 = Number(cfg.regles.horsSaisonJours1) || 3, hs2 = Number(cfg.regles.horsSaisonJours2) || 6;
+  const bonusHS = caHorsSaison >= hs2 ? 2 : caHorsSaison >= hs1 ? 1 : 0;
   const periodes = periodesConges(caJours, etat, codes);
-  const bonusFrac = periodes.filter((p) => p >= 5).length >= 3 ? 1 : 0;
+  const bonusFrac = periodes.filter((p) => p.n >= (p.ferie ? 4 : 5)).length >= 3 ? 1 : 0;
   const q = quotite(etat, cfg);
   return {
     annee, jusqua: fin, depart: depart <= fin ? depart : null, pointDepart: pd, mois, report, reportAuto,
@@ -310,7 +322,12 @@ export function bilanAnnee(annee, etat, cfg, jusqua = aujourdhui(), profondeur =
     rttPris: rtt, rttDroit: Math.round(rttParAn(etat, cfg) * q), recupPris: recup,
     caPris: ca, caDroit: Math.round((cfg.regles.caParAn || 25) * q), caHorsSaison, bonusHS, bonusFrac,
     djfMinutes: djf.minutes + djfMinAvant, djfJours: djf.jours.size + djfJoursAvant,
-    compteurs: extras.map(({ c, pris }) => { const p2 = pris + v('pris_' + c.id); const droit = droitCompteur(c, etat, cfg); return { id: c.id, nom: c.nom, pris: p2, droit, reste: droit - p2 }; })
+    compteurs: extras.map(({ c, pris }) => {
+      const p2 = pris + v('pris_' + c.id);
+      const gagnes = joursGagnesDJF(c, djf.jours.size + djfJoursAvant);
+      const droit = droitCompteur(c, etat, cfg) + gagnes;
+      return { id: c.id, nom: c.nom, pris: p2, droit, gagnes, reste: droit - p2 };
+    })
   };
 }
 
@@ -319,19 +336,22 @@ function periodesConges(jours, etat, codes) {
   const set = new Set(jours); const vus = new Set(); const out = [];
   for (const d of jours.sort()) {
     if (vus.has(d)) continue;
-    let n = 0, c = d;
+    let n = 0, c = d, ferie = false;
+    // un férié collé juste avant la période (ex. lundi de Pâques puis CA du mardi au vendredi) en fait partie
+    for (let k = 1, p = ajouterJours(d, -1); k <= 4 && (jourSemaine(p) >= 5 || nomFerie(p)); k++, p = ajouterJours(p, -1)) if (nomFerie(p) && jourSemaine(p) < 5) { ferie = true; break; }
     // une période continue de CA, en traversant week-ends et repos
     while (true) {
-      if (set.has(c)) { vus.add(c); if (jourSemaine(c) < 5 && !nomFerie(c)) n++; }
+      if (set.has(c)) { vus.add(c); if (jourSemaine(c) < 5 && !nomFerie(c)) n++; else if (nomFerie(c) && jourSemaine(c) < 5) ferie = true; }
       else {
         const j = journee(c, etat, codes);
         const pont = (jourSemaine(c) >= 5 || nomFerie(c) || (j && j.info && (j.info.type === 'repos')));
+        if (pont && nomFerie(c) && jourSemaine(c) < 5) ferie = true;
         if (!pont) break;
       }
       c = ajouterJours(c, 1);
       if (jourNum(c) - jourNum(d) > 60) break;
     }
-    out.push(n);
+    out.push({ n, ferie });
   }
   return out;
 }

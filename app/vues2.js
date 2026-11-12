@@ -158,8 +158,8 @@ export function vueDroits() {
   return {
     html: `${enteteRetour('Mes droits', '#/syndicat')}
       <div class="page" style="margin-top:.75rem">
-        <p class="texte">Les règles de base du temps de travail à l'hôpital public, en clair. Chaque fiche renvoie au texte officiel.</p>
-        ${fiches.map((f) => `<details class="carte"><summary style="font-weight:700;cursor:pointer;min-height:1.75rem;display:flex;align-items:center">${esc(f.titre)}</summary><p class="texte" style="margin-top:.5rem">${esc(f.texte)}</p>${f.lien ? `<p class="petit" style="margin:.5rem 0 0"><a href="${esc(f.lien)}" target="_blank" rel="noopener">${esc(f.source || 'Texte officiel')}</a></p>` : ''}</details>`).join('')}
+        <p class="texte">Les règles du temps de travail à l'hôpital public et au CH d'Albi, en clair. Chaque fiche indique sa source.</p>
+        ${fiches.map((f) => `<details class="carte"><summary style="font-weight:700;cursor:pointer;min-height:1.75rem;display:flex;align-items:center">${esc(f.titre)}</summary><p class="texte" style="margin-top:.5rem;white-space:pre-line">${esc(f.texte)}</p>${f.lien ? `<p class="petit" style="margin:.5rem 0 0"><a href="${esc(f.lien)}" target="_blank" rel="noopener">${esc(f.source || 'Texte officiel')}</a></p>` : f.source ? `<p class="petit" style="margin:.5rem 0 0">Source : ${esc(f.source)}</p>` : ''}</details>`).join('')}
         <p class="petit">Les accords propres au ${esc(S.cfg.etablissement)} peuvent préciser ces règles. En cas de doute, parles-en au syndicat.</p>
       </div>`
   };

@@ -1,27 +1,387 @@
 [
   {
+    "code": "M34g",
+    "libelle": "07h00 à 17h00 (gamma)",
+    "type": "travail",
+    "debut": "07:00",
+    "fin": "17:00"
+  },
+  {
+    "code": "M34",
+    "libelle": "07h00 à 17h00 (gris)",
+    "type": "travail",
+    "debut": "07:00",
+    "fin": "17:00"
+  },
+  {
+    "code": "M71",
+    "libelle": "07h12 à 15h00",
+    "type": "travail",
+    "debut": "07:12",
+    "fin": "15:00"
+  },
+  {
+    "code": "M13",
+    "libelle": "07h30 à 15h18",
+    "type": "travail",
+    "debut": "07:30",
+    "fin": "15:18"
+  },
+  {
+    "code": "M32E",
+    "libelle": "07h30 à 17h30, pause repas déduite",
+    "type": "travail",
+    "debut": "07:30",
+    "fin": "17:30",
+    "pauseMin": 30
+  },
+  {
+    "code": "M32",
+    "libelle": "07h30 à 17h30 (couleur)",
+    "type": "travail",
+    "debut": "07:30",
+    "fin": "17:30"
+  },
+  {
+    "code": "M74",
+    "libelle": "07h30 à 19h18",
+    "type": "travail",
+    "debut": "07:30",
+    "fin": "19:18"
+  },
+  {
+    "code": "UPAM",
+    "libelle": "07h30 à 12h00 et 12h30 à 15h48",
+    "type": "travail",
+    "debut": "07:30",
+    "fin": "12:00",
+    "debut2": "12:30",
+    "fin2": "15:48"
+  },
+  {
+    "code": "M22",
+    "libelle": "08h00 à 11h54",
+    "type": "travail",
+    "debut": "08:00",
+    "fin": "11:54"
+  },
+  {
+    "code": "M27",
+    "libelle": "08h00 à 12h00",
+    "type": "travail",
+    "debut": "08:00",
+    "fin": "12:00"
+  },
+  {
+    "code": "C84",
+    "libelle": "08h00 à 12h00 et 14h00 à 17h48",
+    "type": "travail",
+    "debut": "08:00",
+    "fin": "12:00",
+    "debut2": "14:00",
+    "fin2": "17:48"
+  },
+  {
+    "code": "J142",
+    "libelle": "08h00 à 12h30 et 13h00 à 16h18",
+    "type": "travail",
+    "debut": "08:00",
+    "fin": "12:30",
+    "debut2": "13:00",
+    "fin2": "16:18"
+  },
+  {
+    "code": "J76",
+    "libelle": "08h00 à 13h00",
+    "type": "travail",
+    "debut": "08:00",
+    "fin": "13:00"
+  },
+  {
+    "code": "J203",
+    "libelle": "08h00 à 13h00 et 13h30 à 16h18",
+    "type": "travail",
+    "debut": "08:00",
+    "fin": "13:00",
+    "debut2": "13:30",
+    "fin2": "16:18"
+  },
+  {
+    "code": "J221",
+    "libelle": "08h00 à 13h00 et 13h30 à 18h30",
+    "type": "travail",
+    "debut": "08:00",
+    "fin": "13:00",
+    "debut2": "13:30",
+    "fin2": "18:30"
+  },
+  {
+    "code": "M15",
+    "libelle": "08h00 à 15h48",
+    "type": "travail",
+    "debut": "08:00",
+    "fin": "15:48"
+  },
+  {
     "code": "M41",
-    "libelle": "Matin 41",
+    "libelle": "08h00 à 16h18, pause repas déduite",
     "type": "travail",
     "debut": "08:00",
     "fin": "16:18",
     "pauseMin": 30
   },
   {
-    "code": "M52",
-    "libelle": "Matin 52",
+    "code": "M38",
+    "libelle": "08h00 à 17h30, pause repas déduite",
     "type": "travail",
-    "debut": "08:42",
-    "fin": "17:00",
+    "debut": "08:00",
+    "fin": "17:30",
     "pauseMin": 30
   },
   {
+    "code": "C85",
+    "libelle": "08h12 à 12h00 et 13h00 à 17h00",
+    "type": "travail",
+    "debut": "08:12",
+    "fin": "12:00",
+    "debut2": "13:00",
+    "fin2": "17:00"
+  },
+  {
+    "code": "C44",
+    "libelle": "08h12 à 12h30 et 13h00 à 16h30",
+    "type": "travail",
+    "debut": "08:12",
+    "fin": "12:30",
+    "debut2": "13:00",
+    "fin2": "16:30"
+  },
+  {
+    "code": "M18",
+    "libelle": "08h12 à 16h00",
+    "type": "travail",
+    "debut": "08:12",
+    "fin": "16:00"
+  },
+  {
+    "code": "P42",
+    "libelle": "08h15 à 12h00 et 12h30 à 16h33",
+    "type": "travail",
+    "debut": "08:15",
+    "fin": "12:00",
+    "debut2": "12:30",
+    "fin2": "16:33"
+  },
+  {
+    "code": "FI2",
+    "libelle": "08h20 à 12h30 et 13h02 à 16h40",
+    "type": "travail",
+    "debut": "08:20",
+    "fin": "12:30",
+    "debut2": "13:02",
+    "fin2": "16:40"
+  },
+  {
+    "code": "C103",
+    "libelle": "08h30 à 12h00 et 12h45 à 17h03",
+    "type": "travail",
+    "debut": "08:30",
+    "fin": "12:00",
+    "debut2": "12:45",
+    "fin2": "17:03"
+  },
+  {
+    "code": "J104",
+    "libelle": "08h30 à 12h30 et 13h00 à 16h48",
+    "type": "travail",
+    "debut": "08:30",
+    "fin": "12:30",
+    "debut2": "13:00",
+    "fin2": "16:48"
+  },
+  {
+    "code": "J47",
+    "libelle": "08h30 à 12h30 et 14h00 à 17h48",
+    "type": "travail",
+    "debut": "08:30",
+    "fin": "12:30",
+    "debut2": "14:00",
+    "fin2": "17:48"
+  },
+  {
+    "code": "C45",
+    "libelle": "08h30 à 13h00 et 13h30 à 16h48",
+    "type": "travail",
+    "debut": "08:30",
+    "fin": "13:00",
+    "debut2": "13:30",
+    "fin2": "16:48"
+  },
+  {
+    "code": "M51",
+    "libelle": "08h30 à 16h18",
+    "type": "travail",
+    "debut": "08:30",
+    "fin": "16:18"
+  },
+  {
+    "code": "J10",
+    "libelle": "08h30 à 16h48, pause repas déduite",
+    "type": "travail",
+    "debut": "08:30",
+    "fin": "16:48",
+    "pauseMin": 30
+  },
+  {
+    "code": "M52",
+    "libelle": "08h42 à 13h00 et 13h30 à 17h00",
+    "type": "travail",
+    "debut": "08:42",
+    "fin": "13:00",
+    "debut2": "13:30",
+    "fin2": "17:00"
+  },
+  {
+    "code": "J62",
+    "libelle": "08h45 à 12h30 et 13h00 à 17h03",
+    "type": "travail",
+    "debut": "08:45",
+    "fin": "12:30",
+    "debut2": "13:00",
+    "fin2": "17:03"
+  },
+  {
+    "code": "C116",
+    "libelle": "09h00 à 12h18 et 14h00 à 18h30",
+    "type": "travail",
+    "debut": "09:00",
+    "fin": "12:18",
+    "debut2": "14:00",
+    "fin2": "18:30"
+  },
+  {
+    "code": "J122",
+    "libelle": "09h00 à 12h30 et 13h00 à 17h18",
+    "type": "travail",
+    "debut": "09:00",
+    "fin": "12:30",
+    "debut2": "13:00",
+    "fin2": "17:18"
+  },
+  {
+    "code": "C86",
+    "libelle": "09h00 à 12h48 et 15h00 à 19h00",
+    "type": "travail",
+    "debut": "09:00",
+    "fin": "12:48",
+    "debut2": "15:00",
+    "fin2": "19:00"
+  },
+  {
+    "code": "J27",
+    "libelle": "09h00 à 13h00 et 13h42 à 17h30",
+    "type": "travail",
+    "debut": "09:00",
+    "fin": "13:00",
+    "debut2": "13:42",
+    "fin2": "17:30"
+  },
+  {
+    "code": "J01",
+    "libelle": "09h00 à 16h48",
+    "type": "travail",
+    "debut": "09:00",
+    "fin": "16:48"
+  },
+  {
+    "code": "J02",
+    "libelle": "09h00 à 17h30, pause repas déduite",
+    "type": "travail",
+    "debut": "09:00",
+    "fin": "17:30",
+    "pauseMin": 30
+  },
+  {
+    "code": "J57",
+    "libelle": "09h12 à 17h00",
+    "type": "travail",
+    "debut": "09:12",
+    "fin": "17:00"
+  },
+  {
+    "code": "M75",
+    "libelle": "09h12 à 21h00",
+    "type": "travail",
+    "debut": "09:12",
+    "fin": "21:00"
+  },
+  {
+    "code": "C14",
+    "libelle": "09h42 à 13h30 et 14h00 à 18h00",
+    "type": "travail",
+    "debut": "09:42",
+    "fin": "13:30",
+    "debut2": "14:00",
+    "fin2": "18:00"
+  },
+  {
     "code": "J38",
-    "libelle": "Journée 38",
+    "libelle": "09h42 à 18h00, pause repas déduite",
     "type": "travail",
     "debut": "09:42",
     "fin": "18:00",
     "pauseMin": 30
+  },
+  {
+    "code": "P25",
+    "libelle": "10h00 à 17h00",
+    "type": "travail",
+    "debut": "10:00",
+    "fin": "17:00"
+  },
+  {
+    "code": "S24",
+    "libelle": "12h42 à 20h30",
+    "type": "travail",
+    "debut": "12:42",
+    "fin": "20:30"
+  },
+  {
+    "code": "S21",
+    "libelle": "13h00 à 16h30",
+    "type": "travail",
+    "debut": "13:00",
+    "fin": "16:30"
+  },
+  {
+    "code": "S23",
+    "libelle": "13h12 à 21h00",
+    "type": "travail",
+    "debut": "13:12",
+    "fin": "21:00"
+  },
+  {
+    "code": "SM1",
+    "libelle": "13h30 à 18h30",
+    "type": "travail",
+    "debut": "13:30",
+    "fin": "18:30"
+  },
+  {
+    "code": "J07b",
+    "libelle": "Journée 07h30 à 12h00 et 12h30 à 17h00",
+    "type": "travail",
+    "debut": "07:30",
+    "fin": "12:00",
+    "debut2": "12:30",
+    "fin2": "17:00"
+  },
+  {
+    "code": "N66",
+    "libelle": "Radio, nuit de 20h42 à 07h30",
+    "type": "nuit",
+    "debut": "20:42",
+    "fin": "07:30"
   },
   {
     "code": "RH",
@@ -29,13 +389,18 @@
     "type": "repos"
   },
   {
-    "code": "RF",
-    "libelle": "Repos férié",
+    "code": "Jfer",
+    "libelle": "Jour férié",
+    "type": "repos"
+  },
+  {
+    "code": "Recf",
+    "libelle": "Récupérateur férié",
     "type": "repos"
   },
   {
     "code": "RTT",
-    "libelle": "Réduction du temps de travail",
+    "libelle": "Jour de RTT",
     "type": "rtt"
   },
   {
@@ -44,47 +409,87 @@
     "type": "repos"
   },
   {
+    "code": "RS",
+    "libelle": "Repos supplémentaire (dimanches et fériés travaillés)",
+    "type": "repos"
+  },
+  {
+    "code": "REC",
+    "libelle": "Récupération d'heures dues de l'année précédente",
+    "type": "recup"
+  },
+  {
     "code": "CA",
     "libelle": "Congé annuel",
     "type": "conge",
     "compteCA": true
   },
   {
-    "code": "CAF",
-    "libelle": "Congé annuel fractionné",
-    "type": "conge",
-    "compteCA": true
+    "code": "CA-1",
+    "libelle": "Congé annuel de l'année précédente",
+    "type": "conge"
   },
   {
     "code": "CH",
-    "libelle": "Congé d'hiver",
+    "libelle": "Congé hors saison",
     "type": "conge",
-    "compteCA": true
+    "compteBonusCA": true
+  },
+  {
+    "code": "CH-1",
+    "libelle": "Congé hors saison de l'année précédente",
+    "type": "conge"
+  },
+  {
+    "code": "CF",
+    "libelle": "Congé de fractionnement",
+    "type": "conge",
+    "compteBonusCA": true
   },
   {
     "code": "CF-1",
-    "libelle": "Congé de fractionnement",
+    "libelle": "Congé de fractionnement de l'année précédente",
     "type": "conge"
-  },
-  {
-    "code": "HS",
-    "libelle": "Congé hors saison",
-    "type": "conge"
-  },
-  {
-    "code": "REC",
-    "libelle": "Récupération d'heures",
-    "type": "recup"
   },
   {
     "code": "CET",
-    "libelle": "Jour pris sur le CET",
+    "libelle": "Jour pris sur le compte épargne-temps",
     "type": "cet"
   },
   {
-    "code": "TPPO",
-    "libelle": "Temps partiel",
+    "code": "TP50",
+    "libelle": "Temps partiel 50 % (jour non travaillé)",
     "type": "repos"
+  },
+  {
+    "code": "TP60",
+    "libelle": "Temps partiel 60 % (jour non travaillé)",
+    "type": "repos"
+  },
+  {
+    "code": "TP70",
+    "libelle": "Temps partiel 70 % (jour non travaillé)",
+    "type": "repos"
+  },
+  {
+    "code": "TP75",
+    "libelle": "Temps partiel 75 % (jour non travaillé)",
+    "type": "repos"
+  },
+  {
+    "code": "TP80",
+    "libelle": "Temps partiel 80 % (jour non travaillé)",
+    "type": "repos"
+  },
+  {
+    "code": "TP90",
+    "libelle": "Temps partiel 90 % (jour non travaillé)",
+    "type": "repos"
+  },
+  {
+    "code": "ASA",
+    "libelle": "Autorisation spéciale d'absence",
+    "type": "assimile"
   },
   {
     "code": "GE",
@@ -94,12 +499,12 @@
   },
   {
     "code": "MAL",
-    "libelle": "Maladie",
+    "libelle": "Arrêt maladie",
     "type": "assimile"
   },
   {
     "code": "AT",
-    "libelle": "Accident du travail",
+    "libelle": "Accident du travail ou de trajet",
     "type": "assimile"
   },
   {
@@ -111,6 +516,11 @@
     "code": "SYN",
     "libelle": "Activité syndicale",
     "type": "assimile"
+  },
+  {
+    "code": "AAQ",
+    "libelle": "Absence à qualifier",
+    "type": "repos"
   },
   {
     "code": "GRE",

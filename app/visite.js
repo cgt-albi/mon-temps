@@ -19,7 +19,7 @@ function etatDemo() {
   for (let n = M.jourNum(debut); n <= M.jourNum(fin); n++) {
     const d = M.depuisNum(n); const js = M.jourSemaine(d);
     let code;
-    if (M.nomFerie(d) && !M.estPentecote(d)) code = 'RF';
+    if (M.nomFerie(d) && !M.estPentecote(d)) code = 'Jfer';
     else if (js === 5 || js === 6) code = (n % 3 === 0 && js === 5) ? 'M52' : 'RH';
     else if (n % 11 === 0) code = 'RTT';
     else code = travail[k++ % travail.length];
@@ -34,7 +34,7 @@ function etatDemo() {
   e.jours[rap] = { prevu: { code: 'RH' }, realise: { code: 'M52', note: 'Remplacement d\'une collègue' } };
   e.preuves.push({ id: 'rappel-' + rap, type: 'rappel', date: rap, code: 'M52', appelLe: `${M.ajouterJours(rap, -1)}T19:10`, compense: false, creeLe: new Date().toISOString() });
   delete e.jours[today].realise;
-  if (!e.jours[today].prevu || ['RH', 'RF', 'RTT'].includes(e.jours[today].prevu.code)) e.jours[today] = { prevu: { code: 'M52' } };
+  if (!e.jours[today].prevu || ['RH', 'Jfer', 'RTT'].includes(e.jours[today].prevu.code)) e.jours[today] = { prevu: { code: 'M52' } };
   return e;
 }
 

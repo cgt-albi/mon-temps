@@ -12,7 +12,7 @@ const INFOS = (R) => ({
   solde: { titre: 'Solde et théorique', p: [
     'Ton solde, c\'est ce que tu as fait moins ce que tu devais faire, depuis le début de ton suivi.',
     `Ce que tu dois (le « théorique ») : ${M.formatDuree(M.duJournalierHeures(S.etat, S.cfg) * 60)} par jour du lundi au vendredi, ajusté à ta quotité. Les jours fériés et tes congés annuels sont retirés du compte.`,
-    'Ce que tu as fait : la durée de tes journées de travail, pause déduite, plus tes dépassements. Maladie, formation et garde d\'enfant comptent comme la journée prévue.',
+    'Ce que tu as fait : la durée de tes journées de travail, pause déduite, plus tes dépassements. Maladie, formation, garde d\'enfant et autorisations d\'absence comptent pour la valeur d\'une journée d\'absence : 7 h (6 h 30 la nuit).',
     'Un solde négatif n\'est pas une dette : c\'est le planning qui ne t\'a pas donné assez d\'heures. Un solde positif, ce sont des heures à récupérer ou à payer.',
     'Chaque barre du graphique est le solde d\'un mois : vers le haut, des heures en plus ; vers le bas, en rouge, des heures en moins.'] },
   garanties: { titre: 'Garanties minimales', p: [
