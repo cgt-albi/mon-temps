@@ -56,6 +56,9 @@ t('nom présent', typeof cfg.nom === 'string' && cfg.nom.trim().length > 0);
   t('RS : 9 dimanches → 0 jour', rs(9).droit === 0);
   t('RS : 10 dimanches → 1 jour', rs(10).droit === 1);
   t('RS : 20 dimanches → 2 jours', rs(20).droit === 2);
+  // comme Octime (« nb repos Sup » retiré de l'obligation) : un RS posé ne coûte pas d'heures
+  const eRS = vide(); eRS.jours['2026-03-03'] = { prevu: { code: 'RS' } };
+  t('RS posé : retiré du dû, comme dans Octime', M.bilanPeriode('2026-03-03', '2026-03-03', eRS, cfg).theorique === 0);
 }
 
 // Temps en plus (réunion après la journée, sans remplacer l'horaire)

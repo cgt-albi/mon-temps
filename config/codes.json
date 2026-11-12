@@ -411,7 +411,7 @@
   {
     "code": "RS",
     "libelle": "Repos supplémentaire (dimanches et fériés travaillés)",
-    "type": "repos"
+    "type": "conge"
   },
   {
     "code": "REC",
