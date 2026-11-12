@@ -428,7 +428,7 @@ export function vueReleve(p) {
     for (let d = 1; d <= M.joursDansMois(y, m); d++) {
       const date = M.iso(y, m, d); if (date > b.jusqua) break;
       const j = M.journee(date, S.etat, C); if (!j) continue;
-      lignes.push(`<tr><td>${d} ${esc(M.JOURS[M.jourSemaine(date)].slice(0, 3))}.</td><td><b>${esc(j.code)}</b>${j.change ? ` <span class="petit">(prévu ${esc(j.prevuCode)})</span>` : ''}</td><td>${j.info && j.info.debut ? `${esc(j.info.debut)}–${esc(j.info.fin)}` : esc(j.info ? j.info.libelle : '')}</td><td>${j.effMin ? M.formatDuree(j.effMin) : ''}</td><td>${j.depassementMin ? M.formatDuree(j.depassementMin, true) : ''}</td><td>${esc(j.note)}${j.rappel ? ' · rappel sur repos' : ''}</td></tr>`);
+      lignes.push(`<tr><td>${d} ${esc(M.JOURS[M.jourSemaine(date)].slice(0, 3))}.</td><td><b>${esc(j.code)}</b>${j.change ? ` <span class="petit">(prévu ${esc(j.prevuCode)})</span>` : ''}</td><td>${j.info && j.info.debut ? `${esc(j.info.debut)}–${esc(j.info.fin)}` : esc(j.info ? j.info.libelle : '')}</td><td>${j.effMin ? M.formatDuree(j.effMin) : ''}</td><td>${j.depassementMin || j.ajoutsMin ? M.formatDuree((j.depassementMin || 0) + (j.ajoutsMin || 0), true) : ''}</td><td>${esc([...(j.ajouts || []).map((a) => `${a.motif} ${a.debut}–${a.fin}`), j.note].filter(Boolean).join(' · '))}${j.rappel ? ' · rappel sur repos' : ''}</td></tr>`);
     }
     if (!lignes.length) continue;
     const bm = b.mois[m - 1];

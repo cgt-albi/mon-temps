@@ -110,7 +110,9 @@ export function preparerImport(analyse, etat, cfg, aujourdhui = M.aujourdhui()) 
 }
 
 export function appliquerImport(etat, prep) {
-  etat.jours = { ...(etat.jours || {}), ...prep.jours };
+  const avant = etat.jours || {};
+  etat.jours = { ...avant, ...prep.jours };
+  for (const d of Object.keys(prep.jours)) if (avant[d] && avant[d].ajouts) etat.jours[d].ajouts = avant[d].ajouts; // les temps en plus notés à la main restent
   const deja = new Set((etat.codesPerso || []).map((c) => c.code));
   etat.codesPerso = [...(etat.codesPerso || []), ...prep.nouveauxCodes.filter((c) => !deja.has(c.code))];
   return etat;

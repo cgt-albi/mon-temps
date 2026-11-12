@@ -58,6 +58,22 @@ t('nom présent', typeof cfg.nom === 'string' && cfg.nom.trim().length > 0);
   t('RS : 20 dimanches → 2 jours', rs(20).droit === 2);
 }
 
+// Temps en plus (réunion après la journée, sans remplacer l'horaire)
+{
+  const e = { profil: { quotite: 100 }, jours: { '2026-03-03': { prevu: { code: 'M41' }, ajouts: [{ motif: 'Réunion', debut: '18:00', fin: '20:00' }] } }, codesPerso: [], departs: {} };
+  const j = M.journee('2026-03-03', e, M.tousLesCodes(cfg, e));
+  t('temps en plus : 2 h ajoutées à la journée', j.effMin === 468 + 120 && j.code === 'M41');
+  t('temps en plus : créneau séparé (pas de faux service coupé)', M.blocs(j).length === 2 && M.blocsService(j).length === 1);
+  const b = M.bilanPeriode('2026-03-03', '2026-03-03', e, cfg);
+  t('temps en plus : compté dans le solde', b.realise === 588 && b.depassements === 120);
+  t('temps en plus : pas d\'alerte de vacation trop courte', !M.controles('2026-03-02', '2026-03-08', e, cfg).some((a) => a.regle.includes('acation')));
+  const e2 = { profil: { quotite: 100 }, jours: { '2026-03-07': { prevu: { code: 'RH' }, ajouts: [{ motif: 'Réunion', debut: '09:00', fin: '11:00' }] } }, codesPerso: [], departs: {} };
+  t('temps en plus un jour de RH : compté', M.bilanPeriode('2026-03-07', '2026-03-07', e2, cfg).realise === 120);
+  t('temps en plus un jour de RH : alerte rappel sur repos', M.controles('2026-03-02', '2026-03-08', e2, cfg).some((a) => a.regle === 'Travail un jour de repos'));
+  const e3 = { profil: { quotite: 100 }, jours: { '2026-03-03': { prevu: { code: 'M41' }, ajouts: [{ motif: 'Garde', debut: '22:00', fin: '02:00' }] } }, codesPerso: [], departs: {} };
+  t('temps en plus de nuit : passe minuit, heures de nuit comptées', M.journee('2026-03-03', e3, M.tousLesCodes(cfg, e3)).ajoutsMin === 240 && M.minutesNuit(M.blocs(M.journee('2026-03-03', e3, M.tousLesCodes(cfg, e3))), cfg) >= 180);
+}
+
 // Import d'un emploi du temps Octime (relevé fictif, même mise en page qu'un vrai)
 {
   const lignes = ['EMPLOI DU TEMPS INDIVIDUEL', 'DU MOIS DE Février 2026', 'De DUPONT Camille (000000)', 'Jour Plage (pause) Poste Structure',

@@ -33,7 +33,7 @@ export function grilleMois(y, m, options = {}) {
     const lib = `${M.longue(d)}${j ? ', ' + j.code + (j.source === 'prevu' && d > today ? ' prévu' : '') : ', non saisi'}${M.nomFerie(d) ? ', férié' : ''}${alertes.has(d) ? ', alerte' : ''}`;
     const attrs = options.selection ? `role="button" tabindex="0" data-date="${d}" aria-pressed="${options.selection.has(d)}"` : `href="#/jour/${d}"`;
     const tag = options.selection ? 'span' : 'a';
-    cases += `<${tag} class="${cls.join(' ')}" ${attrs} data-tour="jour-${d}" aria-label="${esc(lib)}"><span class="n">${n}</span><span class="c">${j ? esc(j.code) : ''}</span>${j && j.depassementMin > 0 ? '<span class="plus" aria-hidden="true">+</span>' : ''}${alertes.has(d) ? '<span class="pastille"></span>' : ''}</${tag}>`;
+    cases += `<${tag} class="${cls.join(' ')}" ${attrs} data-tour="jour-${d}" aria-label="${esc(lib)}"><span class="n">${n}</span><span class="c">${j ? esc(j.code) : ''}</span>${j && (j.depassementMin > 0 || j.ajoutsMin > 0) ? '<span class="plus" aria-hidden="true">+</span>' : ''}${alertes.has(d) ? '<span class="pastille"></span>' : ''}</${tag}>`;
   }
   return `<div class="cal" data-tour="grille"><div class="cal-jours" aria-hidden="true">${['L', 'M', 'M', 'J', 'V', 'S', 'D'].map((x) => `<div>${x}</div>`).join('')}</div><div class="cal-grille">${cases}</div></div>`;
 }
@@ -134,12 +134,12 @@ function vueSemaine(p) {
   let total = 0, dep = 0, lignes = '';
   for (let k = 0; k < 7; k++) {
     const d = M.ajouterJours(lundi, k); const j = M.journee(d, S.etat, C); const f = M.nomFerie(d);
-    if (j) { total += j.effMin; dep += Math.max(0, j.depassementMin); }
+    if (j) { total += j.effMin; dep += Math.max(0, j.depassementMin) + (j.ajoutsMin || 0); }
     lignes += `<li><a class="lien ligne-jour${d === today ? ' auj' : ''}" href="#/planning/jour/${d}">
       <span class="jr"><b>${Number(d.slice(8))}</b><span class="${f ? 'ferie' : ''}">${esc(M.JOURS[k].slice(0, 3))}.</span></span>
       ${j ? pastille(j) : '<span class="pilule vide">—</span>'}
-      <span class="h">${j ? esc(horaire(j)) : 'Non saisi'}${j && j.source === 'prevu' && d > today ? '<span class="sous">prévu</span>' : ''}${j && j.note ? `<span class="sous">${esc(j.note)}</span>` : ''}${f ? `<span class="sous">${esc(f)}</span>` : ''}</span>
-      <span class="d">${j && j.effMin ? M.formatDuree(j.effMin) : ''}${j && j.depassementMin > 0 ? `<span class="sous" style="color:var(--rouge-texte)">${M.formatDuree(j.depassementMin, true)}</span>` : ''}${parJour.has(d) ? '<span class="pastille" style="position:static;display:inline-block;margin-left:.25rem"></span>' : ''}</span></a></li>`;
+      <span class="h">${j ? esc(horaire(j)) : 'Non saisi'}${j && j.ajouts && j.ajouts.length ? `<span class="sous">+ ${esc(j.ajouts.map((a) => `${a.motif} ${a.debut}–${a.fin}`).join(', '))}</span>` : ''}${j && j.source === 'prevu' && d > today ? '<span class="sous">prévu</span>' : ''}${j && j.note ? `<span class="sous">${esc(j.note)}</span>` : ''}${f ? `<span class="sous">${esc(f)}</span>` : ''}</span>
+      <span class="d">${j && j.effMin ? M.formatDuree(j.effMin) : ''}${j && (j.depassementMin > 0 || j.ajoutsMin > 0) ? `<span class="sous" style="color:var(--rouge-texte)">${M.formatDuree(Math.max(0, j.depassementMin) + (j.ajoutsMin || 0), true)}</span>` : ''}${parJour.has(d) ? '<span class="pastille" style="position:static;display:inline-block;margin-left:.25rem"></span>' : ''}</span></a></li>`;
   }
   const max = S.cfg.regles.maxSeptJoursHeures * 60;
   return {
@@ -180,6 +180,7 @@ function vueJourDetail(p) {
           </section>
           <ul class="liste">
             ${j.depassementMin ? ligne('Dépassement d\'horaire', M.formatDuree(j.depassementMin, true)) : ''}
+            ${(j.ajouts || []).map((a) => ligne(`${esc(a.motif || 'Temps en plus')} · ${esc(a.debut)}–${esc(a.fin)}`, M.formatDuree(M.dureeAjout(a), true))).join('')}
             ${nuit ? ligne('Heures de nuit', M.formatDuree(nuit)) : ''}
             ${djf ? ligne(f ? 'Heures un jour férié' : 'Heures un dimanche', M.formatDuree(djf)) : ''}
             ${j.info && j.info.pauseMin && j.effMin ? ligne('Pause non comptée', `${j.info.pauseMin} min`) : ''}

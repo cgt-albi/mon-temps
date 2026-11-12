@@ -111,7 +111,7 @@ function chargerJour(date, mode) {
   const preuveR = S.etat.preuves.find((x) => x.type === 'rappel' && x.date === date);
   const preuveC = S.etat.preuves.find((x) => x.type === 'changement' && x.date === date);
   const codeParDefaut = src.code || (mode === 'realise' && e.prevu ? e.prevu.code : null);
-  return { date, mode, code: codeParDefaut || null, depassement: Number(src.depassementMin) || 0, note: src.note || '', rappel: !!preuveR, appelLe: preuveR ? preuveR.appelLe : '', change: !!preuveC, prevenuLe: preuveC ? preuveC.prevenuLe : '' };
+  return { date, mode, code: codeParDefaut || null, ajouts: M.ajoutsValides(e.ajouts).map((a) => ({ ...a })), depassement: Number(src.depassementMin) || 0, note: src.note || '', rappel: !!preuveR, appelLe: preuveR ? preuveR.appelLe : '', change: !!preuveC, prevenuLe: preuveC ? preuveC.prevenuLe : '' };
 }
 
 function vueJour(p) {
@@ -149,6 +149,14 @@ function vueJour(p) {
           ${J.rappel ? `<label class="champ"><span>Appelé·e le</span><input type="datetime-local" id="appelLe" value="${esc(J.appelLe)}"></label>` : ''}` : ''}
         ${montrerChange ? `<label class="case-a-cocher"><span><b>Changement de dernière minute</b><small>Prévu ${esc(prevuCode)}, fait ${esc(J.code)} : garde une trace</small></span><input type="checkbox" id="change" ${J.change ? 'checked' : ''}></label>
           ${J.change ? `<label class="champ"><span>Prévenu·e le</span><input type="datetime-local" id="prevenuLe" value="${esc(J.prevenuLe)}"></label>` : ''}` : ''}
+        <div style="display:flex;flex-direction:column;gap:.5rem" data-tour="ajouts"><p class="etiquette">Temps en plus</p>
+          <p class="petit" style="margin:0">Une réunion, une formation, une instance… en dehors de ton horaire : elle s'ajoute à la journée sans la remplacer.</p>
+          ${J.ajouts.length ? `<ul class="liste">${J.ajouts.map((a, i) => `<li style="display:flex;align-items:center;gap:.5rem;padding:.5rem .75rem"><span style="flex:1"><b>${esc(a.motif || 'Temps en plus')}</b> · ${esc(a.debut)}–${esc(a.fin)} <span class="petit">(${M.formatDuree(M.dureeAjout(a))})</span></span><button type="button" class="btn-icone" data-suppr-ajout="${i}" aria-label="Retirer ce temps en plus">${ic('fermer')}</button></li>`).join('')}</ul>` : ''}
+          <label class="champ"><span>Motif</span><select id="ajout-motif">${MOTIFS_AJOUT.map((m) => `<option>${esc(m)}</option>`).join('')}</select></label>
+          <div class="rangee"><label class="champ" style="flex:1"><span>De</span><input type="time" id="ajout-debut"></label><label class="champ" style="flex:1"><span>À</span><input type="time" id="ajout-fin"></label></div>
+          <button type="button" class="btn" id="ajout-ajouter">${ic('plus')}Ajouter ce temps en plus</button>
+          ${!J.code ? '<p class="petit" style="margin:0">Choisis aussi l\'horaire de la journée (RH si c\'était un repos) : le temps en plus s\'y ajoute.</p>' : ''}
+        </div>
         <label class="champ"><span>Note</span><input type="text" id="note" value="${esc(J.note)}" placeholder="Ex. : remplacement d'une collègue absente" maxlength="200"></label>
         <button class="btn principal plein" id="enregistrer" data-tour="enregistrer">Enregistrer la journée</button>
         ${e.prevu || e.realise ? `<button class="btn plein danger" id="effacer">Effacer « ${J.mode === 'realise' ? 'ce que j\'ai fait' : 'prévu'} »</button>` : ''}
@@ -161,6 +169,13 @@ function vueJour(p) {
       };
       el.querySelectorAll('[data-mode]').forEach((b) => b.onclick = () => { lireChamps(); S.vue.jour = chargerJour(date, b.dataset.mode); S.rendre(); });
       el.querySelectorAll('[data-code]').forEach((b) => b.onclick = () => { lireChamps(); J.code = J.code === b.dataset.code ? null : b.dataset.code; const i = C.get(J.code); if (!i || !i.debut) J.depassement = 0; S.rendre(); emettre('code'); });
+      el.querySelector('#ajout-ajouter').onclick = () => {
+        lireChamps();
+        const debut = el.querySelector('#ajout-debut').value, finA = el.querySelector('#ajout-fin').value;
+        if (!debut || !finA || debut === finA) { toast('Indique l\'heure de début et de fin'); return; }
+        J.ajouts.push({ motif: el.querySelector('#ajout-motif').value, debut, fin: finA }); S.rendre();
+      };
+      el.querySelectorAll('[data-suppr-ajout]').forEach((b) => b.onclick = () => { lireChamps(); J.ajouts.splice(Number(b.dataset.supprAjout), 1); S.rendre(); });
       el.querySelectorAll('[data-dep]').forEach((b) => b.onclick = () => { lireChamps(); J.depassement = Math.max(-240, Math.min(720, J.depassement + Number(b.dataset.dep))); S.rendre(); emettre('depassement'); });
       const r = el.querySelector('#rappel'); if (r) r.onchange = () => { lireChamps(); J.rappel = r.checked; if (J.rappel && !J.appelLe) J.appelLe = maintenantLocal(); S.rendre(); };
       const c = el.querySelector('#change'); if (c) c.onchange = () => { lireChamps(); J.change = c.checked; if (J.change && !J.prevenuLe) J.prevenuLe = maintenantLocal(); S.rendre(); };
@@ -173,7 +188,8 @@ function vueJour(p) {
           if (J.note.trim()) o.note = J.note.trim();
           ent[J.mode] = o;
         } else delete ent[J.mode];
-        if (!ent.prevu && !ent.realise) delete S.etat.jours[date];
+        if (J.ajouts.length) ent.ajouts = J.ajouts; else delete ent.ajouts;
+        if (!ent.prevu && !ent.realise && !ent.ajouts) delete S.etat.jours[date];
         if (J.mode === 'realise') {
           majPreuve('rappel', date, J.rappel && J.code ? { code: J.code, appelLe: J.appelLe, note: J.note.trim() } : null);
           majPreuve('changement', date, J.change && montrerChange ? { ancien: prevuCode, nouveau: J.code, prevenuLe: J.prevenuLe } : null);
@@ -191,6 +207,7 @@ function vueJour(p) {
     }
   };
 }
+const MOTIFS_AJOUT = ['Réunion', 'Formation', 'Instance (CSE, F3SCT…)', 'Rappel sur repos', 'Garde ou astreinte', 'Autre'];
 function maintenantLocal() { const t = new Date(); t.setMinutes(t.getMinutes() - t.getTimezoneOffset()); return t.toISOString().slice(0, 16); }
 function majPreuve(type, date, donnees) {
   const i = S.etat.preuves.findIndex((x) => x.type === type && x.date === date);
@@ -206,7 +223,9 @@ function vuePreuves(p) {
   const C = codes();
   const rappels = S.etat.preuves.filter((x) => x.type === 'rappel').sort((a, b) => b.date.localeCompare(a.date));
   const changes = S.etat.preuves.filter((x) => x.type === 'changement').sort((a, b) => b.date.localeCompare(a.date));
-  const deps = Object.keys(S.etat.jours).sort().reverse().map((d) => M.journee(d, S.etat, C)).filter((j) => j && j.depassementMin > 0);
+  const deps = Object.keys(S.etat.jours).sort().reverse().map((d) => M.journee(d, S.etat, C)).filter((j) => j && (j.depassementMin > 0 || j.ajoutsMin > 0));
+  const enPlus = (j) => Math.max(0, j.depassementMin) + (j.ajoutsMin || 0);
+  const detailAjouts = (j) => (j.ajouts || []).map((a) => `${a.motif} ${a.debut}–${a.fin}`).join(', ');
   const delai = (date, quand, code) => {
     if (!quand) return '';
     const info = C.get(code); const debut = info && info.debut ? M.hm(info.debut) : 0;
@@ -225,13 +244,13 @@ function vuePreuves(p) {
   let items = '';
   if (onglet === 'rappels') items = rappels.map((r) => `<li><a class="lien" href="#/preuve/${encodeURIComponent(r.id)}" style="align-items:flex-start">${bloc(r.date)}<span style="flex:1;display:flex;flex-direction:column;gap:3px"><span style="display:flex;justify-content:space-between;gap:.5rem"><b>Rappelé·e sur un repos</b><b>${esc(r.code || '')}</b></span><span style="font-size:.8125rem;color:var(--encre2)">${esc(delai(r.date, r.appelLe, r.code)) || 'Heure de l\'appel non notée'}</span><span><span class="badge ${r.compense ? 'vert' : 'rouge'}">${r.compense ? 'Compensé' : 'Non compensé'}</span></span></span></a></li>`).join('');
   if (onglet === 'changements') items = changes.map((r) => `<li><a class="lien" href="#/preuve/${encodeURIComponent(r.id)}" style="align-items:flex-start">${bloc(r.date)}<span style="flex:1;display:flex;flex-direction:column;gap:3px"><span style="display:flex;justify-content:space-between;gap:.5rem"><b>Planning changé</b><b>${esc(r.ancien)} → ${esc(r.nouveau)}</b></span><span style="font-size:.8125rem;color:var(--encre2)">${esc(delai(r.date, r.prevenuLe, r.nouveau)) || 'Date de prévenance non notée'}</span>${badgeDelai(r)}</span></a></li>`).join('');
-  if (onglet === 'depassements') items = deps.map((j) => `<li><a class="lien" href="#/jour/${j.date}" style="align-items:flex-start">${bloc(j.date)}<span style="flex:1;display:flex;flex-direction:column;gap:3px"><span style="display:flex;justify-content:space-between;gap:.5rem"><b>${esc(j.code)}</b><b>${M.formatDuree(j.depassementMin, true)}</b></span>${j.note ? `<span style="font-size:.8125rem;color:var(--encre2)">${esc(j.note)}</span>` : ''}</span></a></li>`).join('');
+  if (onglet === 'depassements') items = deps.map((j) => `<li><a class="lien" href="#/jour/${j.date}" style="align-items:flex-start">${bloc(j.date)}<span style="flex:1;display:flex;flex-direction:column;gap:3px"><span style="display:flex;justify-content:space-between;gap:.5rem"><b>${esc(j.code)}</b><b>${M.formatDuree(enPlus(j), true)}</b></span>${j.ajouts && j.ajouts.length ? `<span style="font-size:.8125rem;color:var(--encre2)">${esc(detailAjouts(j))}</span>` : ''}${j.note ? `<span style="font-size:.8125rem;color:var(--encre2)">${esc(j.note)}</span>` : ''}</span></a></li>`).join('');
   const vides = { rappels: 'Aucun rappel noté. Quand on te rappelle sur un repos, coche la case dans la saisie de la journée.', changements: 'Aucun changement noté. Il apparaît quand ce que tu as fait diffère de ce qui était prévu.', depassements: 'Aucun dépassement noté pour l\'instant.' };
   const resume = () => {
     const l = [`Mes preuves — ${S.cfg.nom}`, ''];
     if (rappels.length) { l.push(`RAPPELS SUR REPOS (${rappels.length})`); rappels.forEach((r) => l.push(`- ${M.longue(r.date)} : ${r.code}. ${delai(r.date, r.appelLe, r.code)}. ${r.compense ? 'Compensé.' : 'Non compensé.'}`)); l.push(''); }
     if (changes.length) { l.push(`CHANGEMENTS DE PLANNING (${changes.length})`); changes.forEach((r) => l.push(`- ${M.longue(r.date)} : ${r.ancien} → ${r.nouveau}. ${delai(r.date, r.prevenuLe, r.nouveau)}.`)); l.push(''); }
-    if (deps.length) { l.push(`DÉPASSEMENTS (${deps.length}, total ${M.formatDuree(deps.reduce((s, j) => s + j.depassementMin, 0))})`); deps.forEach((j) => l.push(`- ${M.longue(j.date)} : ${j.code} ${M.formatDuree(j.depassementMin, true)}${j.note ? ' — ' + j.note : ''}`)); }
+    if (deps.length) { l.push(`DÉPASSEMENTS ET TEMPS EN PLUS (${deps.length}, total ${M.formatDuree(deps.reduce((s, j) => s + enPlus(j), 0))})`); deps.forEach((j) => l.push(`- ${M.longue(j.date)} : ${j.code} ${M.formatDuree(enPlus(j), true)}${j.ajouts && j.ajouts.length ? ' (' + detailAjouts(j) + ')' : ''}${j.note ? ' — ' + j.note : ''}`)); }
     return l.join('\n');
   };
   return {

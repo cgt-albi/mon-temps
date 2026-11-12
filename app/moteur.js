@@ -119,22 +119,36 @@ export function journee(date, etat, codes) {
   if (!src) return null;
   const info = codes.get(src.code) || null;
   const depassement = Number(src.depassementMin) || 0;
-  const eff = estTravail(info) ? dureeEffectiveCode(info) + depassement : 0;
+  const ajouts = ajoutsValides(e.ajouts);
+  const ajoutsMin = ajouts.reduce((s, a) => s + dureeAjout(a), 0);
+  const eff = (estTravail(info) ? dureeEffectiveCode(info) + depassement : 0) + ajoutsMin;
   return {
-    date, code: src.code, info, source: r ? 'realise' : 'prevu', depassementMin: depassement,
+    date, code: src.code, info, source: r ? 'realise' : 'prevu', depassementMin: depassement, ajouts, ajoutsMin,
     effMin: eff, note: src.note || '', rappel: !!src.rappel,
     prevuCode: p ? p.code : null, realiseCode: r ? r.code : null,
     change: !!(r && p && r.code !== p.code)
   };
 }
 
-// Blocs de travail en minutes absolues (pour les contrôles et les heures de nuit / dimanche).
-export function blocs(j) {
+// Temps en plus (réunion, formation, instance…) : créneaux ajoutés à la journée sans la remplacer.
+const hmMin = (s) => { const m = /^(\d{1,2}):(\d{2})$/.exec(s || ''); return m ? Number(m[1]) * 60 + Number(m[2]) : null; };
+export function ajoutsValides(liste) { return (Array.isArray(liste) ? liste : []).filter((a) => a && hmMin(a.debut) != null && hmMin(a.fin) != null && a.debut !== a.fin); }
+export function dureeAjout(a) { const d = hmMin(a.debut); let f = hmMin(a.fin); if (f <= d) f += JOUR_MIN; return f - d; }
+
+// Blocs du service prévu (horaire du code + dépassement), sans le temps en plus.
+export function blocsService(j) {
   if (!j || !estTravail(j.info)) return [];
   const base = jourNum(j.date) * JOUR_MIN;
   const seg = segments(j.info).map(([a, b]) => [base + a, base + b]);
   if (seg.length && j.depassementMin > 0) seg[seg.length - 1][1] += j.depassementMin;
   return seg;
+}
+// Blocs de travail en minutes absolues (pour les contrôles et les heures de nuit / dimanche), temps en plus compris.
+export function blocs(j) {
+  if (!j) return [];
+  const base = jourNum(j.date) * JOUR_MIN;
+  const seg = blocsService(j).concat((j.ajouts || []).map((a) => { const d = base + hmMin(a.debut); return [d, d + dureeAjout(a)]; }));
+  return seg.sort((x, y) => x[0] - y[0]);
 }
 
 function minutesDans(seg, debutJour, finJour) {
@@ -218,7 +232,11 @@ export function theoriqueJour(date, j, etat, cfg) {
 export function creditJour(date, j, etat, cfg, codes) {
   if (!j || !j.info) return 0;
   const t = j.info.type;
-  if (t === 'travail' || t === 'nuit') return j.effMin;
+  if (t === 'travail' || t === 'nuit') return j.effMin; // temps en plus déjà compris
+  return creditHorsTravail(date, j, etat, cfg, codes) + (j.ajoutsMin || 0);
+}
+function creditHorsTravail(date, j, etat, cfg, codes) {
+  const t = j.info.type;
   if (t === 'assimile' || t === 'greve') {
     // Charte du temps de travail du CH d'Albi : une journée d'absence vaut 7 h (6 h 30 la nuit), proratisée,
     // quelle que soit la durée du poste prévu ; une absence ne génère donc pas d'heures en plus (ni de RTT).
@@ -238,7 +256,7 @@ export function bilanPeriode(debut, fin, etat, cfg) {
     const j = journee(d, etat, codes);
     theo += theoriqueJour(d, j, etat, cfg);
     if (j) {
-      saisis++; credit += creditJour(d, j, etat, cfg, codes); depass += j.depassementMin > 0 ? j.depassementMin : 0;
+      saisis++; credit += creditJour(d, j, etat, cfg, codes); depass += (j.depassementMin > 0 ? j.depassementMin : 0) + (j.ajoutsMin || 0);
       nuit += minutesNuit(blocs(j), cfg);
     } else if (estJourOuvreTheorique(d, cfg)) manquants.push(d);
   }
@@ -369,13 +387,17 @@ export function controles(debut, fin, etat, cfg) {
   for (let n = jourNum(d0); n <= jourNum(d1); n++) {
     const d = depuisNum(n); const j = journee(d, etat, codes); js[d] = j;
     const b = blocs(j);
-    if (b.length) tous.push({ date: d, debut: b[0][0], fin: b[b.length - 1][1], eff: j.effMin, segs: b });
+    if (b.length) tous.push({ date: d, debut: b[0][0], fin: b[b.length - 1][1], eff: j.effMin, segs: blocsService(j), ajouts: j.ajouts || [], repos: !estTravail(j.info) });
   }
   const dansPeriode = (d) => d >= debut && d <= fin;
+
+  // Temps en plus un jour de repos ou de congé : c'est un rappel sur repos
+  for (const t of tous) if (dansPeriode(t.date) && t.repos && t.ajouts.length) ajoute(t.date, 'Travail un jour de repos', 'art. 6', `${t.ajouts.map((a) => `${a.motif || 'Temps en plus'} de ${a.debut} à ${a.fin}`).join(', ')} un jour sans travail prévu : c'est un rappel sur repos.`);
 
   // Amplitude et service coupé (art. 7)
   for (const t of tous) {
     if (!dansPeriode(t.date)) continue;
+    if (!t.segs.length) continue;
     const ampl = (t.fin - t.debut) / 60;
     if (t.segs.length > 1) {
       if (ampl > R.amplitudeServiceCoupeHeures) ajoute(t.date, 'Amplitude du service coupé', 'art. 7', `Amplitude de ${formatDuree(ampl * 60)} pour une journée en deux vacations (maximum ${formatDuree(R.amplitudeServiceCoupeHeures * 60)}).`);
