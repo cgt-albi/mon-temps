@@ -498,3 +498,33 @@ export function numeroSemaine(d) {
   const n = jourNum(d); const jeudi = n - jourSemaine(d) + 3; const an = Number(depuisNum(jeudi).slice(0, 4));
   return 1 + Math.floor((jeudi - jourNum(iso(an, 1, 4)) + jourSemaine(iso(an, 1, 4))) / 7);
 }
+
+// ---------- Échéances : les jours à poser avant de les perdre ----------
+// Renvoie au plus quelques messages courts, seulement quand c'est utile (dates de la charte du CH d'Albi,
+// réglables dans Pages CMS : regles.echeanceCA, regles.echeanceBonus au format MM-JJ).
+export function echeances(etat, cfg, today = aujourdhui()) {
+  const y = Number(today.slice(0, 4)); const md = today.slice(5);
+  const eCA = cfg.regles.echeanceCA || '01-15', eBonus = cfg.regles.echeanceBonus || '04-30';
+  const jolie = (mmjj, an) => { const [m, j] = mmjj.split('-').map(Number); return `${j === 1 ? '1er' : j} ${MOIS[m - 1]}${an ? ' ' + an : ''}`; };
+  const out = [];
+  if (!aDesSaisies(etat, y) && !aDesSaisies(etat, y - 1)) return out;
+  const b = bilanAnnee(y, etat, cfg, `${y}-12-31`);
+  const pl = (n, mot) => `${n} ${mot}${n > 1 ? 's' : ''}`;
+  // Début d'année : restes de l'année précédente
+  if (aDesSaisies(etat, y - 1)) {
+    const a = bilanAnnee(y - 1, etat, cfg, `${y - 1}-12-31`);
+    const caAvant = a.caDroit + a.bonusHS + a.bonusFrac - a.caPris;
+    if (md <= eCA && a.caDroit && caAvant > 0) out.push({ niveau: 'urgent', texte: `${pl(caAvant, 'jour')} de congés ${y - 1} à poser avant le ${jolie(eCA)}`, detail: 'Après, ils sont perdus sauf accord écrit de la DRH.' });
+    // jours hors saison et de fractionnement gagnés l'an dernier, à poser en CH-1 / CF-1
+    let pris = 0; for (const [d, e] of Object.entries(etat.jours || {})) if (d.startsWith(String(y))) { const c = (e.realise && e.realise.code) || (e.prevu && e.prevu.code); if (c === 'CH-1' || c === 'CF-1') pris++; }
+    const bonus = a.bonusHS + a.bonusFrac - pris;
+    if (md <= eBonus && bonus > 0) out.push({ niveau: md >= '03-15' ? 'urgent' : 'info', texte: `${pl(bonus, 'jour')} hors saison ou de fractionnement ${y - 1} à poser avant le ${jolie(eBonus)}`, detail: 'Codes CH-1 et CF-1 dans Octime.' });
+  }
+  // Fin d'année : ce qui reste à poser
+  const caReste = b.caDroit + b.bonusHS + b.bonusFrac - b.caPris;
+  if (md >= '10-01' && b.caDroit && caReste > 0) out.push({ niveau: md >= '12-01' ? 'urgent' : 'info', texte: `${pl(caReste, 'jour')} de congés encore à poser`, detail: `À poser avant le 31 décembre (tolérance jusqu'au ${jolie(eCA)} ${y + 1}).` });
+  const rttReste = b.rttDroit - b.rttPris;
+  if (md >= '11-01' && b.rttDroit && rttReste > 0) out.push({ niveau: 'info', texte: `${rttReste} RTT encore à poser`, detail: 'Ou à placer sur ton compte épargne-temps (15 au maximum par an).' });
+  for (const c of b.compteurs || []) if (c.gagnes > 0 && c.reste > 0) out.push({ niveau: 'info', texte: `${pl(c.reste, 'jour')} gagné${c.reste > 1 ? 's' : ''} : ${c.nom.toLowerCase()}`, detail: 'À poser dans l\'année.' });
+  return out.slice(0, 3);
+}

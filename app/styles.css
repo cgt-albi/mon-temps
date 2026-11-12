@@ -402,3 +402,14 @@ nav.bas{grid-template-columns:repeat(5,minmax(0,1fr));padding-left:4px;padding-r
 
 .ligne-paie { display: flex; align-items: center; gap: .5rem; margin: .25rem 0 .5rem; color: var(--encre2); }
 .ligne-paie .i { width: 1rem; height: 1rem; flex: none; }
+
+/* Mon année : graphique des heures en plus (une seule série, barres fines arrondies posées sur l'axe) */
+.bilan-graph{display:grid;grid-template-columns:repeat(12,1fr);gap:2px;height:8.5rem;align-items:end}
+.bilan-barre{all:unset;cursor:pointer;display:flex;flex-direction:column;align-items:center;height:100%;min-width:0}
+.bilan-barre .val{font-size:.625rem;color:var(--encre2);height:1rem;white-space:nowrap;font-variant-numeric:tabular-nums}
+.bilan-barre .col{flex:1;width:100%;display:flex;align-items:flex-end;justify-content:center;border-bottom:1px solid var(--filet)}
+.bilan-barre .col i{display:block;width:60%;max-width:1.25rem;background:var(--rouge);border-radius:4px 4px 0 0}
+.bilan-barre .m{font-size:.6875rem;color:var(--sourdine);margin-top:.25rem}
+.bilan-barre.actif .m,.bilan-barre:focus-visible .m{color:var(--encre);font-weight:700}
+.bilan-barre:focus-visible{outline:2px solid var(--rouge);outline-offset:2px;border-radius:4px}
+@media (forced-colors:active){.bilan-barre .col i{background:CanvasText}}

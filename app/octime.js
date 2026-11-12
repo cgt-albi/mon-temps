@@ -117,3 +117,56 @@ export function appliquerImport(etat, prep) {
   etat.codesPerso = [...(etat.codesPerso || []), ...prep.nouveauxCodes.filter((c) => !deja.has(c.code))];
   return etat;
 }
+
+// ---------- 4. Vérifier un relevé Octime contre ce que l'agent a noté ----------
+// Pour chaque jour passé du relevé que l'agent a noté lui-même, on compare les heures comptées.
+// Renvoie les jours où Octime compte moins (heures à réclamer) et ceux où le code diffère.
+export function comparer(analyse, etat, cfg, aujourdhui = M.aujourdhui()) {
+  const tous = M.tousLesCodes(cfg, etat);
+  const parMaj = new Map([...tous.keys()].map((k) => [k.toUpperCase(), k]));
+  const ecarts = []; let compares = 0;
+  for (const [date, x] of Object.entries(analyse.jours).sort()) {
+    if (date > aujourdhui) continue;
+    const j = M.journee(date, etat, tous);
+    if (!j) continue;
+    compares++;
+    const codeOctime = parMaj.get(x.code.toUpperCase()) || x.code;
+    const minOctime = x.plages.length ? minutesPlages(x.plages) : 0;
+    const minAgent = j.effMin;
+    const diff = minAgent - minOctime;
+    const codeDiff = codeOctime !== j.code;
+    if (diff > 0 || codeDiff) {
+      ecarts.push({
+        date, diff, codeDiff,
+        octime: { code: x.code, horaire: x.plages.map(([a, b]) => `${a}–${b}`).join(' et '), minutes: minOctime },
+        agent: { code: j.code, minutes: minAgent, depassement: j.depassementMin > 0 ? j.depassementMin : 0, ajouts: j.ajouts || [], note: j.note || '' }
+      });
+    }
+  }
+  const aReclamer = ecarts.filter((e) => e.diff > 0);
+  return { compares, ecarts, aReclamer, totalMin: aReclamer.reduce((s, e) => s + e.diff, 0) };
+}
+
+// Texte du courrier de réclamation, prêt à copier ou à envoyer.
+export function courrierReclamation(res, { prenom = '', formule = '' } = {}) {
+  const lignes = res.aReclamer.map((e) => {
+    const quoi = [];
+    if (e.agent.depassement) quoi.push(`dépassement d'horaire de ${M.formatDuree(e.agent.depassement)}`);
+    for (const a of e.agent.ajouts) quoi.push(`${String(a.motif || 'temps en plus').toLowerCase()} de ${a.debut} à ${a.fin}`);
+    if (!quoi.length) quoi.push(`journée ${e.agent.code} au lieu de ${e.octime.code}`);
+    return `- ${M.longue(e.date)} : ${quoi.join(', ')} (${M.formatDuree(e.diff)} non comptées)${e.agent.note ? ` — ${e.agent.note}` : ''}`;
+  });
+  return [
+    'Objet : demande de régularisation de mon relevé d\'heures',
+    '',
+    'Madame, Monsieur,',
+    '',
+    'En comparant mon relevé Octime avec le suivi de mes horaires, je constate que les heures suivantes n\'y figurent pas :',
+    ...lignes,
+    '',
+    `Soit un total de ${M.formatDuree(res.totalMin)} à régulariser. Je vous remercie de bien vouloir les prendre en compte dans mon compteur d'heures.`,
+    '',
+    formule || 'Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.',
+    prenom
+  ].join('\n').trim();
+}

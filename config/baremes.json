@@ -1,55 +1,4381 @@
 {
-  "pointIndice": [
+ "pointIndice": [
+  {
+   "date": "2022-07-01",
+   "valeur": 4.85003,
+   "statut": "officiel",
+   "source": "Décret n° 2022-994"
+  },
+  {
+   "date": "2023-07-01",
+   "valeur": 4.92278,
+   "statut": "officiel",
+   "source": "Décret n° 2023-519"
+  }
+ ],
+ "indiceMinimum": [
+  {
+   "date": "2024-01-01",
+   "indice": 366,
+   "statut": "officiel",
+   "source": "Minimum de traitement dans la fonction publique"
+  },
+  {
+   "date": "2027-01-01",
+   "indice": 372,
+   "statut": "annonce",
+   "source": "Proposition du gouvernement du 2 octobre 2026, à confirmer"
+  }
+ ],
+ "smic": [
+  {
+   "date": "2026-01-01",
+   "horaire": 12.02,
+   "statut": "officiel",
+   "source": "Décret n° 2025-1228"
+  },
+  {
+   "date": "2026-06-01",
+   "horaire": 12.31,
+   "mensuel": 1867.02,
+   "statut": "officiel",
+   "source": "Arrêté du 22 mai 2026"
+  },
+  {
+   "date": "2026-12-01",
+   "horaire": 12.5,
+   "statut": "annonce",
+   "source": "Annonce du gouvernement du 9 novembre 2026 (+1,6 %), montant exact à confirmer au décret"
+  }
+ ],
+ "grilles": [
+  {
+   "nom": "Adjoint administratif",
+   "categorie": "C",
+   "echelons": [
     {
-      "date": "2022-07-01",
-      "valeur": 4.85003,
-      "statut": "officiel",
-      "source": "Décret n° 2022-994"
+     "indice": 366,
+     "duree": "1 an"
     },
     {
-      "date": "2023-07-01",
-      "valeur": 4.92278,
-      "statut": "officiel",
-      "source": "Décret n° 2023-519"
+     "indice": 367,
+     "duree": "1 an"
+    },
+    {
+     "indice": 368,
+     "duree": "1 an"
+    },
+    {
+     "indice": 369,
+     "duree": "1 an"
+    },
+    {
+     "indice": 370,
+     "duree": "1 an"
+    },
+    {
+     "indice": 371,
+     "duree": "1 an"
+    },
+    {
+     "indice": 372,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 373,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 376,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 377,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 387
     }
-  ],
-  "indiceMinimum": [
+   ]
+  },
+  {
+   "nom": "Adjoint administratif principal de 1re classe",
+   "categorie": "C",
+   "echelons": [
     {
-      "date": "2024-01-01",
-      "indice": 366,
-      "statut": "officiel",
-      "source": "Minimum de traitement dans la fonction publique"
+     "indice": 373,
+     "duree": "1 an"
     },
     {
-      "date": "2027-01-01",
-      "indice": 372,
-      "statut": "annonce",
-      "source": "Proposition du gouvernement du 2 octobre 2026, à confirmer"
+     "indice": 375,
+     "duree": "1 an"
+    },
+    {
+     "indice": 376,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 385,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 398,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 408,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 420,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 435,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 455,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 478
     }
-  ],
-  "smic": [
+   ]
+  },
+  {
+   "nom": "Adjoint administratif principal de 2e classe",
+   "categorie": "C",
+   "echelons": [
     {
-      "date": "2026-01-01",
-      "horaire": 12.02,
-      "statut": "officiel",
-      "source": "Décret n° 2025-1228"
+     "indice": 367,
+     "duree": "1 an"
     },
     {
-      "date": "2026-06-01",
-      "horaire": 12.31,
-      "mensuel": 1867.02,
-      "statut": "officiel",
-      "source": "Arrêté du 22 mai 2026"
+     "indice": 369,
+     "duree": "1 an"
     },
     {
-      "date": "2026-12-01",
-      "horaire": 12.5,
-      "statut": "annonce",
-      "source": "Annonce du gouvernement du 9 novembre 2026 (+1,6 %), montant exact à confirmer au décret"
+     "indice": 370,
+     "duree": "1 an"
+    },
+    {
+     "indice": 373,
+     "duree": "1 an"
+    },
+    {
+     "indice": 374,
+     "duree": "1 an"
+    },
+    {
+     "indice": 376,
+     "duree": "1 an"
+    },
+    {
+     "indice": 377,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 385,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 397,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 409,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 417,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 425
     }
-  ],
-  "grilles": [],
-  "aValider": [
-    "grilles"
-  ]
+   ]
+  },
+  {
+   "nom": "Agent d'entretien qualifié",
+   "categorie": "C",
+   "echelons": [
+    {
+     "indice": 366,
+     "duree": "1 an"
+    },
+    {
+     "indice": 367,
+     "duree": "1 an"
+    },
+    {
+     "indice": 368,
+     "duree": "1 an"
+    },
+    {
+     "indice": 369,
+     "duree": "1 an"
+    },
+    {
+     "indice": 370,
+     "duree": "1 an"
+    },
+    {
+     "indice": 371,
+     "duree": "1 an"
+    },
+    {
+     "indice": 372,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 373,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 376,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 377,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 387
+    }
+   ]
+  },
+  {
+   "nom": "Agent de maîtrise",
+   "categorie": "C",
+   "echelons": [
+    {
+     "indice": 367,
+     "duree": "1 an"
+    },
+    {
+     "indice": 369,
+     "duree": "1 an"
+    },
+    {
+     "indice": 370,
+     "duree": "1 an"
+    },
+    {
+     "indice": 373,
+     "duree": "1 an"
+    },
+    {
+     "indice": 374,
+     "duree": "1 an"
+    },
+    {
+     "indice": 376,
+     "duree": "1 an"
+    },
+    {
+     "indice": 377,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 385,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 397,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 409,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 417,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 425
+    }
+   ]
+  },
+  {
+   "nom": "Agent de maîtrise principal",
+   "categorie": "C",
+   "echelons": [
+    {
+     "indice": 373,
+     "duree": "1 an"
+    },
+    {
+     "indice": 375,
+     "duree": "1 an"
+    },
+    {
+     "indice": 376,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 385,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 398,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 408,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 420,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 435,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 455,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 478
+    }
+   ]
+  },
+  {
+   "nom": "Agent de service mortuaire (extinction)",
+   "categorie": "C",
+   "echelons": [
+    {
+     "indice": 367,
+     "duree": "1 an"
+    },
+    {
+     "indice": 369,
+     "duree": "1 an"
+    },
+    {
+     "indice": 370,
+     "duree": "1 an"
+    },
+    {
+     "indice": 373,
+     "duree": "1 an"
+    },
+    {
+     "indice": 374,
+     "duree": "1 an"
+    },
+    {
+     "indice": 376,
+     "duree": "1 an"
+    },
+    {
+     "indice": 377,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 385,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 397,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 409,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 417,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 425
+    }
+   ]
+  },
+  {
+   "nom": "Agent des services hospitaliers qualifié (classe normale)",
+   "categorie": "C",
+   "echelons": [
+    {
+     "indice": 366,
+     "duree": "1 an"
+    },
+    {
+     "indice": 367,
+     "duree": "1 an"
+    },
+    {
+     "indice": 368,
+     "duree": "1 an"
+    },
+    {
+     "indice": 369,
+     "duree": "1 an"
+    },
+    {
+     "indice": 370,
+     "duree": "1 an"
+    },
+    {
+     "indice": 371,
+     "duree": "1 an"
+    },
+    {
+     "indice": 372,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 373,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 376,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 377,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 387
+    }
+   ]
+  },
+  {
+   "nom": "Agent des services hospitaliers qualifié (classe supérieure)",
+   "categorie": "C",
+   "echelons": [
+    {
+     "indice": 367,
+     "duree": "1 an"
+    },
+    {
+     "indice": 369,
+     "duree": "1 an"
+    },
+    {
+     "indice": 370,
+     "duree": "1 an"
+    },
+    {
+     "indice": 373,
+     "duree": "1 an"
+    },
+    {
+     "indice": 374,
+     "duree": "1 an"
+    },
+    {
+     "indice": 376,
+     "duree": "1 an"
+    },
+    {
+     "indice": 377,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 385,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 397,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 409,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 417,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 425
+    }
+   ]
+  },
+  {
+   "nom": "Aide de laboratoire, de pharmacie ou d'électroradiologie, classe normale (extinction)",
+   "categorie": "C",
+   "echelons": [
+    {
+     "indice": 366,
+     "duree": "1 an"
+    },
+    {
+     "indice": 367,
+     "duree": "1 an"
+    },
+    {
+     "indice": 368,
+     "duree": "1 an"
+    },
+    {
+     "indice": 369,
+     "duree": "1 an"
+    },
+    {
+     "indice": 370,
+     "duree": "1 an"
+    },
+    {
+     "indice": 371,
+     "duree": "1 an"
+    },
+    {
+     "indice": 372,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 373,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 376,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 377,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 387
+    }
+   ]
+  },
+  {
+   "nom": "Aide de laboratoire, de pharmacie ou d'électroradiologie, classe supérieure (extinction)",
+   "categorie": "C",
+   "echelons": [
+    {
+     "indice": 367,
+     "duree": "1 an"
+    },
+    {
+     "indice": 369,
+     "duree": "1 an"
+    },
+    {
+     "indice": 370,
+     "duree": "1 an"
+    },
+    {
+     "indice": 373,
+     "duree": "1 an"
+    },
+    {
+     "indice": 374,
+     "duree": "1 an"
+    },
+    {
+     "indice": 376,
+     "duree": "1 an"
+    },
+    {
+     "indice": 377,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 385,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 397,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 409,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 417,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 425
+    }
+   ]
+  },
+  {
+   "nom": "Aide médico-psychologique / Accompagnant éducatif et social",
+   "categorie": "C",
+   "echelons": [
+    {
+     "indice": 367,
+     "duree": "1 an"
+    },
+    {
+     "indice": 369,
+     "duree": "1 an"
+    },
+    {
+     "indice": 370,
+     "duree": "1 an"
+    },
+    {
+     "indice": 373,
+     "duree": "1 an"
+    },
+    {
+     "indice": 374,
+     "duree": "1 an"
+    },
+    {
+     "indice": 376,
+     "duree": "1 an"
+    },
+    {
+     "indice": 377,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 385,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 397,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 409,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 417,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 425
+    }
+   ]
+  },
+  {
+   "nom": "Aide médico-psychologique / Accompagnant éducatif et social principal",
+   "categorie": "C",
+   "echelons": [
+    {
+     "indice": 373,
+     "duree": "1 an"
+    },
+    {
+     "indice": 375,
+     "duree": "1 an"
+    },
+    {
+     "indice": 376,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 385,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 398,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 408,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 420,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 435,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 455,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 478
+    }
+   ]
+  },
+  {
+   "nom": "Aide préparateur (extinction)",
+   "categorie": "C",
+   "echelons": [
+    {
+     "indice": 373,
+     "duree": "1 an"
+    },
+    {
+     "indice": 375,
+     "duree": "1 an"
+    },
+    {
+     "indice": 376,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 385,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 398,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 408,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 420,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 435,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 455,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 478
+    }
+   ]
+  },
+  {
+   "nom": "Aide technique d'électroradiologie (extinction)",
+   "categorie": "C",
+   "echelons": [
+    {
+     "indice": 367,
+     "duree": "1 an"
+    },
+    {
+     "indice": 369,
+     "duree": "1 an"
+    },
+    {
+     "indice": 370,
+     "duree": "1 an"
+    },
+    {
+     "indice": 373,
+     "duree": "1 an"
+    },
+    {
+     "indice": 374,
+     "duree": "1 an"
+    },
+    {
+     "indice": 376,
+     "duree": "1 an"
+    },
+    {
+     "indice": 377,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 385,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 397,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 409,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 417,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 425
+    }
+   ]
+  },
+  {
+   "nom": "Conducteur ambulancier",
+   "categorie": "C",
+   "echelons": [
+    {
+     "indice": 367,
+     "duree": "1 an"
+    },
+    {
+     "indice": 369,
+     "duree": "1 an"
+    },
+    {
+     "indice": 370,
+     "duree": "1 an"
+    },
+    {
+     "indice": 373,
+     "duree": "1 an"
+    },
+    {
+     "indice": 374,
+     "duree": "1 an"
+    },
+    {
+     "indice": 376,
+     "duree": "1 an"
+    },
+    {
+     "indice": 377,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 385,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 397,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 409,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 417,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 425
+    }
+   ]
+  },
+  {
+   "nom": "Conducteur ambulancier principal",
+   "categorie": "C",
+   "echelons": [
+    {
+     "indice": 373,
+     "duree": "1 an"
+    },
+    {
+     "indice": 375,
+     "duree": "1 an"
+    },
+    {
+     "indice": 376,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 385,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 398,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 408,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 420,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 435,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 455,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 478
+    }
+   ]
+  },
+  {
+   "nom": "Dessinateur (extinction)",
+   "categorie": "C",
+   "echelons": [
+    {
+     "indice": 367,
+     "duree": "1 an"
+    },
+    {
+     "indice": 369,
+     "duree": "1 an"
+    },
+    {
+     "indice": 370,
+     "duree": "1 an"
+    },
+    {
+     "indice": 373,
+     "duree": "1 an"
+    },
+    {
+     "indice": 374,
+     "duree": "1 an"
+    },
+    {
+     "indice": 376,
+     "duree": "1 an"
+    },
+    {
+     "indice": 377,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 385,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 397,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 409,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 417,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 425
+    }
+   ]
+  },
+  {
+   "nom": "Dessinateur principal (extinction)",
+   "categorie": "C",
+   "echelons": [
+    {
+     "indice": 373,
+     "duree": "1 an"
+    },
+    {
+     "indice": 375,
+     "duree": "1 an"
+    },
+    {
+     "indice": 376,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 385,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 398,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 408,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 420,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 435,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 455,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 478
+    }
+   ]
+  },
+  {
+   "nom": "Moniteur d'atelier",
+   "categorie": "C",
+   "echelons": [
+    {
+     "indice": 366,
+     "duree": "1 an"
+    },
+    {
+     "indice": 366,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 366,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 367,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 370,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 373,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 377,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 389,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 412,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 430,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 436,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 455,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 478
+    }
+   ]
+  },
+  {
+   "nom": "Ouvrier principal de 1re classe",
+   "categorie": "C",
+   "echelons": [
+    {
+     "indice": 373,
+     "duree": "1 an"
+    },
+    {
+     "indice": 375,
+     "duree": "1 an"
+    },
+    {
+     "indice": 376,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 385,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 398,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 408,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 420,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 435,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 455,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 478
+    }
+   ]
+  },
+  {
+   "nom": "Ouvrier principal de 2e classe",
+   "categorie": "C",
+   "echelons": [
+    {
+     "indice": 367,
+     "duree": "1 an"
+    },
+    {
+     "indice": 369,
+     "duree": "1 an"
+    },
+    {
+     "indice": 370,
+     "duree": "1 an"
+    },
+    {
+     "indice": 373,
+     "duree": "1 an"
+    },
+    {
+     "indice": 374,
+     "duree": "1 an"
+    },
+    {
+     "indice": 376,
+     "duree": "1 an"
+    },
+    {
+     "indice": 377,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 385,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 397,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 409,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 417,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 425
+    }
+   ]
+  },
+  {
+   "nom": "Permanencier auxiliaire de régulation médicale (extinction)",
+   "categorie": "C",
+   "echelons": [
+    {
+     "indice": 367,
+     "duree": "1 an"
+    },
+    {
+     "indice": 369,
+     "duree": "1 an"
+    },
+    {
+     "indice": 370,
+     "duree": "1 an"
+    },
+    {
+     "indice": 373,
+     "duree": "1 an"
+    },
+    {
+     "indice": 374,
+     "duree": "1 an"
+    },
+    {
+     "indice": 376,
+     "duree": "1 an"
+    },
+    {
+     "indice": 377,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 385,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 397,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 409,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 417,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 425
+    }
+   ]
+  },
+  {
+   "nom": "Permanencier auxiliaire de régulation médicale principal (extinction)",
+   "categorie": "C",
+   "echelons": [
+    {
+     "indice": 373,
+     "duree": "1 an"
+    },
+    {
+     "indice": 375,
+     "duree": "1 an"
+    },
+    {
+     "indice": 376,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 385,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 398,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 408,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 420,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 435,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 455,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 478
+    }
+   ]
+  },
+  {
+   "nom": "Adjoint des cadres hospitaliers (classe exceptionnelle)",
+   "categorie": "B",
+   "echelons": [
+    {
+     "indice": 397,
+     "duree": "1 an"
+    },
+    {
+     "indice": 409,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 424,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 446,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 470,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 489,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 513,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 539,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 556,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 574,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 592
+    }
+   ]
+  },
+  {
+   "nom": "Adjoint des cadres hospitaliers (classe normale)",
+   "categorie": "B",
+   "echelons": [
+    {
+     "indice": 373,
+     "duree": "1 an"
+    },
+    {
+     "indice": 374,
+     "duree": "1 an"
+    },
+    {
+     "indice": 375,
+     "duree": "1 an"
+    },
+    {
+     "indice": 376,
+     "duree": "1 an"
+    },
+    {
+     "indice": 377,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 386,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 401,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 420,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 436,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 446,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 462,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 482,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 508
+    }
+   ]
+  },
+  {
+   "nom": "Adjoint des cadres hospitaliers (classe supérieure)",
+   "categorie": "B",
+   "echelons": [
+    {
+     "indice": 376,
+     "duree": "1 an"
+    },
+    {
+     "indice": 377,
+     "duree": "1 an"
+    },
+    {
+     "indice": 384,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 395,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 406,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 421,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 441,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 457,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 466,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 485,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 509,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 539
+    }
+   ]
+  },
+  {
+   "nom": "Aide-soignant / Auxiliaire de puériculture (classe normale)",
+   "categorie": "B",
+   "echelons": [
+    {
+     "indice": 373,
+     "duree": "1 an ½"
+    },
+    {
+     "indice": 375,
+     "duree": "1 an ½"
+    },
+    {
+     "indice": 377,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 388,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 401,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 414,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 429,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 444,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 461,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 485,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 517
+    }
+   ]
+  },
+  {
+   "nom": "Aide-soignant / Auxiliaire de puériculture (classe supérieure)",
+   "categorie": "B",
+   "echelons": [
+    {
+     "indice": 387,
+     "duree": "1 an ½"
+    },
+    {
+     "indice": 399,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 411,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 424,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 442,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 460,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 480,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 499,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 519,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 539,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 560
+    }
+   ]
+  },
+  {
+   "nom": "Animateur",
+   "categorie": "B",
+   "echelons": [
+    {
+     "indice": 373,
+     "duree": "1 an"
+    },
+    {
+     "indice": 374,
+     "duree": "1 an"
+    },
+    {
+     "indice": 375,
+     "duree": "1 an"
+    },
+    {
+     "indice": 376,
+     "duree": "1 an"
+    },
+    {
+     "indice": 377,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 386,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 401,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 420,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 436,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 446,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 462,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 482,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 508
+    }
+   ]
+  },
+  {
+   "nom": "Animateur principal de 1re classe",
+   "categorie": "B",
+   "echelons": [
+    {
+     "indice": 397,
+     "duree": "1 an"
+    },
+    {
+     "indice": 409,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 424,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 446,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 470,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 489,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 513,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 539,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 556,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 574,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 592
+    }
+   ]
+  },
+  {
+   "nom": "Animateur principal de 2e classe",
+   "categorie": "B",
+   "echelons": [
+    {
+     "indice": 376,
+     "duree": "1 an"
+    },
+    {
+     "indice": 377,
+     "duree": "1 an"
+    },
+    {
+     "indice": 384,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 395,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 406,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 421,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 441,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 457,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 466,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 485,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 509,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 539
+    }
+   ]
+  },
+  {
+   "nom": "Assistant de régulation médicale (classe exceptionnelle)",
+   "categorie": "B",
+   "echelons": [
+    {
+     "indice": 397,
+     "duree": "1 an"
+    },
+    {
+     "indice": 409,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 424,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 446,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 470,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 489,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 513,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 539,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 556,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 574,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 592
+    }
+   ]
+  },
+  {
+   "nom": "Assistant de régulation médicale (classe normale)",
+   "categorie": "B",
+   "echelons": [
+    {
+     "indice": 373,
+     "duree": "1 an"
+    },
+    {
+     "indice": 374,
+     "duree": "1 an"
+    },
+    {
+     "indice": 375,
+     "duree": "1 an"
+    },
+    {
+     "indice": 376,
+     "duree": "1 an"
+    },
+    {
+     "indice": 377,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 386,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 401,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 420,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 436,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 446,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 462,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 482,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 508
+    }
+   ]
+  },
+  {
+   "nom": "Assistant de régulation médicale (classe supérieure)",
+   "categorie": "B",
+   "echelons": [
+    {
+     "indice": 376,
+     "duree": "1 an"
+    },
+    {
+     "indice": 377,
+     "duree": "1 an"
+    },
+    {
+     "indice": 384,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 395,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 406,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 421,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 441,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 457,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 466,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 485,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 509,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 539
+    }
+   ]
+  },
+  {
+   "nom": "Assistant médico-administratif (classe exceptionnelle)",
+   "categorie": "B",
+   "echelons": [
+    {
+     "indice": 397,
+     "duree": "1 an"
+    },
+    {
+     "indice": 409,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 424,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 446,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 470,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 489,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 513,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 539,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 556,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 574,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 592
+    }
+   ]
+  },
+  {
+   "nom": "Assistant médico-administratif (classe normale)",
+   "categorie": "B",
+   "echelons": [
+    {
+     "indice": 373,
+     "duree": "1 an"
+    },
+    {
+     "indice": 374,
+     "duree": "1 an"
+    },
+    {
+     "indice": 375,
+     "duree": "1 an"
+    },
+    {
+     "indice": 376,
+     "duree": "1 an"
+    },
+    {
+     "indice": 377,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 386,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 401,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 420,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 436,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 446,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 462,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 482,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 508
+    }
+   ]
+  },
+  {
+   "nom": "Assistant médico-administratif (classe supérieure)",
+   "categorie": "B",
+   "echelons": [
+    {
+     "indice": 376,
+     "duree": "1 an"
+    },
+    {
+     "indice": 377,
+     "duree": "1 an"
+    },
+    {
+     "indice": 384,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 395,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 406,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 421,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 441,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 457,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 466,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 485,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 509,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 539
+    }
+   ]
+  },
+  {
+   "nom": "IDE ou rééducateur catégorie B active, classe normale (extinction)",
+   "categorie": "B",
+   "echelons": [
+    {
+     "indice": 377,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 391,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 408,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 427,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 449,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 482,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 520,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 559
+    }
+   ]
+  },
+  {
+   "nom": "IDE ou rééducateur catégorie B active, classe supérieure (extinction)",
+   "categorie": "B",
+   "echelons": [
+    {
+     "indice": 460,
+     "duree": "1 an"
+    },
+    {
+     "indice": 474,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 500,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 526,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 549,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 566,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 580,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 590,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 605,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 625
+    }
+   ]
+  },
+  {
+   "nom": "Moniteur-éducateur",
+   "categorie": "B",
+   "echelons": [
+    {
+     "indice": 373,
+     "duree": "1 an"
+    },
+    {
+     "indice": 374,
+     "duree": "1 an"
+    },
+    {
+     "indice": 375,
+     "duree": "1 an"
+    },
+    {
+     "indice": 376,
+     "duree": "1 an"
+    },
+    {
+     "indice": 377,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 386,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 401,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 420,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 436,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 446,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 462,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 482,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 508
+    }
+   ]
+  },
+  {
+   "nom": "Moniteur-éducateur principal",
+   "categorie": "B",
+   "echelons": [
+    {
+     "indice": 376,
+     "duree": "1 an"
+    },
+    {
+     "indice": 377,
+     "duree": "1 an"
+    },
+    {
+     "indice": 384,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 395,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 406,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 421,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 441,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 457,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 466,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 485,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 509,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 539
+    }
+   ]
+  },
+  {
+   "nom": "Technicien hospitalier",
+   "categorie": "B",
+   "echelons": [
+    {
+     "indice": 373,
+     "duree": "1 an"
+    },
+    {
+     "indice": 374,
+     "duree": "1 an"
+    },
+    {
+     "indice": 375,
+     "duree": "1 an"
+    },
+    {
+     "indice": 376,
+     "duree": "1 an"
+    },
+    {
+     "indice": 377,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 386,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 401,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 420,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 436,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 446,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 462,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 482,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 508
+    }
+   ]
+  },
+  {
+   "nom": "Technicien supérieur hospitalier de 1re classe",
+   "categorie": "B",
+   "echelons": [
+    {
+     "indice": 397,
+     "duree": "1 an"
+    },
+    {
+     "indice": 409,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 424,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 446,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 470,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 489,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 513,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 539,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 556,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 574,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 592
+    }
+   ]
+  },
+  {
+   "nom": "Technicien supérieur hospitalier de 2e classe",
+   "categorie": "B",
+   "echelons": [
+    {
+     "indice": 376,
+     "duree": "1 an"
+    },
+    {
+     "indice": 377,
+     "duree": "1 an"
+    },
+    {
+     "indice": 384,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 395,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 406,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 421,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 441,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 457,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 466,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 485,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 509,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 539
+    }
+   ]
+  },
+  {
+   "nom": "Assistant socio-éducatif, 1er grade (éducateur, assistant social, CESF, ETS, EJE)",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 395,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 409,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 420,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 431,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 445,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 457,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 470,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 487,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 507,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 528,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 551,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 571,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 581,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 597
+    }
+   ]
+  },
+  {
+   "nom": "Assistant socio-éducatif, 2e grade (éducateur, assistant social, CESF, ETS, EJE)",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 438,
+     "duree": "1 an"
+    },
+    {
+     "indice": 453,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 467,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 483,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 502,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 527,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 550,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 571,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 590,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 610,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 632
+    }
+   ]
+  },
+  {
+   "nom": "Attaché d'administration hospitalière",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 395,
+     "duree": "1 an 6 mois"
+    },
+    {
+     "indice": 415,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 435,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 455,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 485,
+     "duree": "2 ans 6 mois"
+    },
+    {
+     "indice": 518,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 550,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 580,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 610,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 645,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 678
+    }
+   ]
+  },
+  {
+   "nom": "Attaché d'administration hospitalière, hors classe",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 660,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 700,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 735,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 773,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 811,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 835
+    },
+    {
+     "indice": 895,
+     "echelon": "HEA 1"
+    },
+    {
+     "indice": 930,
+     "echelon": "HEA 2"
+    },
+    {
+     "indice": 977,
+     "echelon": "HEA 3"
+    }
+   ]
+  },
+  {
+   "nom": "Attaché principal d'administration hospitalière",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 505,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 540,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 580,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 610,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 655,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 695,
+     "duree": "2 ans 6 mois"
+    },
+    {
+     "indice": 735,
+     "duree": "2 ans 6 mois"
+    },
+    {
+     "indice": 773,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 811,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 826
+    }
+   ]
+  },
+  {
+   "nom": "Cadre de santé n'ayant pas opté pour le reclassement (extinction)",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 414,
+     "duree": "1 an"
+    },
+    {
+     "indice": 449,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 481,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 508,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 534,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 564,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 593,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 652,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 692
+    }
+   ]
+  },
+  {
+   "nom": "Cadre de santé paramédical",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 465,
+     "duree": "1 an"
+    },
+    {
+     "indice": 492,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 520,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 558,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 582,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 615,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 648,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 681,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 714,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 743,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 769
+    }
+   ]
+  },
+  {
+   "nom": "Cadre socio-éducatif",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 443,
+     "duree": "1 an"
+    },
+    {
+     "indice": 454,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 468,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 486,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 511,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 536,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 566,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 591,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 613,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 639,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 663
+    }
+   ]
+  },
+  {
+   "nom": "Cadre supérieur de santé n'ayant pas opté pour le reclassement (extinction)",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 556,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 579,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 604,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 620,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 662,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 685,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 725
+    }
+   ]
+  },
+  {
+   "nom": "Cadre supérieur de santé paramédical",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 585,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 620,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 655,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 695,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 735,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 773,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 811,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 826
+    }
+   ]
+  },
+  {
+   "nom": "Cadre supérieur de santé paramédical, hors classe",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 700,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 735,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 773,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 811,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 835
+    },
+    {
+     "indice": 895,
+     "duree": "1 an",
+     "echelon": "HEA 1"
+    },
+    {
+     "indice": 930,
+     "duree": "1 an",
+     "echelon": "HEA 2"
+    },
+    {
+     "indice": 977,
+     "echelon": "HEA 3"
+    }
+   ]
+  },
+  {
+   "nom": "Cadre supérieur socio-éducatif",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 541,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 566,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 584,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 608,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 625,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 650,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 674,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 685
+    }
+   ]
+  },
+  {
+   "nom": "Cadre supérieur socio-éducatif, classe exceptionnelle",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 608,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 625,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 655,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 689,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 725,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 769
+    }
+   ]
+  },
+  {
+   "nom": "Coordonnateur en maïeutique",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 674,
+     "duree": "1 an"
+    },
+    {
+     "indice": 709,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 743,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 776,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 811,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 835,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 895,
+     "duree": "1 an",
+     "echelon": "HEA 1"
+    },
+    {
+     "indice": 930,
+     "duree": "1 an",
+     "echelon": "HEA 2"
+    },
+    {
+     "indice": 977,
+     "echelon": "HEA 3"
+    }
+   ]
+  },
+  {
+   "nom": "IADE, 1er grade",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 450,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 478,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 506,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 534,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 563,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 593,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 624,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 656,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 690,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 727
+    }
+   ]
+  },
+  {
+   "nom": "IADE, 2e grade",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 558,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 582,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 615,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 648,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 681,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 714,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 743,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 769
+    }
+   ]
+  },
+  {
+   "nom": "IADE, IBODE ou puéricultrice catégorie active, classe normale (extinction)",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 399,
+     "duree": "1 an"
+    },
+    {
+     "indice": 425,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 446,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 471,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 494,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 520,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 550,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 584
+    }
+   ]
+  },
+  {
+   "nom": "IADE, IBODE ou puéricultrice catégorie active, classe supérieure (extinction)",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 487,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 514,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 534,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 557,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 583,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 603,
+     "duree": "3 ans ½"
+    },
+    {
+     "indice": 645,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 687
+    }
+   ]
+  },
+  {
+   "nom": "IBODE / Puéricultrice, 1er grade",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 427,
+     "duree": "1 an ½"
+    },
+    {
+     "indice": 450,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 478,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 506,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 534,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 563,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 593,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 624,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 656,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 690,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 727
+    }
+   ]
+  },
+  {
+   "nom": "IBODE / Puéricultrice, 2e grade",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 471,
+     "duree": "1 an",
+     "echelon": "Provisoire 1"
+    },
+    {
+     "indice": 495,
+     "duree": "2 ans",
+     "echelon": "Provisoire 2"
+    },
+    {
+     "indice": 520,
+     "duree": "2 ans",
+     "echelon": "1"
+    },
+    {
+     "indice": 558,
+     "duree": "2 ans",
+     "echelon": "2"
+    },
+    {
+     "indice": 582,
+     "duree": "2 ans",
+     "echelon": "3"
+    },
+    {
+     "indice": 615,
+     "duree": "2 ans ½",
+     "echelon": "4"
+    },
+    {
+     "indice": 648,
+     "duree": "3 ans",
+     "echelon": "5"
+    },
+    {
+     "indice": 681,
+     "duree": "3 ans",
+     "echelon": "6"
+    },
+    {
+     "indice": 714,
+     "duree": "4 ans",
+     "echelon": "7"
+    },
+    {
+     "indice": 743,
+     "duree": "4 ans",
+     "echelon": "8"
+    },
+    {
+     "indice": 769,
+     "echelon": "9"
+    }
+   ]
+  },
+  {
+   "nom": "Infirmier en pratique avancée (IPA), 1er grade",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 450,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 478,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 506,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 534,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 563,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 593,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 624,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 656,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 690,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 727
+    }
+   ]
+  },
+  {
+   "nom": "Infirmier en pratique avancée (IPA), 2e grade",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 558,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 582,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 615,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 648,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 681,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 714,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 743,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 769
+    }
+   ]
+  },
+  {
+   "nom": "Infirmier en soins généraux (IDE), 1er grade",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 395,
+     "duree": "1 an"
+    },
+    {
+     "indice": 424,
+     "duree": "1 an ½"
+    },
+    {
+     "indice": 447,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 468,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 491,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 518,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 550,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 580,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 610,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 645,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 678
+    }
+   ]
+  },
+  {
+   "nom": "Infirmier en soins généraux (IDE), 2e grade",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 427,
+     "duree": "1 an ½"
+    },
+    {
+     "indice": 450,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 478,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 506,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 534,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 563,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 593,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 624,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 656,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 690,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 727
+    }
+   ]
+  },
+  {
+   "nom": "Ingénieur en chef hospitalier",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 409,
+     "duree": "1 an"
+    },
+    {
+     "indice": 455,
+     "duree": "1 an"
+    },
+    {
+     "indice": 490,
+     "duree": "1 ans ½"
+    },
+    {
+     "indice": 528,
+     "duree": "1 ans 1/2"
+    },
+    {
+     "indice": 560,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 596,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 649,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 710,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 748,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 797,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 826
+    }
+   ]
+  },
+  {
+   "nom": "Ingénieur en chef hospitalier, hors classe",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 633,
+     "duree": "1 ans ½"
+    },
+    {
+     "indice": 694,
+     "duree": "1 ans ½"
+    },
+    {
+     "indice": 748,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 797,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 835,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 895,
+     "duree": "1 an",
+     "echelon": "HEA 1"
+    },
+    {
+     "indice": 930,
+     "duree": "1 an",
+     "echelon": "HEA 2"
+    },
+    {
+     "indice": 977,
+     "duree": "1 an",
+     "echelon": "HEA 3"
+    },
+    {
+     "indice": 977,
+     "duree": "1 an",
+     "echelon": "HEB 1"
+    },
+    {
+     "indice": 1018,
+     "duree": "1 an",
+     "echelon": "HEB 2"
+    },
+    {
+     "indice": 1072,
+     "echelon": "HEB 3"
+    },
+    {
+     "indice": 1072,
+     "duree": "1 an",
+     "echelon": "HEB bis 1"
+    },
+    {
+     "indice": 1100,
+     "duree": "1 an",
+     "echelon": "HEB bis 2"
+    },
+    {
+     "indice": 1129,
+     "echelon": "HEB bis 3"
+    }
+   ]
+  },
+  {
+   "nom": "Ingénieur hospitalier",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 395,
+     "duree": "1 an ½"
+    },
+    {
+     "indice": 424,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 450,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 483,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 518,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 545,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 583,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 615,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 642,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 678
+    }
+   ]
+  },
+  {
+   "nom": "Ingénieur hospitalier en chef, classe exceptionnelle",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 835,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 895,
+     "duree": "1 an",
+     "echelon": "HEA 1"
+    },
+    {
+     "indice": 930,
+     "duree": "1 an",
+     "echelon": "HEA 2"
+    },
+    {
+     "indice": 977,
+     "duree": "1 an",
+     "echelon": "HEA 3"
+    },
+    {
+     "indice": 977,
+     "duree": "1 an",
+     "echelon": "HEB 1"
+    },
+    {
+     "indice": 1018,
+     "duree": "1 an",
+     "echelon": "HEB 2"
+    },
+    {
+     "indice": 1072,
+     "duree": "1 an",
+     "echelon": "HEB 3"
+    },
+    {
+     "indice": 1072,
+     "duree": "1 an",
+     "echelon": "HEB bis 1"
+    },
+    {
+     "indice": 1100,
+     "duree": "1 an",
+     "echelon": "HEB bis 2"
+    },
+    {
+     "indice": 1129,
+     "duree": "1 an",
+     "echelon": "HEB bis 3"
+    },
+    {
+     "indice": 1129,
+     "duree": "1 an",
+     "echelon": "HEC 1"
+    },
+    {
+     "indice": 1153,
+     "duree": "1 an",
+     "echelon": "HEC 2"
+    },
+    {
+     "indice": 1178,
+     "duree": "1 an",
+     "echelon": "HEC 3"
+    },
+    {
+     "indice": 1178,
+     "duree": "1 an",
+     "echelon": "HED 1"
+    },
+    {
+     "indice": 1231,
+     "duree": "1 an",
+     "echelon": "HED 2"
+    },
+    {
+     "indice": 1284,
+     "echelon": "HED 3"
+    },
+    {
+     "indice": 1284,
+     "duree": "1 an",
+     "echelon": "HEE 1"
+    },
+    {
+     "indice": 1334,
+     "echelon": "HEE 2"
+    }
+   ]
+  },
+  {
+   "nom": "Ingénieur hospitalier hors classe",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 700,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 735,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 773,
+     "duree": "2 ans 1/2"
+    },
+    {
+     "indice": 811,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 835
+    },
+    {
+     "indice": 895,
+     "duree": "1 an",
+     "echelon": "HEA 1"
+    },
+    {
+     "indice": 930,
+     "duree": "1 an",
+     "echelon": "HEA 2"
+    },
+    {
+     "indice": 977,
+     "echelon": "HEA 3"
+    }
+   ]
+  },
+  {
+   "nom": "Ingénieur hospitalier principal",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 524,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 560,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 602,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 655,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 690,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 735,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 773,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 811,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 826
+    }
+   ]
+  },
+  {
+   "nom": "Manipulateur d'électroradiologie médicale, 1er grade",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 395,
+     "duree": "1 an"
+    },
+    {
+     "indice": 424,
+     "duree": "1 an ½"
+    },
+    {
+     "indice": 447,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 468,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 491,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 518,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 550,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 580,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 610,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 645,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 678
+    }
+   ]
+  },
+  {
+   "nom": "Manipulateur d'électroradiologie médicale, 2e grade",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 450,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 478,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 506,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 534,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 563,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 593,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 624,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 656,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 690,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 727
+    }
+   ]
+  },
+  {
+   "nom": "Masseur-kinésithérapeute / Orthophoniste, 1er grade",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 427,
+     "duree": "1 an ½"
+    },
+    {
+     "indice": 450,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 478,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 506,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 534,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 563,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 593,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 624,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 656,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 690,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 727
+    }
+   ]
+  },
+  {
+   "nom": "Masseur-kinésithérapeute / Orthophoniste, 2e grade",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 471,
+     "duree": "1 an",
+     "echelon": "Provisoire 1"
+    },
+    {
+     "indice": 495,
+     "duree": "2 ans",
+     "echelon": "Provisoire 2"
+    },
+    {
+     "indice": 520,
+     "duree": "2 ans",
+     "echelon": "1"
+    },
+    {
+     "indice": 558,
+     "duree": "2 ans",
+     "echelon": "2"
+    },
+    {
+     "indice": 582,
+     "duree": "2 ans",
+     "echelon": "3"
+    },
+    {
+     "indice": 615,
+     "duree": "2 ans ½",
+     "echelon": "4"
+    },
+    {
+     "indice": 648,
+     "duree": "3 ans",
+     "echelon": "5"
+    },
+    {
+     "indice": 681,
+     "duree": "3 ans",
+     "echelon": "6"
+    },
+    {
+     "indice": 714,
+     "duree": "4 ans",
+     "echelon": "7"
+    },
+    {
+     "indice": 743,
+     "duree": "4 ans",
+     "echelon": "8"
+    },
+    {
+     "indice": 769,
+     "echelon": "9"
+    }
+   ]
+  },
+  {
+   "nom": "Préparateur en pharmacie hospitalière, 1er grade",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 395,
+     "duree": "1 an"
+    },
+    {
+     "indice": 424,
+     "duree": "1 an ½"
+    },
+    {
+     "indice": 447,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 468,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 491,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 518,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 550,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 580,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 610,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 645,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 678
+    }
+   ]
+  },
+  {
+   "nom": "Préparateur en pharmacie hospitalière, 2e grade",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 450,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 478,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 506,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 534,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 563,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 593,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 624,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 656,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 690,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 727
+    }
+   ]
+  },
+  {
+   "nom": "Psychologue, classe normale",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 395,
+     "duree": "1 an"
+    },
+    {
+     "indice": 405,
+     "duree": "1 an"
+    },
+    {
+     "indice": 416,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 436,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 462,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 497,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 524,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 562,
+     "duree": "3 ans ½"
+    },
+    {
+     "indice": 595,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 634,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 678
+    }
+   ]
+  },
+  {
+   "nom": "Psychologue, hors classe",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 525,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 595,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 629,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 673,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 720,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 768,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 811,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 826
+    }
+   ]
+  },
+  {
+   "nom": "Pédicure-podologue, ergothérapeute, orthoptiste, diététicien, psychomotricien, 1er grade",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 395,
+     "duree": "1 an"
+    },
+    {
+     "indice": 424,
+     "duree": "1 an ½"
+    },
+    {
+     "indice": 447,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 468,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 491,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 518,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 550,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 580,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 610,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 645,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 678
+    }
+   ]
+  },
+  {
+   "nom": "Pédicure-podologue, ergothérapeute, orthoptiste, diététicien, psychomotricien, 2e grade",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 450,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 478,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 506,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 534,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 563,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 593,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 624,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 656,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 690,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 727
+    }
+   ]
+  },
+  {
+   "nom": "Sage-femme, 1er grade",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 465,
+     "duree": "1 an ½"
+    },
+    {
+     "indice": 492,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 515,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 534,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 556,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 581,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 610,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 647,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 681,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 723
+    }
+   ]
+  },
+  {
+   "nom": "Sage-femme, 2e grade",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 568,
+     "duree": "1 an ½"
+    },
+    {
+     "indice": 598,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 628,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 658,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 693,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 728,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 760,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 794,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 832,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 835
+    }
+   ]
+  },
+  {
+   "nom": "Technicien de laboratoire médical, 1er grade",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 395,
+     "duree": "1 an"
+    },
+    {
+     "indice": 424,
+     "duree": "1 an ½"
+    },
+    {
+     "indice": 447,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 468,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 491,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 518,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 550,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 580,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 610,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 645,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 678
+    }
+   ]
+  },
+  {
+   "nom": "Technicien de laboratoire médical, 2e grade",
+   "categorie": "A",
+   "echelons": [
+    {
+     "indice": 450,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 478,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 506,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 534,
+     "duree": "2 ans"
+    },
+    {
+     "indice": 563,
+     "duree": "2 ans ½"
+    },
+    {
+     "indice": 593,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 624,
+     "duree": "3 ans"
+    },
+    {
+     "indice": 656,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 690,
+     "duree": "4 ans"
+    },
+    {
+     "indice": 727
+    }
+   ]
+  }
+ ],
+ "aValider": [],
+ "sourceGrilles": "Livret « Grilles des salaires des agent·e·s de la Fonction publique hospitalière au 1er juillet 2026 », Fédération CGT Santé et Action sociale"
 }

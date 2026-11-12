@@ -45,7 +45,7 @@ export function vueOutils() {
           ${lien('#/dossier', 'preuves', 'Dossier pour le syndicat', 'Bilan, alertes, rappels : un PDF prêt à envoyer')}
           ${lien('#/droits', 'livre', 'Mes droits', 'Temps de travail et repos, en clair')}
           ${lien(`#/releve/${M.aujourdhui().slice(0, 4)}`, 'imprimer', 'Mon relevé annuel', 'À imprimer ou à enregistrer en PDF')}
-          ${lien('#/import', 'telecharger', 'Importer depuis Octime', 'Tout ton emploi du temps d\'un coup, à partir du PDF Octime')}
+          ${lien('#/import/remplir', 'telecharger', 'Mon relevé Octime', 'Remplir mon planning ou vérifier mes heures, à partir du PDF')}
         </ul>
         ${liens.length ? `<p class="etiquette">Liens utiles</p><ul class="liste">${liens.map((l) => `<li><a class="lien" href="${esc(l.url)}" target="_blank" rel="noopener"><span style="display:flex;gap:.75rem;align-items:flex-start">${ic('web')}<span>${esc(l.titre)}${l.description ? `<span class="sous">${esc(l.description)}</span>` : ''}</span></span>${chevron()}</a></li>`).join('')}</ul>` : ''}
         <a class="btn plein" href="#/contact">${ic('telephone')}Contacter le syndicat</a>
@@ -67,7 +67,7 @@ export function vueSalaire(p) {
           <h2>Mon traitement de base</h2>
           <div class="rangee"><label class="champ"><span>Indice majoré</span><input type="number" inputmode="numeric" id="im" min="300" max="1100" value="${pr.indiceMajore || ''}" placeholder="Ex. : 420"></label>
             <label class="champ"><span>Quotité</span><select id="q">${[100, 90, 80, 70, 60, 50].map((x) => `<option value="${x}" ${Number(pr.quotite || 100) === x ? 'selected' : ''}>${x} %</option>`).join('')}</select></label></div>
-          ${S.cfg.grilles.length ? `<div class="rangee"><label class="champ"><span>Mon grade</span><select id="grade"><option value="">Choisir…</option>${S.cfg.grilles.map((g, i) => `<option value="${i}">${esc(g.nom)}</option>`).join('')}</select></label>
+          ${S.cfg.grilles.length ? `<div class="rangee"><label class="champ"><span>Mon grade</span><select id="grade"><option value="">Choisir…</option>${['C', 'B', 'A', ''].map((c) => { const l = S.cfg.grilles.map((g, i) => [g, i]).filter(([g]) => (g.categorie || '') === c); return l.length ? `<optgroup label="${c ? 'Catégorie ' + c : 'Autres'}">${l.map(([g, i]) => `<option value="${i}">${esc(g.nom)}</option>`).join('')}</optgroup>` : ''; }).join('')}</select></label>
             <label class="champ"><span>Mon échelon</span><select id="ech" disabled><option value="">—</option></select></label></div>` : ''}
           ${note('L\'indice majoré est écrit en haut de ta fiche de paie (« IM » ou « indice »). Il dépend de ton grade et de ton échelon.')}
           <div id="res-base" class="res"></div>
@@ -114,7 +114,7 @@ export function vueSalaire(p) {
       el.querySelector('#im').onchange = garder;
       const gr = el.querySelector('#grade'), ec = el.querySelector('#ech');
       if (gr) {
-        gr.onchange = () => { const g = S.cfg.grilles[Number(gr.value)]; ec.disabled = !g; ec.innerHTML = g ? '<option value="">Choisir…</option>' + g.echelons.map((x, i) => `<option value="${x.indice}">Échelon ${i + 1} · indice ${x.indice}${x.duree ? ' · ' + esc(x.duree) : ''}</option>`).join('') : '<option value="">—</option>'; };
+        gr.onchange = () => { const g = S.cfg.grilles[Number(gr.value)]; ec.disabled = !g; ec.innerHTML = g ? '<option value="">Choisir…</option>' + g.echelons.map((x, i) => `<option value="${x.indice}">Échelon ${esc(x.echelon || String(i + 1))} · indice ${x.indice}${x.duree ? ' · ' + esc(x.duree) : ''}</option>`).join('') : '<option value="">—</option>'; };
         ec.onchange = () => { if (ec.value) { el.querySelector('#im').value = ec.value; maj(); majPrimes(); garder(); } };
       }
       maj(); majPrimes();

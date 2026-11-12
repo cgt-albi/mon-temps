@@ -31,6 +31,8 @@ function sections() {
       ['regles.rttParAn', 'RTT par an', n(R.rttParAn, 'jours'), LOCAL],
       ['regles.caParAn', 'Congés annuels par an', n(R.caParAn, 'jours'), 'Décret n° 2002-8'],
       ['regles.horsSaisonJours1', 'Congés hors saison : 1 jour gagné à partir de', n(R.horsSaisonJours1 || 3, 'jours de CA'), 'Charte 2009 : 3 jours · note Octime 2026 : 4 jours'],
+      ['regles.echeanceCA', 'CA de l\'année précédente : à poser avant le', R.echeanceCA || '01-15', 'Charte du temps de travail (tolérance au 15 janvier)'],
+      ['regles.echeanceBonus', 'CH-1 et CF-1 : à poser avant le', R.echeanceBonus || '04-30', 'Charte du temps de travail et note Octime'],
       ['regles.horsSaisonJours2', 'Congés hors saison : 2 jours gagnés à partir de', n(R.horsSaisonJours2 || 6, 'jours de CA'), 'Charte du temps de travail'],
       ['regles.rhParAn', 'Repos hebdomadaires attendus par an', n(R.rhParAn, 'jours'), LOCAL],
       ['regles.gardeEnfantJours', 'Garde d\'enfant malade (GE) par an', n(R.gardeEnfantJours, 'jours'), 'Autorisations spéciales d\'absence, à confirmer au niveau local'],

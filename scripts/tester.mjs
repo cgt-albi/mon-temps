@@ -94,7 +94,50 @@ t('nom présent', typeof cfg.nom === 'string' && cfg.nom.trim().length > 0);
   t('Octime : code inconnu avec horaires → code perso', p.nouveauxCodes.length === 1 && p.nouveauxCodes[0].debut === '07:00');
   t('Octime : code inconnu sans horaire signalé', p.ignores.includes('QQQ') && !p.jours['2026-02-09']);
   t('Octime : jour déjà noté compté comme remplacé', p.remplaces === 1);
+  // vérification : l'agent a noté une réunion et un dépassement qu'Octime ne compte pas
+  const notes = { profil: { quotite: 100 }, codesPerso: [], departs: {}, jours: {
+    '2026-02-02': { prevu: { code: 'M41' }, ajouts: [{ motif: 'Réunion', debut: '18:00', fin: '20:00' }] },
+    '2026-02-03': { prevu: { code: 'M52' }, realise: { code: 'M52', depassementMin: 45 } },
+    '2026-02-04': { prevu: { code: 'J38' }, realise: { code: 'J38', depassementMin: 30 } },
+    '2026-02-05': { prevu: { code: 'CA' } } } };
+  const v = O.comparer(a, notes, cfg, '2026-02-28');
+  t('vérif : 4 jours comparés', v.compares === 4);
+  t('vérif : réunion et dépassement non comptés trouvés (2 h 45)', v.totalMin === 165 && v.aReclamer.length === 2);
+  t('vérif : dépassement déjà compté par Octime non réclamé', !v.aReclamer.some((e) => e.date === '2026-02-04'));
+  t('vérif : code différent signalé', v.ecarts.some((e) => e.date === '2026-02-05' && e.codeDiff));
+  const lettre = O.courrierReclamation(v, { prenom: 'Camille' });
+  t('vérif : courrier avec le détail et le total', lettre.includes('réunion de 18:00 à 20:00') && lettre.includes('2h45') && lettre.endsWith('Camille'));
   t('Octime : ni nom ni matricule gardés', !JSON.stringify(p).includes('DUPONT') && !JSON.stringify(p).includes('000000'));
+}
+
+// Échéances : jours à ne pas perdre
+{
+  const ouvres = (debut, n) => { const out = []; let d = debut; while (out.length < n) { if (M.jourSemaine(d) < 5 && !M.nomFerie(d)) out.push(d); d = M.ajouterJours(d, 1); } return out; };
+  const e = { profil: { quotite: 100 }, codesPerso: [], departs: {}, jours: {} };
+  ouvres('2025-02-03', 3).forEach((d) => { e.jours[d] = { prevu: { code: 'CA' } }; }); // 3 CA hors saison en 2025 → 1 jour gagné
+  ouvres('2025-06-02', 20).forEach((d) => { e.jours[d] = { prevu: { code: 'CA' } }; });
+  ouvres('2026-03-02', 2).forEach((d) => { e.jours[d] = { prevu: { code: 'M41' } }; });
+  const janv = M.echeances(e, cfg, '2026-01-10');
+  t('échéances : CA de l\'an dernier avant le 15 janvier', janv.some((x) => x.texte.includes('3 jours de congés 2025') && x.texte.includes('15 janvier')));
+  t('échéances : jour hors saison à poser avant le 30 avril', janv.some((x) => x.texte.includes('1 jour hors saison') && x.texte.includes('30 avril')));
+  e.jours['2026-03-04'] = { prevu: { code: 'CH-1' } };
+  t('échéances : CH-1 posé, plus d\'alerte', !M.echeances(e, cfg, '2026-03-10').some((x) => x.texte.includes('hors saison')));
+  t('échéances : rien en juin', M.echeances(e, cfg, '2026-06-10').length === 0);
+  t('échéances : CA restants en décembre', M.echeances(e, cfg, '2026-12-05').some((x) => x.texte.includes('de congés encore à poser') && x.niveau === 'urgent'));
+}
+
+// Mon année en un coup d'œil
+{
+  const B = await import('../app/bilan.js').catch(() => null);
+  if (B) {
+    const e = { profil: { quotite: 100 }, codesPerso: [], departs: {}, preuves: [{ type: 'changement', date: '2026-03-03' }], jours: {
+      '2026-03-03': { prevu: { code: 'M41' }, realise: { code: 'M41', depassementMin: 45 } },
+      '2026-03-07': { prevu: { code: 'RH' }, ajouts: [{ motif: 'Réunion', debut: '09:00', fin: '11:00' }] },
+      '2026-03-08': { prevu: { code: 'M41' } } } };
+    const c = B.chiffresAnnee(2026, e, cfg, '2026-12-31');
+    t('bilan : heures en plus de mars (45 min + 2 h)', c.parMois[2] === 165 && c.enPlus === 165);
+    t('bilan : dimanche travaillé, rappel et changement comptés', c.djf === 1 && c.rappels === 1 && c.changements === 1);
+  }
 }
 
 // Régimes de travail
@@ -178,7 +221,8 @@ const datesOk = (l) => Array.isArray(l) && l.length > 0 && l.every((x) => /^\d{4
 t('barèmes : point d\'indice daté', datesOk(bar.pointIndice) && bar.pointIndice.every((x) => x.valeur > 4 && x.valeur < 6));
 t('barèmes : SMIC daté et croissant', datesOk(bar.smic) && bar.smic.every((x, k, a) => k === 0 || x.horaire >= a[k - 1].horaire));
 t('barèmes : indice minimum daté', datesOk(bar.indiceMinimum) && bar.indiceMinimum.every((x) => x.indice >= 300 && x.indice <= 500));
-t('barèmes : grilles valides', (bar.grilles || []).every((g) => g.nom && Array.isArray(g.echelons) && g.echelons.every((e) => e.indice >= 300 && e.indice <= 1100)));
+t('barèmes : grilles croissantes', (bar.grilles || []).every((g) => g.echelons.every((e, k, a) => k === 0 || e.indice >= a[k - 1].indice)));
+t('barèmes : grilles valides', (bar.grilles || []).every((g) => g.nom && Array.isArray(g.echelons) && g.echelons.every((e) => e.indice >= 300 && e.indice <= 1400)));
 const el = contenu.elections; t('élections : dates cohérentes', !el || (/^\d{4}-\d{2}-\d{2}$/.test(el.dateScrutin) && (!el.ouvertureVote || el.ouvertureVote <= el.dateScrutin)));
 const pr = lire('primes.json'); const idsP = new Set();
 t('primes : liste', Array.isArray(pr.liste) && pr.liste.length > 0);

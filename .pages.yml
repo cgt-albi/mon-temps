@@ -266,6 +266,14 @@ content:
       - name: horsSaisonJours2
         label: Congés hors saison, 2e jour gagné à partir de (jours de CA)
         type: number
+      - name: echeanceCA
+        label: Date limite pour poser les CA de l'année précédente (MM-JJ)
+        type: string
+        pattern: { regex: "^\\d{2}-\\d{2}$", message: "Format attendu : 01-15" }
+      - name: echeanceBonus
+        label: Date limite pour poser les CH-1 et CF-1 (MM-JJ)
+        type: string
+        pattern: { regex: "^\\d{2}-\\d{2}$", message: "Format attendu : 04-30" }
       - name: regimes
         label: Régimes de travail (postes en 12 h, 10 h, 7 h 48…)
         description: "L'agent choisit son régime dans son profil. Il ne voit alors que les codes de travail de son régime (plus repos, congés, absences). Une case vide reprend la règle générale."
@@ -437,13 +445,19 @@ content:
           collapsible: { collapsed: true, summary: "{fields.nom}" }
         fields:
           - { name: nom, label: Grade, type: string, required: true }
+          - name: categorie
+            label: Catégorie
+            type: select
+            options: { values: [C, B, A] }
           - name: echelons
             label: Échelons
             type: object
             list: true
             fields:
               - { name: indice, label: Indice majoré, type: number, required: true }
+              - { name: echelon, label: "Nom de l'échelon s'il n'est pas un simple numéro (ex. HEA 1, Provisoire 1)", type: string }
               - { name: duree, label: Durée dans l'échelon (facultatif), type: string }
+      - { name: sourceGrilles, label: Source des grilles, type: string }
       - name: aValider
         label: Éléments encore « à valider »
         type: string

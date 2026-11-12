@@ -5,6 +5,8 @@
   "caParAn": 25,
   "horsSaisonJours1": 3,
   "horsSaisonJours2": 6,
+  "echeanceCA": "01-15",
+  "echeanceBonus": "04-30",
   "periodeEstivale": {
     "debut": "05-01",
     "fin": "10-31"
