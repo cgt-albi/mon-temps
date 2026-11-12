@@ -389,12 +389,12 @@
     "type": "repos"
   },
   {
-    "code": "Jfer",
+    "code": "JFER",
     "libelle": "Jour férié",
     "type": "repos"
   },
   {
-    "code": "Recf",
+    "code": "RECF",
     "libelle": "Récupérateur férié",
     "type": "repos"
   },
@@ -496,6 +496,17 @@
     "libelle": "Garde d'enfant malade",
     "type": "assimile",
     "compte": "ge"
+  },
+  {
+    "code": "EFM",
+    "libelle": "Enfant malade (autorisation d'absence)",
+    "type": "assimile",
+    "compte": "ge"
+  },
+  {
+    "code": "DC",
+    "libelle": "Décès d'un proche (autorisation d'absence)",
+    "type": "assimile"
   },
   {
     "code": "MAL",
