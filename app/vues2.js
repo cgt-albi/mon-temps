@@ -338,6 +338,7 @@ export function vueSauvegarde() {
       <div class="page" style="margin-top:.75rem">
         ${S.demo ? '<div class="carte ambre"><b>Mode essai</b><p class="petit" style="margin:.25rem 0 0">La sauvegarde est désactivée pendant l\'essai.</p></div>' : `
         <div class="carte ${js === null || js > 30 ? 'ambre' : ''}" role="status" style="display:flex;gap:.625rem">${ic('horloge')}<span><b style="display:block;font-size:.875rem">${js === null ? 'Aucune sauvegarde pour l\'instant' : js === 0 ? 'Sauvegardé aujourd\'hui' : `Dernière sauvegarde il y a ${js} jour${js > 1 ? 's' : ''}`}</b><span class="petit">Ton planning n'existe que sur ce téléphone. Une sauvegarde par mois suffit.</span></span></div>`}
+        <a class="carte lien" href="#/import" style="display:flex;gap:.625rem;align-items:center;text-decoration:none;color:inherit">${ic('telecharger')}<span style="flex:1"><b style="display:block">Importer mon emploi du temps Octime</b><span class="petit">Remplir ton planning à partir du PDF Octime, sans mot de passe</span></span>${chevron()}</a>
         <section class="carte" style="display:flex;flex-direction:column;gap:.625rem">
           <h2>Créer un fichier de sauvegarde</h2>
           <p class="petit" style="margin:0">Le fichier est chiffré : sans le mot de passe, personne ne peut le lire. Garde-le où tu veux (mail à toi-même, cloud, clé USB).</p>
@@ -348,6 +349,7 @@ export function vueSauvegarde() {
         </section>
         <section class="carte" style="display:flex;flex-direction:column;gap:.625rem">
           <h2>Restaurer depuis un fichier</h2>
+          <p class="petit" style="margin:0">Le mot de passe est celui choisi <b>au moment où ce fichier a été créé</b>.</p>
           <p class="petit" style="margin:0">Choisis ton fichier de sauvegarde. Les données actuelles de cet appareil seront remplacées.</p>
           <label class="champ"><span>Fichier de sauvegarde</span><input type="file" id="fichier" accept=".json,application/json"></label>
           <label class="champ"><span>Mot de passe du fichier</span><input type="password" id="mdp3" autocomplete="current-password"></label>

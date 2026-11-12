@@ -13,6 +13,7 @@ import * as O from './outils.js';
 import * as K from './courriers.js';
 import * as X from './extras.js';
 import { vueVerification } from './verification.js';
+import { vueImport } from './import.js';
 import { compterInstallations } from './statistiques.js';
 
 const racine = document.getElementById('appli');
@@ -48,7 +49,7 @@ const ROUTES = {
   outils: O.vueOutils, salaire: O.vueSalaire, calc: O.vueCalc, contact: O.vueContact, cet: vueCet,
   reglages: V.vueReglages, code: V.vueCode, report: V.vueReport, sauvegarde: V.vueSauvegarde, releve: V.vueReleve,
   bienvenue: V.vueBienvenue, confidentialite: V.vueConfidentialite,
-  elections: X.vueElections, cycle: X.vueCycle, simuler: X.vueSimuler, dossier: X.vueDossier, verification: vueVerification
+  elections: X.vueElections, cycle: X.vueCycle, simuler: X.vueSimuler, dossier: X.vueDossier, verification: vueVerification, import: vueImport
 };
 
 let derniereRoute = '';

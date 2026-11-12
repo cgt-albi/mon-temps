@@ -45,6 +45,7 @@ export function vueOutils() {
           ${lien('#/dossier', 'preuves', 'Dossier pour le syndicat', 'Bilan, alertes, rappels : un PDF prêt à envoyer')}
           ${lien('#/droits', 'livre', 'Mes droits', 'Temps de travail et repos, en clair')}
           ${lien(`#/releve/${M.aujourdhui().slice(0, 4)}`, 'imprimer', 'Mon relevé annuel', 'À imprimer ou à enregistrer en PDF')}
+          ${lien('#/import', 'telecharger', 'Importer depuis Octime', 'Tout ton emploi du temps d\'un coup, à partir du PDF Octime')}
         </ul>
         ${liens.length ? `<p class="etiquette">Liens utiles</p><ul class="liste">${liens.map((l) => `<li><a class="lien" href="${esc(l.url)}" target="_blank" rel="noopener"><span style="display:flex;gap:.75rem;align-items:flex-start">${ic('web')}<span>${esc(l.titre)}${l.description ? `<span class="sous">${esc(l.description)}</span>` : ''}</span></span>${chevron()}</a></li>`).join('')}</ul>` : ''}
         <a class="btn plein" href="#/contact">${ic('telephone')}Contacter le syndicat</a>

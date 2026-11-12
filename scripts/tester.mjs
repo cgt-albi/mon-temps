@@ -3,6 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import * as M from '../app/moteur.js';
+import * as O from '../app/octime.js';
 
 let ok = 0, ko = 0;
 const t = (nom, cond) => { if (cond) ok++; else { ko++; console.error('ÉCHEC :', nom); } };
@@ -55,6 +56,26 @@ t('nom présent', typeof cfg.nom === 'string' && cfg.nom.trim().length > 0);
   t('RS : 9 dimanches → 0 jour', rs(9).droit === 0);
   t('RS : 10 dimanches → 1 jour', rs(10).droit === 1);
   t('RS : 20 dimanches → 2 jours', rs(20).droit === 2);
+}
+
+// Import d'un emploi du temps Octime (relevé fictif, même mise en page qu'un vrai)
+{
+  const lignes = ['EMPLOI DU TEMPS INDIVIDUEL', 'DU MOIS DE Février 2026', 'De DUPONT Camille (000000)', 'Jour Plage (pause) Poste Structure',
+    'L 02 M41 08h00-16h18 (-00h30) Agent SERVICE', 'M 03 M52 08h42-13h00 Agent SERVICE', 'M52 13h30-17h00 Agent SERVICE',
+    'M 04 J38 09h42-18h30 (-00h30) Agent SERVICE', 'J 05 RTT Réduction Tps de Travail', 'V 06 jfer Absence jour férié',
+    'S 07 RH *Repos Hebdomadaire Agent SERVICE', 'D 08 ZZ9 07h00-19h00 Agent SERVICE', 'L 09 QQQ Code inconnu'];
+  const a = O.analyserLignes(lignes);
+  t('Octime : relevé reconnu', a.estOctime && a.mois[0] === '2026-02');
+  t('Octime : journée coupée lue en deux plages', a.jours['2026-02-03'].plages.length === 2);
+  t('Octime : pause lue', a.jours['2026-02-02'].plages[0][2] === 30);
+  const p = O.preparerImport(a, { jours: { '2026-02-05': { prevu: { code: 'CA' } } }, codesPerso: [] }, cfg, '2026-02-28');
+  t('Octime : 30 min de plus notées sur J38', p.jours['2026-02-04'].realise && p.jours['2026-02-04'].realise.depassementMin === 30);
+  t('Octime : journée normale sans écart', !p.jours['2026-02-02'].realise && !p.jours['2026-02-03'].realise);
+  t('Octime : codes sans tenir compte des majuscules', p.jours['2026-02-06'].prevu.code === 'JFER');
+  t('Octime : code inconnu avec horaires → code perso', p.nouveauxCodes.length === 1 && p.nouveauxCodes[0].debut === '07:00');
+  t('Octime : code inconnu sans horaire signalé', p.ignores.includes('QQQ') && !p.jours['2026-02-09']);
+  t('Octime : jour déjà noté compté comme remplacé', p.remplaces === 1);
+  t('Octime : ni nom ni matricule gardés', !JSON.stringify(p).includes('DUPONT') && !JSON.stringify(p).includes('000000'));
 }
 
 // Régimes de travail
