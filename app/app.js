@@ -38,7 +38,34 @@ async function demarrer() {
   if (!S.etat.profil && !/^#\/(bienvenue|recevoir|sauvegarde|confidentialite|report|verification|elections)/.test(location.hash)) location.hash = '#/bienvenue';
   else rendre(true);
   compterInstallations(S);
-  if ('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('../sw.js').catch(() => {});
+  surveillerMisesAJour();
+}
+
+// ---------- Mises à jour de l'appli ----------
+// Chaque publication change la version du service worker. L'appli la cherche à l'ouverture, quand on y revient,
+// et toutes les 30 minutes ; quand elle est prête, un bandeau propose de recharger (rien n'est perdu : tout est enregistré).
+function surveillerMisesAJour() {
+  if (!('serviceWorker' in navigator) || (location.protocol !== 'https:' && location.hostname !== 'localhost')) return;
+  let dejaControle = !!navigator.serviceWorker.controller;
+  navigator.serviceWorker.register('../sw.js').then((reg) => {
+    const verifier = () => reg.update().catch(() => {});
+    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') verifier(); });
+    setInterval(verifier, 30 * 60 * 1000);
+  }).catch(() => {});
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (!dejaControle) { dejaControle = true; return; } // toute première installation : pas de message
+    bandeauMiseAJour();
+  });
+}
+async function bandeauMiseAJour() {
+  if (document.querySelector('.maj')) return;
+  let message = '';
+  try { const c = await (await fetch('../config/contenu.json', { cache: 'no-store' })).json(); message = String(c.messageMiseAJour || '').trim(); } catch (e) { /* hors ligne */ }
+  const b = document.createElement('div'); b.className = 'maj'; b.setAttribute('role', 'status');
+  b.innerHTML = `<div style="flex:1"><b>Nouvelle version de l'appli</b>${message ? `<span>${esc(message)}</span>` : '<span>Tes données sont gardées.</span>'}</div><button type="button" class="btn principal petit-btn" data-maj="ok">Mettre à jour</button><button type="button" class="btn-icone" data-maj="non" aria-label="Plus tard">${ic('fermer')}</button>`;
+  b.querySelector('[data-maj="ok"]').onclick = () => location.reload();
+  b.querySelector('[data-maj="non"]').onclick = () => b.remove();
+  document.body.appendChild(b);
 }
 
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => S.etat && appliquerAffichage());

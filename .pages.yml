@@ -22,6 +22,10 @@ content:
       - name: slogan
         label: Slogan
         type: string
+      - name: messageMiseAJour
+        label: Message de mise à jour (facultatif)
+        description: "Affiché dans le bandeau « Nouvelle version de l'appli » sur les téléphones, par ex. « Nouveau : vérifiez votre relevé Octime ». Laisser vide pour le message par défaut."
+        type: string
       - name: etablissement
         label: Établissement
         type: string

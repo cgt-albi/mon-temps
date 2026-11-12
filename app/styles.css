@@ -413,3 +413,8 @@ nav.bas{grid-template-columns:repeat(5,minmax(0,1fr));padding-left:4px;padding-r
 .bilan-barre.actif .m,.bilan-barre:focus-visible .m{color:var(--encre);font-weight:700}
 .bilan-barre:focus-visible{outline:2px solid var(--rouge);outline-offset:2px;border-radius:4px}
 @media (forced-colors:active){.bilan-barre .col i{background:CanvasText}}
+
+/* Bandeau « Nouvelle version de l'appli » */
+.maj{position:fixed;left:.75rem;right:.75rem;bottom:calc(5.25rem + env(safe-area-inset-bottom));z-index:55;display:flex;align-items:center;gap:.5rem;background:var(--surface);color:var(--encre);border:1px solid var(--filet);border-left:4px solid var(--rouge);border-radius:12px;padding:.625rem .5rem .625rem .875rem;box-shadow:0 6px 24px rgba(0,0,0,.18);animation:monte .2s ease-out;max-width:34rem;margin:0 auto}
+.maj b{display:block;font-size:.875rem}.maj span{display:block;font-size:.8125rem;color:var(--sourdine)}
+@media print{.maj{display:none!important}}

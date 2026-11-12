@@ -1,6 +1,7 @@
 {
   "nom": "Mon Temps",
   "slogan": "Ton temps de travail, compté par toi.",
+  "messageMiseAJour": "",
   "etablissement": "CH d'Albi",
   "syndicat": "CGT CH d'Albi",
   "couleur": "#E30613",
