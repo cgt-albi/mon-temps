@@ -98,7 +98,7 @@ export function vueCompteurs(p) {
         </section>
         ${b.manquants.length ? `<a class="carte ambre" href="#/jour/${b.manquants[0]}" style="text-decoration:none;display:flex;gap:.625rem">${ic('horloge')}<span><b style="display:block;font-size:.875rem">${pl(b.manquants.length, 'jour')} de semaine sans saisie</b><span class="petit">Le solde est faussé tant qu'ils restent vides. Premier : ${M.courte(b.manquants[0])}.</span></span></a>` : ''}
 
-        ${ech.length ? `<section class="carte${ech.some((e) => e.niveau === 'urgent') ? ' ambre' : ''}" aria-label="Jours à ne pas perdre" style="display:flex;gap:.625rem">${ic('cloche')}<div style="flex:1;display:flex;flex-direction:column;gap:.375rem"><b style="font-size:.875rem">À ne pas perdre</b>${ech.map((e) => `<p class="petit" style="margin:0"><b style="color:var(--encre)">${esc(e.texte)}</b><br>${esc(e.detail)}</p>`).join('')}</div></section>` : ''}
+        ${ech.length ? `<section class="carte${ech.some((e) => e.niveau === 'urgent') ? ' ambre' : ''}" data-tour="echeances" aria-label="Jours à ne pas perdre" style="display:flex;gap:.625rem">${ic('cloche')}<div style="flex:1;display:flex;flex-direction:column;gap:.375rem"><b style="font-size:.875rem">À ne pas perdre</b>${ech.map((e) => `<p class="petit" style="margin:0"><b style="color:var(--encre)">${esc(e.texte)}</b><br>${esc(e.detail)}</p>`).join('')}</div></section>` : ''}
         <section class="liste" data-tour="alertes" aria-label="Garanties minimales">
           <div class="entete-bloc"><h2>Garanties minimales</h2>${q('garanties')}</div>
           ${S.etat.reglages.controles ? `<ul style="list-style:none;margin:0;padding:0">${listeAlertes}
@@ -125,7 +125,7 @@ export function vueCompteurs(p) {
           ${tuile('djf', 'Dimanches et fériés', b.djfJours, ' j', `${M.formatDuree(b.djfMinutes)} · ${pl(b.dimanchesTravailles, 'dimanche')}, ${pl(b.feriesTravailles, 'férié')}${b.pointDepart && b.pointDepart.djfJours ? `, + ${b.pointDepart.djfJours} du relevé` : ''}${b.djfMinutes ? `<br>≈ ${euros(b.djfMinutes / 480 * R.indemniteDimancheFerie8h)} d'indemnité` : ''}`, null, '')}
           ${tuile('nuit', 'Nuits travaillées', b.nuits, b.nuits > 1 ? ' nuits' : ' nuit', `${M.formatDuree(b.nuit)} de nuit${b.nuit && tauxH ? `<br>≈ ${euros(b.nuit / 60 * tauxH * R.majorationNuitPct / 100)} de majoration` : ''}`, null, '')}
         </div>
-        <a class="btn plein" href="#/bilan/${y}">${ic('graphique')}Mon année en un coup d'œil</a>
+        <a class="btn plein" href="#/bilan/${y}" data-tour="mon-annee">${ic('graphique')}Mon année en un coup d'œil</a>
         <div class="rangee"><a class="btn" href="#/releve/${y}">${ic('imprimer')}Relevé annuel</a><a class="btn" href="#/report/${y}">Point de départ</a></div>
       </div>
       ${info ? `<div class="voile-panneau" data-fermer-info></div><section class="panneau-bas panneau-info" role="dialog" aria-label="${esc(info.titre)}">

@@ -249,8 +249,8 @@
    "cle": "accueil-site-5b6a9a"
   },
   {
-   "texte": "Rappelé·e sur un repos ? Planning changé la veille ? C'est daté et gardé. Le jour où ça ne colle pas, tu viens au syndicat avec des faits.",
-   "cle": "accueil-site-f2f499"
+   "texte": "Rappelé·e sur un repos ? Planning changé la veille ? C'est daté et gardé. Et l'appli compare ton relevé Octime avec ce que tu as noté : une heure oubliée, et le courrier de réclamation est prêt.",
+   "cle": "accueil-site-854d00"
   },
   {
    "texte": "Rien n'est envoyé sur internet, jamais.",
@@ -297,8 +297,8 @@
    "cle": "accueil-site-117d84"
   },
   {
-   "texte": "Tu recopies ton planning en deux gestes, puis tu notes seulement ce qui a changé. Ton solde se calcule tout seul, avec tes RTT, tes congés, tes dimanches et fériés.",
-   "cle": "accueil-site-22df2c"
+   "texte": "Importe ton emploi du temps Octime en PDF, ou recopie ton planning en deux gestes. Tu notes ensuite seulement ce qui change : un dépassement, une réunion en plus. Ton solde se calcule tout seul, avec tes RTT, tes congés, tes dimanches et fériés.",
+   "cle": "accueil-site-4b64d0"
   },
   {
    "texte": "Un fichier protégé par ton mot de passe, que tu gardes où tu veux.",

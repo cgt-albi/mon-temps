@@ -161,8 +161,8 @@
    "cle": "bienvenue-visite-019f6f"
   },
   {
-   "texte": "Quand le planning du mois sort, ce bouton te permet de le recopier en quelques gestes : un code, puis tous les jours concernés.",
-   "cle": "bienvenue-visite-b5390f"
+   "texte": "Quand le planning du mois sort, ce bouton te permet de le recopier en quelques gestes : un code, puis tous les jours concernés. Plus rapide encore : importe ton emploi du temps Octime en PDF, dans Outils › Mon relevé Octime.",
+   "cle": "bienvenue-visite-994f1e"
   },
   {
    "texte": "Tes compteurs",
@@ -225,16 +225,40 @@
    "cle": "bienvenue-visite-1837cf"
   },
   {
-   "texte": "Le bouton « Aa » change tout de suite le thème (clair ou sombre) et la taille du texte. L'engrenage ouvre tous les réglages : ton poste, tes horaires, l'affichage.",
-   "cle": "bienvenue-visite-4c428a"
+   "texte": "Le bouton « Aa » change tout de suite le thème (clair ou sombre) et la taille du texte. L'engrenage ouvre tous les réglages : ton poste, ton régime de travail, le rappel de ton horaire du lendemain.",
+   "cle": "bienvenue-visite-6153e2"
   },
   {
    "texte": "C'est parti",
    "cle": "bienvenue-visite-ab46a5"
   },
   {
-   "texte": "Fin de la visite. On quitte le mode essai : ton vrai planning, vide, t'attend. Commence par « Remplir plusieurs jours d'un coup ».",
-   "cle": "bienvenue-visite-06576c"
+   "texte": "Fin de la visite. On quitte le mode essai : ton vrai planning, vide, t'attend. Commence par importer ton emploi du temps Octime (Outils › Mon relevé Octime), ou par « Remplir plusieurs jours d'un coup ».",
+   "cle": "bienvenue-visite-c1405a"
+  },
+  {
+   "texte": "Une réunion en plus ?",
+   "cle": "bienvenue-visite-42577d"
+  },
+  {
+   "texte": "Réunion, formation, instance en dehors de ton horaire : ajoute-la ici. Elle s'ajoute à ta journée sans la remplacer.",
+   "cle": "bienvenue-visite-933531"
+  },
+  {
+   "texte": "À ne pas perdre",
+   "cle": "bienvenue-visite-1e232e"
+  },
+  {
+   "texte": "Quand des congés ou des jours gagnés risquent d'être perdus, l'appli te prévient ici, avec la date limite.",
+   "cle": "bienvenue-visite-29c1bf"
+  },
+  {
+   "texte": "Ton année en un coup d'œil",
+   "cle": "bienvenue-visite-82ba8d"
+  },
+  {
+   "texte": "Tes heures en plus mois par mois, tes dimanches, tes nuits, tes rappels : un résumé clair, à imprimer pour ton entretien annuel ou pour le syndicat.",
+   "cle": "bienvenue-visite-eb4fa0"
   }
  ]
 }

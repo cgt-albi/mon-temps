@@ -30,6 +30,7 @@ function etatDemo() {
   const marque = (d, r) => { if (d < today && e.jours[d]) e.jours[d].realise = r; };
   marque(passe(3), { code: e.jours[passe(3)].prevu.code, depassementMin: 35, note: 'Sortie tardive, transmissions' });
   marque(passe(8), { code: 'J38', depassementMin: 20 });
+  if (e.jours[passe(6)] && passe(6) < today) e.jours[passe(6)].ajouts = [{ motif: 'Réunion', debut: '18:00', fin: '20:00' }];
   const rap = passe(13);
   e.jours[rap] = { prevu: { code: 'RH' }, realise: { code: 'M52', note: 'Remplacement d\'une collègue' } };
   e.preuves.push({ id: 'rappel-' + rap, type: 'rappel', date: rap, code: 'M52', appelLe: `${M.ajouterJours(rap, -1)}T19:10`, compense: false, creeLe: new Date().toISOString() });
@@ -43,17 +44,20 @@ const ETAPES = [
   { route: /^planning/, cible: () => 'jour-' + M.aujourdhui(), titre: 'Noter ta journée', texte: 'Touche la case d\'aujourd\'hui, encadrée en rouge.', attendre: /^jour/ },
   { route: /^jour/, cible: 'codes', titre: 'Ce que tu as vraiment fait', texte: 'Le prévu est déjà connu. Si la journée a changé, choisis le bon code. Sinon, laisse tel quel.', suivantPossible: true, evenement: 'code' },
   { route: /^jour/, cible: 'depassement', titre: 'Partie plus tard ?', texte: 'Touche « + » pour ajouter les minutes en plus. Même un quart d\'heure compte.', evenement: 'depassement', suivantPossible: true, siAbsent: 'passer' },
+  { route: /^jour/, cible: 'ajouts', titre: 'Une réunion en plus ?', texte: 'Réunion, formation, instance en dehors de ton horaire : ajoute-la ici. Elle s\'ajoute à ta journée sans la remplacer.', suivantPossible: true, siAbsent: 'passer' },
   { route: /^jour/, cible: 'enregistrer', titre: 'Et voilà', texte: 'Touche « Enregistrer la journée ». C\'est tout, chaque jour : quelques secondes.', attendre: /^planning/ },
-  { route: /^planning/, cible: 'remplir', titre: 'Recopier le planning du mois', texte: 'Quand le planning du mois sort, ce bouton te permet de le recopier en quelques gestes : un code, puis tous les jours concernés.' },
+  { route: /^planning/, cible: 'remplir', titre: 'Recopier le planning du mois', texte: 'Quand le planning du mois sort, ce bouton te permet de le recopier en quelques gestes : un code, puis tous les jours concernés. Plus rapide encore : importe ton emploi du temps Octime en PDF, dans Outils › Mon relevé Octime.' },
   { route: /^planning/, cible: 'nav-compteurs', titre: 'Tes compteurs', texte: 'Touche « Compteurs » en bas de l\'écran.', attendre: /^compteurs/ },
   { route: /^compteurs/, cible: 'solde', titre: 'Ton solde d\'heures', texte: 'Ce que tu as fait, moins ce que tu dois. Une barre par mois : au-dessus, des heures en plus ; en dessous, des heures en moins.' },
+  { route: /^compteurs/, cible: 'echeances', titre: 'À ne pas perdre', texte: 'Quand des congés ou des jours gagnés risquent d\'être perdus, l\'appli te prévient ici, avec la date limite.', siAbsent: 'passer' },
+  { route: /^compteurs/, cible: 'mon-annee', titre: 'Ton année en un coup d\'œil', texte: 'Tes heures en plus mois par mois, tes dimanches, tes nuits, tes rappels : un résumé clair, à imprimer pour ton entretien annuel ou pour le syndicat.', siAbsent: 'passer' },
   { route: /^compteurs/, cible: 'alertes', titre: 'Tes droits, vérifiés', texte: 'L\'appli contrôle les repos et les durées prévus par le décret. Une ligne rouge : une règle n\'a pas été respectée. Un point rouge apparaît aussi sur le jour, dans le planning.' },
   { route: /^compteurs/, cible: 'nav-preuves', titre: 'Mes preuves', texte: 'Touche « Mes preuves ».', attendre: /^preuves/ },
   { route: /^preuves/, cible: 'onglets-preuves', titre: 'Garder une trace', texte: 'Rappels sur repos, changements de dernière minute, dépassements : tout est daté. Tu peux tout envoyer au syndicat d\'un geste.' },
   { route: /^preuves/, cible: 'nav-planning', titre: 'Retour au planning', texte: 'Touche « Planning ».', attendre: /^planning/ },
   { route: /^planning/, cible: 'sauvegarde', titre: 'Le bouclier : ta sauvegarde', texte: 'Tes données ne sont que sur ce téléphone. Vert : la sauvegarde est récente. Orange : pense à en refaire une. Une fois par mois suffit.' },
-  { route: /^planning/, cible: 'reglages', titre: 'Tes réglages', texte: 'Le bouton « Aa » change tout de suite le thème (clair ou sombre) et la taille du texte. L\'engrenage ouvre tous les réglages : ton poste, tes horaires, l\'affichage.' },
-  { route: null, cible: null, titre: 'C\'est parti', texte: 'Fin de la visite. On quitte le mode essai : ton vrai planning, vide, t\'attend. Commence par « Remplir plusieurs jours d\'un coup ».', fin: true }
+  { route: /^planning/, cible: 'reglages', titre: 'Tes réglages', texte: 'Le bouton « Aa » change tout de suite le thème (clair ou sombre) et la taille du texte. L\'engrenage ouvre tous les réglages : ton poste, ton régime de travail, le rappel de ton horaire du lendemain.' },
+  { route: null, cible: null, titre: 'C\'est parti', texte: 'Fin de la visite. On quitte le mode essai : ton vrai planning, vide, t\'attend. Commence par importer ton emploi du temps Octime (Outils › Mon relevé Octime), ou par « Remplir plusieurs jours d\'un coup ».', fin: true }
 ];
 
 export function demarrerEssai() {
