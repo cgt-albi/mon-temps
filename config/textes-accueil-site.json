@@ -315,6 +315,10 @@
   {
    "texte": "· l'appli des agents",
    "cle": "accueil-site-aff3d7"
+  },
+  {
+   "texte": "Conçue avec l'aide de l'IA Claude (Anthropic) · écrite de zéro, sans reprendre le code d'autres applis.",
+   "cle": "accueil-site-ff9635"
   }
  ]
 }

@@ -119,3 +119,5 @@ a{color:var(--rouge-fonce)}
 .reseaux-pied{display:flex;gap:.5rem;margin-top:.75rem}
 .reseaux-pied a{width:2.75rem;height:2.75rem;border-radius:50%;border:1px solid var(--filet);display:flex;align-items:center;justify-content:center;color:var(--encre)}
 .reseaux-pied a:hover{background:var(--encre);color:#fff}
+.mention-ia{flex-basis:100%;margin:.75rem 0 0;font-size:.75rem;opacity:.75}
+.mention-ia a{color:inherit;text-decoration:underline;text-underline-offset:2px}

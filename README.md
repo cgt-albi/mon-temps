@@ -7,6 +7,12 @@ Tout reste sur le téléphone de l'agent : pas de compte, pas de serveur, aucune
 
 ---
 
+## Conception
+
+Mon Temps a été conçue par des militants du syndicat et programmée avec l'aide de **Claude**, une intelligence artificielle de la société Anthropic (modèle **Claude Opus 5.5**). L'appli elle-même ne contient aucune IA : tous les calculs sont faits sur le téléphone, selon des règles fixes, testées à chaque publication (`scripts/tester.mjs`).
+
+L'idée s'inspire des applications de suivi du temps de travail proposées aux agents du CHIC Castres-Mazamet et du CHU de Toulouse. Mon Temps a été écrite de zéro : elle ne reprend ni leur code, ni leur conception technique, ni leurs contenus.
+
 ## Modifier le contenu sans toucher au code : Pages CMS
 
 Nom de l'appli, logo, icône, couleur, contacts, réseaux sociaux, actualités, agenda,

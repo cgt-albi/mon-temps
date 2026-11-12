@@ -43,6 +43,30 @@
   {
    "texte": "Éditeur",
    "cle": "mentions-eb7b6c"
+  },
+  {
+   "texte": "Lecture des PDF par pdf.js (Mozilla, licence Apache 2.0) ; lecture et création des codes QR par jsQR (licence Apache 2.0) et QR Code Generator (Kazuhiko Arase, licence MIT).",
+   "cle": "mentions-d5b168"
+  },
+  {
+   "texte": "Conception et intelligence artificielle",
+   "cle": "mentions-003724"
+  },
+  {
+   "texte": "Cette application a été conçue par des militants du syndicat et programmée avec l'aide de Claude, une intelligence artificielle de la société Anthropic (modèle Claude Opus 5.5). Les règles de calcul, les textes et les chiffres ont été établis à partir des textes officiels et des documents de l'établissement ; les valeurs encore à confirmer sont signalées « provisoire » dans l'application.",
+   "cle": "mentions-6e3349"
+  },
+  {
+   "texte": "L'application elle-même ne contient aucune intelligence artificielle : tous les calculs sont faits sur le téléphone, selon des règles fixes et vérifiables.",
+   "cle": "mentions-401d01"
+  },
+  {
+   "texte": "Inspiration",
+   "cle": "mentions-cbc8e0"
+  },
+  {
+   "texte": "L'idée s'inspire des applications de suivi du temps de travail proposées aux agents du CHIC Castres-Mazamet et du CHU de Toulouse. Mon Temps a été entièrement écrite de zéro : elle ne reprend ni leur code, ni leur conception technique, ni leurs contenus.",
+   "cle": "mentions-2d53f6"
   }
  ]
 }

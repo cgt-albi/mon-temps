@@ -648,5 +648,14 @@
  "bienvenue-visite-82ba8d": "Ton année en un coup d'œil",
  "bienvenue-visite-eb4fa0": "Tes heures en plus mois par mois, tes dimanches, tes nuits, tes rappels : un résumé clair, à imprimer pour ton entretien annuel ou pour le syndicat.",
  "accueil-site-854d00": "Rappelé·e sur un repos ? Planning changé la veille ? C'est daté et gardé. Et l'appli compare ton relevé Octime avec ce que tu as noté : une heure oubliée, et le courrier de réclamation est prêt.",
- "accueil-site-4b64d0": "Importe ton emploi du temps Octime en PDF, ou recopie ton planning en deux gestes. Tu notes ensuite seulement ce qui change : un dépassement, une réunion en plus. Ton solde se calcule tout seul, avec tes RTT, tes congés, tes dimanches et fériés."
+ "accueil-site-4b64d0": "Importe ton emploi du temps Octime en PDF, ou recopie ton planning en deux gestes. Tu notes ensuite seulement ce qui change : un dépassement, une réunion en plus. Ton solde se calcule tout seul, avec tes RTT, tes congés, tes dimanches et fériés.",
+ "mentions-d5b168": "Lecture des PDF par pdf.js (Mozilla, licence Apache 2.0) ; lecture et création des codes QR par jsQR (licence Apache 2.0) et QR Code Generator (Kazuhiko Arase, licence MIT).",
+ "mentions-003724": "Conception et intelligence artificielle",
+ "mentions-6e3349": "Cette application a été conçue par des militants du syndicat et programmée avec l'aide de Claude, une intelligence artificielle de la société Anthropic (modèle Claude Opus 5.5). Les règles de calcul, les textes et les chiffres ont été établis à partir des textes officiels et des documents de l'établissement ; les valeurs encore à confirmer sont signalées « provisoire » dans l'application.",
+ "mentions-401d01": "L'application elle-même ne contient aucune intelligence artificielle : tous les calculs sont faits sur le téléphone, selon des règles fixes et vérifiables.",
+ "mentions-cbc8e0": "Inspiration",
+ "mentions-2d53f6": "L'idée s'inspire des applications de suivi du temps de travail proposées aux agents du CHIC Castres-Mazamet et du CHU de Toulouse. Mon Temps a été entièrement écrite de zéro : elle ne reprend ni leur code, ni leur conception technique, ni leurs contenus.",
+ "accueil-site-ff9635": "Conçue avec l'aide de l'IA Claude (Anthropic) · écrite de zéro, sans reprendre le code d'autres applis.",
+ "reglages-829dca": "À propos de l'appli",
+ "reglages-dfd8ed": "Conçue par des militants du syndicat et programmée avec l'aide de Claude, une IA de la société Anthropic (modèle Claude Opus 5.5). L'appli elle-même ne contient aucune IA : tout est calculé sur ton téléphone, selon des règles fixes. L'idée s'inspire des applis proposées aux agents du CHIC Castres-Mazamet et du CHU de Toulouse ; Mon Temps a été écrite de zéro, sans reprendre leur code."
 }

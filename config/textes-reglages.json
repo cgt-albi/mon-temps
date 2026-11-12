@@ -623,6 +623,14 @@
   {
    "texte": "à valider",
    "cle": "reglages-ea7ebf"
+  },
+  {
+   "texte": "À propos de l'appli",
+   "cle": "reglages-829dca"
+  },
+  {
+   "texte": "Conçue par des militants du syndicat et programmée avec l'aide de Claude, une IA de la société Anthropic (modèle Claude Opus 5.5). L'appli elle-même ne contient aucune IA : tout est calculé sur ton téléphone, selon des règles fixes. L'idée s'inspire des applis proposées aux agents du CHIC Castres-Mazamet et du CHU de Toulouse ; Mon Temps a été écrite de zéro, sans reprendre leur code.",
+   "cle": "reglages-dfd8ed"
   }
  ]
 }
